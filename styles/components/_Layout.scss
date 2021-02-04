@@ -1,0 +1,88 @@
+@import '../base/settings';
+
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-top: 70px;
+
+  .mainContainerNav {
+    width: 100%;
+    height: 70px;
+    background-color: $backgroundDark;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .footer {
+    width: 100%;
+    height: 530px;
+    overflow: hidden;
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    .newsletter {
+      width: 100%;
+      height: 40%;
+      background: $backgroundDark;
+      display: flex;
+      > div {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3em;
+        > h1 {
+          color: $textFooter;
+          font-family: 'PlayFair' !important;
+          text-align: center;
+        }
+      }
+    }
+    .contact {
+      width: 100%;
+      height: 60%;
+      background: $lightBlue;
+      display: flex;
+      > div {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2em;
+        span {
+          color: $textFooter;
+          margin: 1em;
+          color: $backgroundDark;
+        }
+        .socialIcon {
+          display: flex;
+          li {
+            list-style: none;
+            margin: 1em;
+          }
+        }
+        h1 {
+          font-family: 'PlayFair' !important;
+          color: $backgroundDark;
+        }
+        .contactList {
+          li {
+            list-style: none;
+            color: $backgroundDark;
+            margin: 10px 0 10px 0;
+          }
+        }
+      }
+    }
+  }
+}

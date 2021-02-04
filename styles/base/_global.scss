@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'PlayFair';
+  src: url('../../public/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../../public/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../../public/fonts/Montserrat-Regular.ttf');
+}
+
+html,
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat-Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
