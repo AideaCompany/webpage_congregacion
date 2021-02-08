@@ -1,34 +1,35 @@
 import React from 'react'
-import Link from 'next/Link'
+import useTranslation from '../hooks/useTranslations'
 
 const Navigation = () => {
+  const { t, locale } = useTranslation()
   return (
     <nav className="mainContainerNav">
       <ul className="navBar">
         <li>
-          <a href="#">INICIO</a>
+          <a href="#">{t('index').toUpperCase()}</a>
+        </li>
+        <li className="active">
+          <a href="/about">{t('about').toUpperCase()}</a>
         </li>
         <li>
-          <a href="/about">¿QUIÉNES SOMOS?</a>
+          <a href="#">{t('where').toUpperCase()}</a>
         </li>
         <li>
-          <a href="#">¿DÓNDE ESTAMOS?</a>
+          <a href="#">{t('ourWork').toUpperCase()}</a>
         </li>
         <li>
-          <a href="#">¿QUÉ HACEMOS?</a>
+          <a href="#">{t('beFranciscan').toUpperCase()}</a>
         </li>
         <li>
-          <a href="#">SER FRANCISCANA</a>
+          <a href="#">{t('spirituality').toUpperCase()}</a>
         </li>
         <li>
-          <a href="#">ESPIRITUALIDAD</a>
-        </li>
-        <li>
-          <a href="#">ALMA EUCARÍSTICA</a>
+          <a href="#">{t('eucharisticSoul').toUpperCase()}</a>
         </li>
       </ul>
     </nav>
   )
 }
 
-export default Navigation
+export default React.memo(Navigation)

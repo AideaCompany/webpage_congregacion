@@ -1,10 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
+import useTranslation from '../../hooks/useTranslations'
 
 const Contact = () => {
+  const { t } = useTranslation()
   return (
     <div>
-      <h1>CONTACTO</h1>
+      <h1>{t('contact').toUpperCase()}</h1>
       <ul className="contactList">
         <li>
           <a href="#" target="_blank">

@@ -4,18 +4,19 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  display: flex;
+  // display: flex;
   flex-direction: row;
   position: relative;
-  padding-top: 70px;
+  // padding-top: 70px;
 
   .mainContainerNav {
     width: 100%;
     height: 70px;
-    background-color: $backgroundDark;
+    // background-color: $backgroundDark;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 50000;
     .navBar {
       width: 100%;
       height: 100%;
@@ -24,7 +25,29 @@
       margin-bottom: 0;
       padding-left: 0;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      .active {
+        background-color: transparent;
+      }
+      li {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        background-color: $backgroundDark;
+        font-family: sans-serif;
+        font-size: 18px;
+        a {
+          text-decoration: none;
+          color: $textFooter;
+          text-align: center;
+        }
+        a:hover {
+          text-shadow: 0 0.015em #f0f0f0, 0 -0.015em #f0f0f0, 0.01em 0 #f0f0f0, -0.01em 0 #f0f0f0;
+        }
+      }
     }
   }
 
@@ -32,10 +55,8 @@
     width: 100%;
     height: 530px;
     overflow: hidden;
-    position: fixed;
-
-    bottom: 0;
-    left: 0;
+    position: relative;
+    z-index: 50000;
 
     .newsletter {
       width: 100%;
