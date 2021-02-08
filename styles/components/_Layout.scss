@@ -16,6 +16,16 @@
     position: fixed;
     top: 0;
     left: 0;
+    .navBar {
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      display: flex;
+      margin-bottom: 0;
+      padding-left: 0;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .footer {
@@ -38,11 +48,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         padding: 3em;
         > h1 {
           color: $textFooter;
           font-family: 'PlayFair' !important;
           text-align: center;
+        }
+        > p {
+          color: $textFooter;
+          font-family: 'Montserrat-Bold';
         }
       }
     }

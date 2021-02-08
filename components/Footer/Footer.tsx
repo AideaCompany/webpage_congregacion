@@ -10,6 +10,7 @@ const Footer = () => {
       <div className="newsletter">
         <div>
           <h1>¿QUIERES RECIBIR LAS ULTIMAS NOTICIAS?</h1>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
         </div>
         <div>
           <InputNewsLetter />
