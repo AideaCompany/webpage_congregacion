@@ -5,48 +5,58 @@
   height: 100vh;
   overflow-x: hidden;
   // display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   position: relative;
   // padding-top: 70px;
 
   .mainContainerNav {
     width: 100%;
     height: 70px;
-    // background-color: $backgroundDark;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 50000;
     .navBar {
       width: 100%;
-      height: 100%;
-      list-style: none;
-      display: flex;
       margin-bottom: 0;
       padding-left: 0;
+    }
+    a {
+      color: #fff;
+      background-color: $backgroundDark;
+      height: 70px;
+      display: flex;
       align-items: center;
-      justify-content: space-between;
-      .active {
-        background-color: transparent;
+      justify-content: center;
+      text-decoration: none;
+      &:hover {
+        text-shadow: 0 0.015em #f0f0f0, 0 -0.015em #f0f0f0, 0.01em 0 #f0f0f0, -0.01em 0 #f0f0f0;
       }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    li {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      &:hover .navBar__subMenu > li {
+        display: block;
+      }
+    }
+
+    .navBar__subMenu {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
       li {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        background-color: $backgroundDark;
-        font-family: sans-serif;
-        font-size: 18px;
-        a {
-          text-decoration: none;
-          color: $textFooter;
-          text-align: center;
-        }
-        a:hover {
-          text-shadow: 0 0.015em #f0f0f0, 0 -0.015em #f0f0f0, 0.01em 0 #f0f0f0, -0.01em 0 #f0f0f0;
-        }
+        display: none;
+        position: relative;
+        top: 0;
+        border-top: 1px #f0f0f0 solid;
       }
     }
   }
@@ -102,6 +112,8 @@
         }
         .socialIcon {
           display: flex;
+          padding-left: 0;
+          margin-bottom: 0;
           li {
             list-style: none;
             margin: 1em;
@@ -112,8 +124,11 @@
           color: $backgroundDark;
         }
         .contactList {
+          padding-left: 0;
+          margin-bottom: 0;
           li {
             list-style: none;
+            text-decoration: underline;
             color: $backgroundDark;
             margin: 10px 0 10px 0;
           }

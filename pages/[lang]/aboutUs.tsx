@@ -1,15 +1,17 @@
 import Layout from '../../components/Layout'
-import Header from '../../components/HeaderIndex/Header'
 import MainContent from '../../components/MainContent'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../providers/LenguageContext'
 import { Localization } from '../../i18n/types'
+import useTranslation from '../../hooks/useTranslations'
+import Header from '../../components/HeaderHistory/Header'
 
 export default function Home(props: { localization: Localization }) {
+  const { t } = useTranslation()
   return (
-    <Layout title={'Inicio'}>
+    <Layout title={'¿Quiénes somos?'}>
       <>
-        <Header image={'firenze_santa'} title={'CONGREGRACIÓN DE FRANCISCANAS DE MARÍA INMACULADA'} />
+        <Header />
         {/* <MainContent /> */}
       </>
     </Layout>

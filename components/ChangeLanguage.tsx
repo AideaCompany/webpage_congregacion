@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { Locale } from '../../i18n/types'
+import { Locale } from '../i18n/types'
 //next
 import { useRouter } from 'next/router'
 

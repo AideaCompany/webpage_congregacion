@@ -3,9 +3,9 @@ import React from 'react'
 
 const MainContent = () => {
   return (
-    <div className="indexContentContainer">
-      <div className="aboutUs">
-        <div className="aboutUs__info">
+    <div className="index">
+      <div className="index__aboutUs">
+        <div className="index__aboutUs__info">
           <h1>NOSTOROS</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
@@ -16,21 +16,21 @@ const MainContent = () => {
             feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
           </p>
         </div>
-        <div className="aboutUs__images">
+        <div className="index__aboutUs__images">
           <Image width={357} height={476} src="/images/index/hermana1.png" />
           <Image width={357} height={363} src="/images/index/hermana2.png" />
           <Image width={411} height={730} src="/images/index/hermana3.png" />
         </div>
       </div>
 
-      <div className="our-headquarters">
-        <div className="our-headquarters__images">
+      <div className="index__ourHeadquarters">
+        <div className="index__ourHeadquarters__images">
           <Image width={347} height={359} src="/images/index/rectangle.png" />
           <Image width={347} height={359} src="/images/index/rectangle.png" />
           <Image width={347} height={359} src="/images/index/rectangle.png" />
           <Image width={347} height={359} src="/images/index/rectangle.png" />
         </div>
-        <div className="our-headquarters__info">
+        <div className="index__ourHeadquarters__info">
           <h1>NUESTRAS SEDES</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
@@ -43,7 +43,7 @@ const MainContent = () => {
         </div>
       </div>
 
-      <div className="lastNews">
+      <div className="index__lastNews">
         <h1>ÚLTIMAS NOTICIAS</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque </p>
         <Image width={388} height={317} src="/images/index/papa-francisco.png" />

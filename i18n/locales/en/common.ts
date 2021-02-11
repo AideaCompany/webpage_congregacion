@@ -10,7 +10,7 @@ const common = {
   beFranciscan: 'Be Franciscan',
   vocationMinistry: 'Vocation Ministry',
   vocationOrientation: 'Vocation Orientation',
-  aspirantate: 'Aspirantado',
+  aspirantate: 'Aspirantate',
   postulancy: 'Postulancy',
   novitiate: 'Novitiate ',
   junerado: 'Junerado',

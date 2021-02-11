@@ -7,9 +7,9 @@ import { Localization } from '../../i18n/types'
 
 export default function Home(props: { localization: Localization }) {
   return (
-    <Layout title={'Inicio'}>
+    <Layout title={'¿Quiénes somos?'}>
       <>
-        <Header image={'firenze_santa'} title={'CONGREGRACIÓN DE FRANCISCANAS DE MARÍA INMACULADA'} />
+        <Header image={'church_collage'} title={'PROVINCIAS'} />
         {/* <MainContent /> */}
       </>
     </Layout>
