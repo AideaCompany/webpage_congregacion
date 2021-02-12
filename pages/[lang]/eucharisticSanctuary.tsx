@@ -1,14 +1,14 @@
 import Layout from '../../components/Layout'
-import AboutUsScreen from '../../components/Screens/AboutUsScreen'
+import EucharisticSanctuaryScreen from '../../components/Screens/EucharisticSanctuaryScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../providers/LenguageContext'
 import { Localization } from '../../i18n/types'
 
-export default function aboutUs(props: { localization: Localization }) {
+export default function eucharisticSanctuary(props: { localization: Localization }) {
   return (
     <Layout title={'Inicio'}>
       <>
-        <AboutUsScreen />
+        <EucharisticSanctuaryScreen />
       </>
     </Layout>
   )

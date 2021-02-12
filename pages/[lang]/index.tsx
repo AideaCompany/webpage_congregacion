@@ -1,16 +1,14 @@
 import Layout from '../../components/Layout'
-import Header from '../../components/HeaderIndex/Header'
-import MainContent from '../../components/MainContent'
+import HomeScreen from '../../components/Screens/HomeScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../providers/LenguageContext'
 import { Localization } from '../../i18n/types'
 
-export default function Home(props: { localization: Localization }) {
+export default function index(props: { localization: Localization }) {
   return (
     <Layout title={'Inicio'}>
       <>
-        <Header image={'firenze_santa'} title={'CONGREGRACIÓN DE FRANCISCANAS DE MARÍA INMACULADA'} />
-        {/* <MainContent /> */}
+        <HomeScreen />
       </>
     </Layout>
   )

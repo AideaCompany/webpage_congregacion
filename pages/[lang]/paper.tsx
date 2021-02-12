@@ -1,16 +1,14 @@
 import Layout from '../../components/Layout'
-import Header from '../../components/HeaderIndex/Header'
-import MainContent from '../../components/MainContent'
+import PaperScreen from '../../components/Screens/PaperScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../providers/LenguageContext'
 import { Localization } from '../../i18n/types'
 
-export default function Home(props: { localization: Localization }) {
+export default function paper(props: { localization: Localization }) {
   return (
-    <Layout title={'¿Quiénes somos?'}>
+    <Layout title={'Inicio'}>
       <>
-        <Header image={'church_collage'} title={'PROVINCIAS'} />
-        {/* <MainContent /> */}
+        <PaperScreen />
       </>
     </Layout>
   )
