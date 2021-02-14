@@ -1,0 +1,29 @@
+.franciscan__index {
+  width: 100%;
+  height: calc(100vh - 70px);
+  .container__photos {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container__carousel {
+      width: 80%;
+      height: 70vh;
+      background-color: rgba($color: #fff, $alpha: 0.8);
+      .item {
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

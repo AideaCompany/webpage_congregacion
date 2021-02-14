@@ -6,7 +6,7 @@ import { Localization } from '../../i18n/types'
 
 export default function index(props: { localization: Localization }) {
   return (
-    <Layout title={'Inicio'}>
+    <Layout title={props.localization.translations.index}>
       <>
         <HomeScreen />
       </>

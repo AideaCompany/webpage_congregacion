@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,15 +11,20 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "preserve",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/providers/*": ["providers/*"],
+      "@/types/*": ["types/*"],
+      "@/graphql/*": ["graphql/*"],
+      "@/utils/*": ["utils/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Auth/ProtectRoute.ts", "components/Auth/ProtectRoute.tsx"],
+  "exclude": ["node_modules"]
 }

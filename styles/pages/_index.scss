@@ -1,0 +1,71 @@
+.about__summary {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .images {
+    > div {
+      height: 60%;
+      width: 70%;
+      display: flex;
+      overflow: hidden;
+      > .left__images {
+        :nth-child(1) {
+          height: 70%;
+        }
+        :nth-child(2) {
+          height: 30%;
+        }
+        img {
+          object-fit: cover;
+          object-position: 50% 50%; /* default value: image is centered*/
+        }
+      }
+    }
+  }
+}
+
+.places__summary {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel__sedes {
+    width: 25vw;
+    height: 25vw;
+    .item {
+      width: 100%;
+      height: calc(25vw);
+      display: flex;
+      flex-wrap: wrap;
+      > div {
+        width: 45%;
+        height: auto;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.news__index {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

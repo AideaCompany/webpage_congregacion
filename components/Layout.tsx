@@ -1,10 +1,9 @@
 import React from 'react'
 //next
 import Head from 'next/head'
-import { propsLayout } from '../types'
+import { propsLayout } from '../types/types'
 //Components
 import Navigation from './Navigation'
-import Footer from './Footer/Footer'
 
 const Layout = (props: propsLayout) => {
   //props
@@ -19,7 +18,7 @@ const Layout = (props: propsLayout) => {
         <div className="mainContainer">
           <Navigation />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </main>
     </>

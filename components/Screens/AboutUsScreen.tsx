@@ -1,43 +1,40 @@
 import React from 'react'
-//Antd
-import { Button } from 'antd'
-//next
-import Image from 'next/image'
 //i18n
 import useTranslation from '../../hooks/useTranslations'
-//components
-import ChangeLanguage from '../ChangeLanguage'
+import Header from '../header'
+import TargetText from '../TargetText'
 
 const AboutUsScreen = () => {
   const { t } = useTranslation()
 
   return (
     <>
-      <div className="background">
-        <img src={`/images/body/firenze_santa.png`} className="background__image"></img>
-        <div className="background__layout"></div>
-      </div>
-      <body className="bodyAbout">
-        <Image width={1762} height={799} src="/images/body/rectPlay.png" className="body__rect"></Image>
-        <div className="body__content">
-          <div className="body__content__tittle">
-            <h1>HISTORIA DE LA CONGREGACIÓN</h1>
+      <Header image={'/images/body/firenze_santa.png'}>
+        <>
+          <div className="main__section">
+            <div className="video__about">
+              <video src="" controls></video>
+              <div className="secondary__title">
+                <h1>HISTORIA DE LA CONGREGACIÓN</h1>
+              </div>
+            </div>
           </div>
-          <div className="body__content__btn">
-            <Button size="large" className="body__content__btn-primary">
-              <span> {t('vocationMinistry').toUpperCase()}</span>
-
-              <Image width={40} height={40} src="/images/body/mass.svg"></Image>
-            </Button>
-            <Button size="large" className="body__content__btn-primary">
-              <span>{t('vocationOrientation').toUpperCase()}</span>
-
-              <Image width={40} height={40} src="/images/body/namaste.svg"></Image>
-            </Button>
+          <div className="main__section">
+            <div className="text__history">
+              <TargetText
+                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam,
+                    excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at
+                    perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut
+                    veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis
+                    in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus
+                    sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo."
+              />
+            </div>
           </div>
-          <ChangeLanguage />
-        </div>
-      </body>
+        </>
+      </Header>
     </>
   )
 }

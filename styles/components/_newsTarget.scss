@@ -1,0 +1,31 @@
+.news__target {
+  width: 800px;
+
+  .header__news {
+    background-color: $backgroundDark;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $textFooter;
+    }
+  }
+  .body__news {
+    display: flex;
+    > div {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      img {
+        width: 100%;
+      }
+      p {
+        padding: 20px;
+        font-family: 'Montserrat-Regular';
+      }
+    }
+  }
+}

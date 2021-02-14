@@ -11,6 +11,8 @@ import { AppProps } from 'next/dist/next-server/lib/router/router'
 import defaultStrings from '../i18n/locales/es'
 import { Localization } from '../i18n/types'
 import { getInitialLocale } from '../i18n/getInitialLocale'
+import { ApolloProvider } from '@apollo/client'
+import client from '@/graphql/config'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
@@ -35,9 +37,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }
 
   return (
-    <LanguageProvider localization={getLenguaje(pageProps.lang)}>
-      <Component {...pageProps} />
-    </LanguageProvider>
+    <ApolloProvider client={client}>
+      <LanguageProvider localization={getLenguaje(pageProps.lang)}>
+        <Component {...pageProps} />
+      </LanguageProvider>
+    </ApolloProvider>
   )
 }
 

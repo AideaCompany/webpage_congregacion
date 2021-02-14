@@ -1,0 +1,20 @@
+.video__about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  video {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.text__history {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
