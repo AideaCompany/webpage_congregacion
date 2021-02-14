@@ -1,0 +1,69 @@
+.calendar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .calendar__cont {
+        width: 80%;
+        height: 70%;
+        margin-bottom: 2em;
+        overflow: auto;
+        background-color: white;
+        padding: 1em;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: white; 
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(235, 235, 235); 
+    }
+      
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(186, 186, 186); 
+    }
+}
+
+.events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.events .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.notes-month {
+    font-size: 28px;
+    text-align: center;
+}
+.notes-month section {
+    font-size: 28px;
+}
+
+.eventCell {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: .8em;
+    padding: .1em 1em;
+    &:hover {
+        background-color: gray;
+        color: white
+    }
+}
+
+.img__modal {
+    width: 90%
+    img {
+        width: 100%
+    }
+}
