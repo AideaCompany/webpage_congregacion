@@ -1,0 +1,39 @@
+.eucharistic__index {
+  width: 100%;
+  height: calc(100vh - 70px);
+  .half__card {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    div {
+      div {
+        width: 70%;
+        overflow: auto;
+      }
+    }
+    .cont__img {
+      width: 80%;
+      height: 50vh;
+      align-self: center;
+      justify-self: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .video__about {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    video {
+      width: 80%;
+      height: auto;
+    }
+  }
+}
