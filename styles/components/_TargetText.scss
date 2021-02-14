@@ -1,5 +1,14 @@
 .text {
-  > div {
-    width: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .div__text {
+    padding: 50px;
+    height: auto;
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    p {
+      font-family: 'Montserrat-Regular';
+    }
   }
 }

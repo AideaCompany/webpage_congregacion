@@ -1,0 +1,25 @@
+.ourwork__container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .container__news {
+    margin-top: 5vh;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    > div {
+      height: 100%;
+    }
+    .news {
+      width: 40%;
+    }
+    .main__news {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
