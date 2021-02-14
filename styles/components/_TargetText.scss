@@ -9,6 +9,15 @@
     background-color: rgba($color: #fff, $alpha: 0.8);
     p {
       font-family: 'Montserrat-Regular';
+      > div {
+        width: 50%;
+        .subtitle {
+          margin-bottom: 2em;
+        }
+        .subtitle:last-child {
+          margin: 0;
+        }
+      }
     }
   }
 }

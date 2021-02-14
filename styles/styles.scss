@@ -8,6 +8,9 @@
 @import './components/bodyAboutUs';
 @import './components/TargetText';
 @import './components/newsTarget';
+@import './components/EventCalendar';
+@import './components/CardImage.scss';
+@import './components/HeaderCard.scss';
 //Antd;
 @import './base/antd';
 
@@ -20,3 +23,4 @@
 @import './pages/franciscan';
 @import './pages/our-work';
 @import './pages/ourWorkMisions';
+@import './pages/spirituality';
