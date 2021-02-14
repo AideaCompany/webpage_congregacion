@@ -1,5 +1,11 @@
 .text {
   > div {
     width: 50%;
+    .subtitle {
+      margin-bottom: 2em
+    }
+    .subtitle:last-child {
+      margin: 0
+    }
   }
 }
