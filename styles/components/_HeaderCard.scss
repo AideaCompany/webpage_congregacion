@@ -1,0 +1,29 @@
+.card__cont {
+    height: auto;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    .header {
+        height: 150px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .contenido {
+        padding: 1.5em;
+        height: auto;
+        .subtitle {
+            color: #01b9c5;
+            font-family: 'Montserrat-Regular';
+            font-weight: bold;
+        }
+        .p__cont {
+            font-family: 'Montserrat-Regular';
+        }
+    }
+
+}
