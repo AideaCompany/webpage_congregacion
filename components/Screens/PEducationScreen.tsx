@@ -2,7 +2,7 @@
 import Header from '../header'
 import CardImage from '../CardImage'
 
-const AspirantateScreen = () => {
+const PEducationScreen = () => {
     return (
         <>
             <Header image={'/images/franciscan/franciscan.png'}>
@@ -24,4 +24,4 @@ const AspirantateScreen = () => {
     )
 }
 
-export default AspirantateScreen
+export default PEducationScreen

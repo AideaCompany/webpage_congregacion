@@ -4,7 +4,7 @@ import { lorem_ipsum } from '../lorem_ipsum'
 
 import TargetText from '../TargetText'
 
-const AspirantateScreen = () => {
+const juneradoScreen = () => {
     return (
         <>
             <Header image={'/images/franciscan/franciscan.png'}>
@@ -25,4 +25,4 @@ const AspirantateScreen = () => {
     )
 }
 
-export default AspirantateScreen
+export default juneradoScreen
