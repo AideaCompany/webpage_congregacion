@@ -2,7 +2,7 @@
 @import './base/base';
 @import './base/global';
 // Components
-@import './components/layout';
+@import './components/Layout';
 @import './components/body';
 @import './components/background';
 @import './components/bodyAboutUs';
@@ -13,7 +13,6 @@
 @import './components/HeaderCard.scss';
 //Antd;
 @import './base/antd';
-
 //pages
 @import './pages/index';
 @import './pages/about';
