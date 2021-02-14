@@ -1,13 +1,13 @@
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 //i18n
-import useTranslation from '../../hooks/useTranslations'
+// import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const EducationalScreen = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()
 

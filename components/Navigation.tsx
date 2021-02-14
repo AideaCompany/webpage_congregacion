@@ -2,7 +2,7 @@ import React from 'react'
 import useTranslation from '../hooks/useTranslations'
 
 const Navigation = () => {
-  const { t, locale } = useTranslation()
+  const { t } = useTranslation()
   return (
     <nav className="mainContainerNav">
       <ul className="navBar">

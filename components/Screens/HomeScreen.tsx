@@ -1,5 +1,5 @@
 import React from 'react'
-import useTranslation from '../../hooks/useTranslations'
+// import useTranslation from '../../hooks/useTranslations'
 //components
 import Header from '@/components/header'
 import TargetText from '../TargetText'
@@ -8,7 +8,7 @@ import { Carousel } from 'antd'
 import { News } from '../News'
 
 const HomeScreen = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <>

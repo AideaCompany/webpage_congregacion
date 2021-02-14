@@ -5,12 +5,12 @@ import { gql } from '@apollo/client'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 //i18n
-import useTranslation from '../../hooks/useTranslations'
+// import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 import TargetText from '../TargetText'
 
 const FraternityScreen = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   const [fraternities, setFraternities] = useState<IFraternity[]>()
 

@@ -1,11 +1,11 @@
 import React from 'react'
 //i18n
-import useTranslation from '../../hooks/useTranslations'
+// import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 // import TargetText from '../TargetText'
 
 const CarismaScreen = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <>

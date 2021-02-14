@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { News } from '../News'
 //i18n
-import useTranslation from '../../hooks/useTranslations'
+// import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 
 //antd
@@ -9,7 +9,7 @@ import { List } from 'antd'
 // import TargetText from '../TargetText'
 
 const OurWork = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()
 
