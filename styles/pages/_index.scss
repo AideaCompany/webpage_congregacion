@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   > div {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -68,4 +68,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .about__summary {
+    .images {
+      > div {
+        width: 90%;
+        > div {
+          width: 50%;
+        }
+      }
+    }
+  }
 }

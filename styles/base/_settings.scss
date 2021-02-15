@@ -58,3 +58,19 @@ $textFooter: #fff;
   left: 0;
   top: 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .main__title {
+    bottom: 10%;
+    h1 {
+      font-size: 4vw;
+    }
+  }
+
+  .secondary__title {
+    bottom: 10%;
+    h1 {
+      font-size: 2vw;
+    }
+  }
+}

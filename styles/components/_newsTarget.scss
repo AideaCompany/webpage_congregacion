@@ -29,3 +29,30 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .news__target {
+    width: 80%;
+    .header__news {
+      h1 {
+        font-size: 16pt;
+      }
+    }
+    .body__news {
+      display: block;
+      > div {
+        width: 100%;
+        img {
+          width: 50%;
+        }
+        p {
+          padding: 10px;
+          font-size: 10pt;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
