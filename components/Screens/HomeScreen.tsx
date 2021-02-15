@@ -6,32 +6,25 @@ import TargetText from '../TargetText'
 //antd
 import { Carousel } from 'antd'
 import { News } from '../News'
+import { PropsScreens } from '@/types/types'
 
-const HomeScreen = () => {
+const HomeScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
+
+  console.log(props.dataCMS)
 
   return (
     <>
-      <Header image={'/images/body/firenze_santa.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="main__title">
-              <h1>CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA</h1>
+              <h1>{(props.dataCMS?.title as string).toUpperCase()}</h1>
             </div>
           </div>
           <div className="main__section">
             <div className="about__summary">
-              <TargetText
-                title="Nosotros"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam,
-                    excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at
-                    perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut
-                    veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis
-                    in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus
-                    sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo."
-              />
+              <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
 
               <div className="images">
                 <div>
@@ -51,42 +44,19 @@ const HomeScreen = () => {
               <div className="images__sedes">
                 <div className="carousel__sedes">
                   <Carousel>
-                    <div>
-                      <div className="item">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="item">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="item">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    </div>
+                    {props.photos
+                      ?.find(e => e.name === 'photoOurHeadquarters')
+                      .photos.map((photo: any, i: number) => (
+                        <div key={i}>
+                          <div className="item">
+                            <img src={photo.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                          </div>
+                        </div>
+                      ))}
                   </Carousel>
                 </div>
               </div>
-              <TargetText
-                text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi mollitia incidunt sed praesentium eos consequuntur. Earum tempore
-                    numquam alias nihil harum nulla. Ea voluptatibus minima deserunt facere eius rerum molestias! Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Nisi mollitia incidunt sed praesentium eos consequuntur. Earum tempore numquam alias nihil harum
-                    nulla. Ea voluptatibus minima deserunt facere eius rerum molestias! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-                    mollitia incidunt sed praesentium eos consequuntur. Earum tempore numquam alias nihil harum nulla. Ea voluptatibus minima deserunt
-                    facere eius rerum molestias!"
-                title="Nuestras Sedes"
-              />
+              <TargetText text={props.dataCMS?.textOurHeadquarters} title={props.dataCMS?.titleOurHeadquarters} />
             </div>
           </div>
           <div className="main__section">

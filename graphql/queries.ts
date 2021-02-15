@@ -901,6 +901,17 @@ export const getPages = /* GraphQL */ `
       fr
       de
       it
+      mainPhoto {
+        key
+        filename
+      }
+      photos {
+        name
+        photos {
+          key
+          filename
+        }
+      }
     }
   }
 `

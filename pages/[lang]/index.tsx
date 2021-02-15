@@ -3,13 +3,36 @@ import HomeScreen from '../../components/Screens/HomeScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../providers/LenguageContext'
 import { Localization } from '../../i18n/types'
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 
 export default function index(props: { localization: Localization }) {
+  const [dataCMS, setDataCMS] = useState<any>()
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  useEffect(() => {
+    if (props.localization.locale && data) {
+      setDataCMS(data[props.localization.locale])
+    }
+  }, [props.localization.locale])
+
+  console.log(data)
+
+  const getData = async () => {
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'homePage' } })) as { data: { getPages: any } }
+    setDataCMS(res.data.getPages[props.localization.locale])
+    setData(res.data.getPages)
+  }
+
   return (
     <Layout title={props.localization.translations.index}>
-      <>
-        <HomeScreen />
-      </>
+      <>{dataCMS && data && <HomeScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

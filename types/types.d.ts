@@ -424,3 +424,9 @@ export interface IEvent extends Document {
   descrpition?: string
   image: fileType | string | any
 }
+
+export type PropsScreens = {
+  dataCMS: any
+  mainPhoto?: any
+  photos?: any[]
+}

@@ -52,8 +52,10 @@
       height: calc(25vw);
       display: flex;
       flex-wrap: wrap;
-      > div {
-        width: 45%;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         height: auto;
         background-color: rgba($color: #fff, $alpha: 0.8);
         margin: 10px;
