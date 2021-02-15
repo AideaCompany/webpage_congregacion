@@ -1,6 +1,6 @@
 import client from '@/graphql/config'
-import { listFraternity } from '@/graphql/queries'
-import { IFraternity } from '@/types/types'
+import { listEvents, listFraternity } from '@/graphql/queries'
+import { IFraternity, IEvent } from '@/types/types'
 import { gql } from '@apollo/client'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
@@ -18,18 +18,18 @@ const FranciscanScreen = () => {
   // const { t } = useTranslation()
 
   const [fraternities, setFraternities] = useState<IFraternity[]>()
-  // const [events, setEvents] = useState<any[]>()
+  const [events, setEvents] = useState<IEvent[]>([])
 
   //effect
   useEffect(() => {
     getData()
-    // var tempEvent = []
-    for (let k = 0; k < 50; k++) {}
   }, [])
 
   const getData = async () => {
     try {
       const res = (await client.query({ query: gql(listFraternity) })) as { data: { listFraternity: IFraternity[] } }
+      const resEvents = (await client.query({ query: gql(listEvents) })) as { data: { listEvents: IEvent[] } }
+      setEvents(resEvents.data.listEvents)
       setFraternities(res.data.listFraternity)
     } catch (error) {
       console.log(error)
@@ -66,16 +66,7 @@ const FranciscanScreen = () => {
                 <h1>EVENTOS</h1>
               </div>
               <div className="calendar">
-                <EventCalendar
-                  events={[
-                    {
-                      start: '2021-02-13T07:00-05:00',
-                      title: 'Evento 1',
-                      img: '/images/franciscan/dommie_carousel.png',
-                      desc: 'Evento por defecto número 1'
-                    }
-                  ]}
-                />
+                <EventCalendar event={events} />
               </div>
             </div>
           </div>

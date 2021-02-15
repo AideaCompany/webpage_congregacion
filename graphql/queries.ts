@@ -28,6 +28,7 @@ export const getContentType = /* GraphQL */ `
     getContentType(_id: $_id) {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -72,6 +73,20 @@ export const getDocumentType = /* GraphQL */ `
       short
       createdAt
       updatedAt
+    }
+  }
+`
+export const getEvents = /* GraphQL */ `
+  query getEvents($_id: inputId) {
+    getEvents(_id: $_id) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
     }
   }
 `
@@ -132,6 +147,11 @@ export const getFraternity = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -158,6 +178,7 @@ export const getFraternity = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -176,6 +197,7 @@ export const getFraternity = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -223,6 +245,11 @@ export const getFraternity = /* GraphQL */ `
           email
           opened
           closed
+          photo {
+            filename
+            key
+          }
+          shouldShow
         }
         state
         city
@@ -245,6 +272,11 @@ export const getFraternity = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
     }
   }
 `
@@ -316,6 +348,11 @@ export const getHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -334,6 +371,7 @@ export const getHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -360,6 +398,7 @@ export const getHermanas = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -375,6 +414,11 @@ export const getHermanas = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -409,6 +453,7 @@ export const getHermanas = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -425,6 +470,7 @@ export const getHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -440,6 +486,7 @@ export const getHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -485,6 +532,11 @@ export const getHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -706,6 +758,11 @@ export const getObras = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -724,6 +781,7 @@ export const getObras = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -750,6 +808,7 @@ export const getObras = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -765,6 +824,11 @@ export const getObras = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -799,6 +863,7 @@ export const getObras = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       country {
         _id
@@ -823,6 +888,19 @@ export const getObras = /* GraphQL */ `
       opened
       closed
       finality
+    }
+  }
+`
+export const getPages = /* GraphQL */ `
+  query getPages($name: String) {
+    getPages(name: $name) {
+      _id
+      name
+      es
+      en
+      fr
+      de
+      it
     }
   }
 `
@@ -877,6 +955,11 @@ export const getProvinces = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
       createdAt
       updatedAt
     }
@@ -944,6 +1027,11 @@ export const getUser = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -987,6 +1075,7 @@ export const listContentType = /* GraphQL */ `
     listContentType {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -1031,6 +1120,20 @@ export const listDocumentType = /* GraphQL */ `
       short
       createdAt
       updatedAt
+    }
+  }
+`
+export const listEvents = /* GraphQL */ `
+  query listEvents {
+    listEvents {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
     }
   }
 `
@@ -1091,6 +1194,11 @@ export const listFraternity = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1117,6 +1225,7 @@ export const listFraternity = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1135,6 +1244,7 @@ export const listFraternity = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1182,6 +1292,11 @@ export const listFraternity = /* GraphQL */ `
           email
           opened
           closed
+          photo {
+            filename
+            key
+          }
+          shouldShow
         }
         state
         city
@@ -1204,6 +1319,11 @@ export const listFraternity = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
     }
   }
 `
@@ -1275,6 +1395,11 @@ export const listHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1293,6 +1418,7 @@ export const listHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1319,6 +1445,7 @@ export const listHermanas = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1334,6 +1461,11 @@ export const listHermanas = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -1368,6 +1500,7 @@ export const listHermanas = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -1384,6 +1517,7 @@ export const listHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1399,6 +1533,7 @@ export const listHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -1444,6 +1579,11 @@ export const listHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1665,6 +1805,11 @@ export const listObras = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1683,6 +1828,7 @@ export const listObras = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1709,6 +1855,7 @@ export const listObras = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1724,6 +1871,11 @@ export const listObras = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -1758,6 +1910,7 @@ export const listObras = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       country {
         _id
@@ -1836,6 +1989,11 @@ export const listProvinces = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
       createdAt
       updatedAt
     }
@@ -1903,6 +2061,11 @@ export const listUser = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1989,6 +2152,11 @@ export const newHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -2007,6 +2175,7 @@ export const newHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2033,6 +2202,7 @@ export const newHermanas = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -2048,6 +2218,11 @@ export const newHermanas = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -2082,6 +2257,7 @@ export const newHermanas = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -2098,6 +2274,7 @@ export const newHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2113,6 +2290,7 @@ export const newHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -2158,6 +2336,11 @@ export const newHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -2384,6 +2567,11 @@ export const newHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -2402,6 +2590,7 @@ export const newHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2428,6 +2617,7 @@ export const newHermanasDeath = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -2443,6 +2633,11 @@ export const newHermanasDeath = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -2477,6 +2672,7 @@ export const newHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -2493,6 +2689,7 @@ export const newHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2508,6 +2705,7 @@ export const newHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -2553,6 +2751,11 @@ export const newHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -2779,6 +2982,11 @@ export const newHermanasRetired = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -2797,6 +3005,7 @@ export const newHermanasRetired = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2823,6 +3032,7 @@ export const newHermanasRetired = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -2838,6 +3048,11 @@ export const newHermanasRetired = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -2872,6 +3087,7 @@ export const newHermanasRetired = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -2888,6 +3104,7 @@ export const newHermanasRetired = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -2903,6 +3120,7 @@ export const newHermanasRetired = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -2948,6 +3166,11 @@ export const newHermanasRetired = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -3189,6 +3412,11 @@ export const totalHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -3207,6 +3435,7 @@ export const totalHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -3233,6 +3462,7 @@ export const totalHermanasDeath = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -3248,6 +3478,11 @@ export const totalHermanasDeath = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -3282,6 +3517,7 @@ export const totalHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -3298,6 +3534,7 @@ export const totalHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -3313,6 +3550,7 @@ export const totalHermanasDeath = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -3358,6 +3596,11 @@ export const totalHermanasDeath = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -3584,6 +3827,11 @@ export const totalHermanasRetreat = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -3602,6 +3850,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -3628,6 +3877,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -3643,6 +3893,11 @@ export const totalHermanasRetreat = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -3677,6 +3932,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -3693,6 +3949,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -3708,6 +3965,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -3753,6 +4011,11 @@ export const totalHermanasRetreat = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }

@@ -2,7 +2,7 @@ import client from '@/graphql/config'
 import { listProvinces } from '@/graphql/queries'
 import { Province } from '@/types/types'
 import { gql } from '@apollo/client'
-import { Carousel } from 'antd'
+
 import React, { useEffect, useState } from 'react'
 import Header from '../header'
 
@@ -29,26 +29,25 @@ const ProvinceScreen = () => {
 
   return (
     <Header>
-      <div className="main__section">
-        <div className="province__container">
-          <div className="secondary__title">
-            <h1>PROVINCIAS</h1>
-          </div>
-          <div className="carousel__provinces">
-            <Carousel autoplay={true} dotPosition="left">
-              {itemsSlider?.map((e, i) => (
+      <>
+        {itemsSlider?.map((e, i) => (
+          <div className="main__section">
+            <div className="province__container">
+              <div className="secondary__title">
+                <h1>{e.name}</h1>
+              </div>
+              <div className="carousel__provinces">
                 <div key={i}>
                   <div className="item">
                     <div className="mask"></div>
                     <img src="/images/provinces/province.jpg" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
-                    <h1 className="title">{e.name}</h1>
                   </div>
                 </div>
-              ))}
-            </Carousel>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ))}
+      </>
     </Header>
   )
 }

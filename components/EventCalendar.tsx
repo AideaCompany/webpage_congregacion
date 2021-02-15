@@ -1,3 +1,4 @@
+import { IEvent } from '@/types/types'
 import { Calendar, Modal } from 'antd'
 import React, { useState } from 'react'
 
@@ -5,7 +6,7 @@ function onPanelChange(value: any, mode: any) {
   console.log(value.format('YYYY-MM-DD'), mode)
 }
 
-const dateCellRender = (data: any, val: any, setEvent: any, setModal: any) => {
+const dateCellRender = (data: IEvent[], val: any, setEvent: any, setModal: any) => {
   const events = data.filter((e: any) => {
     const start = new Date(e.start)
     return start.getDate() == val.date() && start.getMonth() == val.month() && start.getFullYear() == val.year()
@@ -26,13 +27,13 @@ const dateCellRender = (data: any, val: any, setEvent: any, setModal: any) => {
   )
 }
 
-const EventCalendar = (props: { events: [{ start: string; title: string; img: string; desc: string }] }) => {
+const EventCalendar = (props: { event: IEvent[] }) => {
   const [event, setEvent] = useState()
   const [modal, setModal] = useState(false)
 
   return (
     <div className="calendar__cont">
-      <Calendar onPanelChange={onPanelChange} dateCellRender={val => dateCellRender(props.events, val, setEvent, setModal)} />
+      <Calendar onPanelChange={onPanelChange} dateCellRender={val => dateCellRender(props.event, val, setEvent, setModal)} />
       {event && (
         <Modal title={(event as any).title} visible={modal} onOk={_ => setModal(false)} onCancel={_ => setModal(false)}>
           <p>{(event as any).desc}</p>

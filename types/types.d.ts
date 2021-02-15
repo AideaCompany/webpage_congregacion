@@ -415,3 +415,12 @@ export type inputAnalyticsSearch = {
   provonce: string
   time: Date | string | number
 }
+
+export interface IEvent extends Document {
+  key?: string
+  _id?: string
+  title?: string
+  date?: string
+  descrpition?: string
+  image: fileType | string | any
+}
