@@ -4,9 +4,9 @@ import React from 'react'
 import Header from '../header'
 import TargetText from '../TargetText'
 
-const AboutUsScreen = () => {
+const AboutUsScreen = (props: { dataCMS: any }) => {
   // const { t } = useTranslation()
-
+  const { dataCMS } = props
   return (
     <>
       <Header image={'/images/body/firenze_santa.png'}>
@@ -15,7 +15,7 @@ const AboutUsScreen = () => {
             <div className="video__about">
               <video src="" controls></video>
               <div className="secondary__title">
-                <h1>HISTORIA DE LA CONGREGACIÓN</h1>
+                <h1>{dataCMS?.title}</h1>
               </div>
             </div>
           </div>
