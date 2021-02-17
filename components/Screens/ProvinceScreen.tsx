@@ -1,12 +1,12 @@
 import client from '@/graphql/config'
 import { listProvinces } from '@/graphql/queries'
-import { Province } from '@/types/types'
+import { PropsScreens, Province } from '@/types/types'
 import { gql } from '@apollo/client'
 
 import React, { useEffect, useState } from 'react'
 import Header from '../header'
 
-const ProvinceScreen = () => {
+const ProvinceScreen = (props: PropsScreens) => {
   //   const [provinces, setProvinces] = useState<Province[]>()
   const [itemsSlider, setItemsSlider] = useState<Province[]>()
   //   const [loading, setLoading] = useState(true)

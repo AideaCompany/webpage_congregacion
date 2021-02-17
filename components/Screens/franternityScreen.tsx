@@ -1,6 +1,6 @@
 import client from '@/graphql/config'
 import { listFraternity } from '@/graphql/queries'
-import { IFraternity } from '@/types/types'
+import { IFraternity, PropsScreens } from '@/types/types'
 import { gql } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
 //i18n
@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../header'
 import TargetText from '../TargetText'
 
-const FraternityScreen = () => {
+const FraternityScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
   const [fraternities, setFraternities] = useState<IFraternity[]>()
@@ -28,7 +28,7 @@ const FraternityScreen = () => {
   }
   return (
     <>
-      <Header>
+      <Header image={props?.mainPhoto}>
         <>
           {fraternities?.slice(0, 5)?.map(fraternity => (
             <div className="main__section">

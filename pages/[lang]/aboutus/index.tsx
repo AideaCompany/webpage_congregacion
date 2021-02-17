@@ -3,12 +3,34 @@ import AboutUsScreen from '../../../components/Screens/AboutUsScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
-
+import { useState, useEffect } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 export default function aboutUs(props: { localization: Localization }) {
+  const [dataCMS, setDataCMS] = useState<any>()
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  useEffect(() => {
+    if (props.localization.locale && data) {
+      setDataCMS(data[props.localization.locale])
+    }
+  }, [props.localization.locale])
+
+  const getData = async () => {
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'about' } })) as { data: { getPages: any } }
+    console.log(res.data.getPages)
+    setDataCMS(res.data.getPages[props.localization.locale])
+    setData(res.data.getPages)
+  }
   return (
     <Layout title={'Inicio'}>
       <>
-        <AboutUsScreen />
+        <AboutUsScreen dataCMS={dataCMS} />
       </>
     </Layout>
   )

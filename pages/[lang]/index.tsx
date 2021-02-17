@@ -22,8 +22,6 @@ export default function index(props: { localization: Localization }) {
     }
   }, [props.localization.locale])
 
-  console.log(data)
-
   const getData = async () => {
     const res = (await client.query({ query: gql(getPages), variables: { name: 'homePage' } })) as { data: { getPages: any } }
     setDataCMS(res.data.getPages[props.localization.locale])

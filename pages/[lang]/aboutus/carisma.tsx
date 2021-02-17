@@ -3,13 +3,34 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '@/providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 import CarismaScreen from '@/components/Screens/carismaScreen'
+import { useEffect, useState } from 'react'
+import { getPages } from '@/graphql/queries'
+import { gql } from '@apollo/client'
+import client from '@/graphql/config'
 
 export default function Carisma(props: { localization: Localization }) {
+  const [dataCMS, setDataCMS] = useState<any>()
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  useEffect(() => {
+    if (props.localization.locale && data) {
+      setDataCMS(data[props.localization.locale])
+    }
+  }, [props.localization.locale])
+
+  const getData = async () => {
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'ourCharisma' } })) as { data: { getPages: any } }
+    console.log(res.data.getPages)
+    setDataCMS(res.data.getPages[props.localization.locale])
+    setData(res.data.getPages)
+  }
   return (
     <Layout title={'Inicio'}>
-      <>
-        <CarismaScreen />
-      </>
+      <> {dataCMS && data && <CarismaScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />} </>
     </Layout>
   )
 }

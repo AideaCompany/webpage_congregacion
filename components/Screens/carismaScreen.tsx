@@ -1,21 +1,22 @@
+import { PropsScreens } from '@/types/types'
 import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 // import TargetText from '../TargetText'
 
-const CarismaScreen = () => {
+const CarismaScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
-
+  console.log(props)
   return (
     <>
-      <Header image={'/images/body/firenze_santa.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="carisma__container">
               <div></div>
               <div className="secondary__title">
-                <h1>PERGAMINOS</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
             </div>
           </div>
