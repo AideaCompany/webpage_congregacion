@@ -1,6 +1,6 @@
 import client from '@/graphql/config'
 import { listEvents, listFraternity } from '@/graphql/queries'
-import { IFraternity, IEvent } from '@/types/types'
+import { IFraternity, IEvent, PropsScreens } from '@/types/types'
 import { gql } from '@apollo/client'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
@@ -14,7 +14,7 @@ import CardSubtitle from '../CardSubtitle'
 
 // import TargetText from '../TargetText'
 
-const FranciscanScreen = () => {
+const FranciscanScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
   const [fraternities, setFraternities] = useState<IFraternity[]>()
@@ -38,7 +38,7 @@ const FranciscanScreen = () => {
 
   return (
     <>
-      <Header image={'/images/franciscan/franciscan.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="franciscan__index">
@@ -63,7 +63,7 @@ const FranciscanScreen = () => {
           <div className="main__section">
             <div className="franciscan__index">
               <div className="secondary__title">
-                <h1>EVENTOS</h1>
+                <h1>{props?.dataCMS?.}</h1>
               </div>
               <div className="calendar">
                 <EventCalendar event={events} />

@@ -7,8 +7,9 @@ import Image from 'next/image'
 import useTranslation from '../../hooks/useTranslations'
 //components
 import ChangeLanguage from '../ChangeLanguage'
+import { PropsScreens } from '@/types/types'
 
-const PaperScreen = () => {
+const PaperScreen = (props: PropsScreens) => {
   const { t } = useTranslation()
 
   return (
@@ -21,7 +22,7 @@ const PaperScreen = () => {
         <Image width={1297} height={732} src="/images/rectangleLight.png" className="body__rect"></Image>
         <div className="body__content">
           <div className="body__content__tittle">
-            <h1>PERGAMINOS</h1>
+            <h1>{props?.dataCMS?.}</h1>
           </div>
           <div className="body__content__btn">
             <Button size="large" className="body__content__btn-primary">

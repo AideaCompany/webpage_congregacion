@@ -1,18 +1,19 @@
+import { PropsScreens } from '@/types/types'
 import React from 'react'
 //i18n
 import Header from '../header'
 
-const PerpetualScreen = () => {
+const PerpetualScreen = (props: PropsScreens) => {
     return (
         <>
-            <Header image={'/images/eucharistic/index.png'}>
+            <Header image={props?.mainPhoto}>
                 <>
                     <div className="main__section">
                         <div className="eucharistic__index">
                             <div className="video__about">
                                 <video src="" controls></video>
                                 <div className="secondary__title">
-                                    <h1>ADORACIÓN PERPETUA</h1>
+                                    <h1>{props?.dataCMS?.}</h1>
                                 </div>
                             </div>
                         </div>

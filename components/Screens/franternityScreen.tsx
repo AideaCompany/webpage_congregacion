@@ -43,11 +43,7 @@ const FraternityScreen = (props: PropsScreens) => {
                       <img src="/images/fraternity/fraternity.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                       <div className="text__fraternity">
                         <TargetText
-                          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam,
-                    excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at
-                    perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut
-                    veniam ducimus rem numquam"
+                          text={props?.dataCMS?.}
                         />
                       </div>
                     </div>

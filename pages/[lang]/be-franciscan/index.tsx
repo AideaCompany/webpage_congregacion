@@ -3,8 +3,31 @@ import FranciscanScreen from '@/components/Screens/franciscanScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 
 export default function beFranciscan(props: { localization: Localization }) {
+  const [dataCMS, setDataCMS] = useState<any>()
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  useEffect(() => {
+    if (props.localization.locale && data) {
+      setDataCMS(data[props.localization.locale])
+    }
+  }, [props.localization.locale])
+
+  const getData = async () => {
+    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    console.log(res.data.getPages)
+    setDataCMS(res.data.getPages[props.localization.locale])
+    setData(res.data.getPages)
+  }
   return (
     <Layout title={props.localization.translations.beFranciscan}>
       <>

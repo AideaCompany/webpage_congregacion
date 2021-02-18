@@ -1,3 +1,4 @@
+import { PropsScreens } from '@/types/types'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 //i18n
@@ -6,7 +7,7 @@ import Header from '../header'
 import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
-const EducationalScreen = () => {
+const EducationalScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()

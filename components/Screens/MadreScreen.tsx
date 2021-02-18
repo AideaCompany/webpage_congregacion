@@ -6,8 +6,9 @@ import TargetText from '../TargetText'
 import HeaderCard from '../HeaderCard'
 import React from 'react'
 import { Carousel } from 'antd'
+import { PropsScreens } from '@/types/types'
 
-const MadreScreen = () => {
+const MadreScreen = (props: PropsScreens) => {
   let entries = [0, 1, 2, 3].map(i => ({
     title: `Entrada ${i}`,
     cont: lorem_ipsum,
@@ -15,35 +16,35 @@ const MadreScreen = () => {
   }))
   return (
     <>
-      <Header image={'/images/spirituality/madre.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>MADRE CARIDAD BRADER ZANHER</h1>
+                <h1>{props?.dataCMS?.}</h1>
               </div>
               <div className="half__card">
-                <TargetText text={lorem_ipsum} />
+                <TargetText text={props?.dataCMS?.} />
               </div>
             </div>
           </div>
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>HISTORIA</h1>
+                <h1>{props?.dataCMS?.}</h1>
               </div>
               <div className="half__card">
                 <div className="cont__img">
                   <img src="/images/spirituality/madre2.png" alt="" />
                 </div>
-                <TargetText text={lorem_ipsum} />
+                <TargetText text={props?.dataCMS?.} />
               </div>
             </div>
           </div>
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>BLOG</h1>
+                <h1>{props?.dataCMS?.}</h1>
               </div>
               <div className="blog__entries">
                 <div className="container__carousel">

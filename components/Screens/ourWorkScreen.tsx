@@ -6,9 +6,10 @@ import Header from '../header'
 
 //antd
 import { List } from 'antd'
+import { PropsScreens } from '@/types/types'
 // import TargetText from '../TargetText'
 
-const OurWork = () => {
+const OurWork = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()
@@ -23,7 +24,7 @@ const OurWork = () => {
 
   return (
     <>
-      <Header image={'/images/ourwork/hermanas.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="ourwork__container">
@@ -45,7 +46,7 @@ const OurWork = () => {
                 </div>
               </div>
               <div className="secondary__title">
-                <h1>¿Qué hacemos?</h1>
+                <h1>{props?.dataCMS?.}</h1>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { PropsScreens } from '@/types/types'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
 //i18n
@@ -6,7 +7,7 @@ import Header from '../header'
 import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
-const MisionScreen = () => {
+const MisionScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()
@@ -21,7 +22,7 @@ const MisionScreen = () => {
 
   return (
     <>
-      <Header image={'/images/ourwork/hermanas.png'}>
+      <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="mision__container">
@@ -36,14 +37,7 @@ const MisionScreen = () => {
                         <div className="text">
                           <TargetText
                             title={'MISION'}
-                            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam,
-                    excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at
-                    perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut
-                    veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis
-                    in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus
-                    sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo"
+                            text={props?.dataCMS?.}
                           />
                         </div>
                       </div>
