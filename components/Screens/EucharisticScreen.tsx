@@ -4,15 +4,15 @@ import { lorem_ipsum } from '../lorem_ipsum'
 
 import TargetText from '../TargetText'
 
-const EucharisticScreen = () => {
+const EucharisticScreen = (props: PropsScreens) => {
     return (
         <>
-            <Header image={'/images/eucharistic/index.png'}>
+            <Header image={props?.mainPhoto}>
                 <>
                     <div className="main__section">
                         <div className="eucharistic__index">
                             <div className="secondary__title">
-                                <h1>ALMA EUCARÍSTICA</h1>
+                                <h1>{props?.dataCMS?.}/h1>
                             </div>
                             <div className="half__card">
                                 <TargetText text={lorem_ipsum} />
