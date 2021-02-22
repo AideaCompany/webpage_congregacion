@@ -3,7 +3,10 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 import OurWork from '@/components/Screens/ourWorkScreen'
-
+import { useState, useEffect } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 export default function index(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -19,7 +22,7 @@ export default function index(props: { localization: Localization }) {
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'ourWork' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
@@ -27,7 +30,7 @@ export default function index(props: { localization: Localization }) {
   return (
     <Layout title={props.localization.translations.ourWork}>
       <>
-        <OurWork />
+        <>{dataCMS && data && <OurWork photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

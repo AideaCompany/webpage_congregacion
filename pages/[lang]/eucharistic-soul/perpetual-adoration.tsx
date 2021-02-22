@@ -4,6 +4,11 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 
+import { useState, useEffect } from 'react'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
+import client from '@/graphql/config'
+
 export default function perpetualAdoration(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -26,9 +31,7 @@ export default function perpetualAdoration(props: { localization: Localization }
   }
   return (
     <Layout title={props.localization.translations.perpetualAdoration}>
-      <>
-        <PerpetualScreen />
-      </>
+      <>{dataCMS && data && <PerpetualScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

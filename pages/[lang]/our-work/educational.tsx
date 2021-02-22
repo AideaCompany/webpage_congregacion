@@ -5,6 +5,11 @@ import { Localization } from '../../../i18n/types'
 
 import EducationalScreen from '@/components/Screens/EducationalScreen'
 
+import { useState, useEffect } from 'react'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
+import client from '@/graphql/config'
+
 export default function educational(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -20,7 +25,7 @@ export default function educational(props: { localization: Localization }) {
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'educational' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
@@ -28,7 +33,7 @@ export default function educational(props: { localization: Localization }) {
   return (
     <Layout title={props.localization.translations.misions}>
       <>
-        <EducationalScreen />
+        <>{dataCMS && data && <EducationalScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

@@ -63,7 +63,7 @@ const FranciscanScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="franciscan__index">
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="calendar">
                 <EventCalendar event={events} />

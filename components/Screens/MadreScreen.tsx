@@ -21,30 +21,30 @@ const MadreScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="half__card">
-                <TargetText text={props?.dataCMS?.} />
+                <TargetText text={props?.dataCMS?.title} />
               </div>
             </div>
           </div>
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="half__card">
                 <div className="cont__img">
                   <img src="/images/spirituality/madre2.png" alt="" />
                 </div>
-                <TargetText text={props?.dataCMS?.} />
+                <TargetText text={props?.dataCMS?.title} />
               </div>
             </div>
           </div>
           <div className="main__section">
             <div className="spirituality__index">
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="blog__entries">
                 <div className="container__carousel">

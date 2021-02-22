@@ -3,6 +3,10 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 import PostulancyScreen from '@/components/Screens/postulancyScreen'
+import { useState, useEffect } from 'react'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
+import client from '@/graphql/config'
 
 export default function postulancy(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
@@ -26,9 +30,7 @@ export default function postulancy(props: { localization: Localization }) {
   }
   return (
     <Layout title={props.localization.translations.postulancy}>
-      <>
-        <PostulancyScreen />
-      </>
+      <>{dataCMS && data && <PostulancyScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

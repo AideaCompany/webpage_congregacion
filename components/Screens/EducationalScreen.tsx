@@ -22,7 +22,7 @@ const EducationalScreen = (props: PropsScreens) => {
 
   return (
     <>
-      <Header image={'/images/ourwork/hermanas.png'}>
+      <Header image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="mision__container">
@@ -53,7 +53,7 @@ const EducationalScreen = (props: PropsScreens) => {
                 </Carousel>
               </div>
               <div className="secondary__title">
-                <h1>OBRAS DE MISIÓN</h1>
+                <h1>{props.dataCMS.title}</h1>
               </div>
             </div>
           </div>

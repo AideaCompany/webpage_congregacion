@@ -1,29 +1,27 @@
 //i18ns
 import { PropsScreens } from '@/types/types'
 import Header from '../header'
-import { lorem_ipsum } from '../lorem_ipsum'
-
 import TargetText from '../TargetText'
 
 const SpiritualityScreen = (props: PropsScreens) => {
-    return (
+  return (
+    <>
+      <Header image={props?.mainPhoto}>
         <>
-            <Header image={props?.mainPhoto}>
-                <>
-                    <div className="main__section">
-                        <div className="franciscan__index">
-                            <div className="secondary__title">
-                                <h1>{props?.dataCMS?.}</h1>
-                            </div>
-                            <div className="half__card">
-                                <TargetText text={props?.dataCMS?.} />
-                            </div>
-                        </div>
-                    </div>
-                </>
-            </Header>
+          <div className="main__section">
+            <div className="franciscan__index">
+              <div className="secondary__title">
+                <h1>{props?.dataCMS?.title}</h1>
+              </div>
+              <div className="half__card">
+                <TargetText text={props?.dataCMS?.title} />
+              </div>
+            </div>
+          </div>
         </>
-    )
+      </Header>
+    </>
+  )
 }
 
 export default SpiritualityScreen

@@ -35,10 +35,7 @@ const ParroquialScreen = (props: PropsScreens) => {
                           <img src="/images/franciscan/dommie_carousel.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                         </div>
                         <div className="text">
-                          <TargetText
-                            title={'MISION'}
-                            text={props?.dataCMS?.}
-                          />
+                          <TargetText title={'MISION'} text={props?.dataCMS?.title} />
                         </div>
                       </div>
                     </div>
@@ -46,7 +43,7 @@ const ParroquialScreen = (props: PropsScreens) => {
                 </Carousel>
               </div>
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
             </div>
           </div>

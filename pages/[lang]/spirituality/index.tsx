@@ -3,6 +3,10 @@ import SpiritualityScreen from '@/components/Screens/SpiritualityScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 
 export default function beFranciscan(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
@@ -26,9 +30,7 @@ export default function beFranciscan(props: { localization: Localization }) {
   }
   return (
     <Layout title={props.localization.translations.spirituality}>
-      <>
-        <SpiritualityScreen />
-      </>
+      <>{dataCMS && data && <SpiritualityScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

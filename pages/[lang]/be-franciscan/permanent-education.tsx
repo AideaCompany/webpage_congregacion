@@ -4,6 +4,11 @@ import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 import PEducationScreen from '@/components/Screens/PEducationScreen'
 
+import { useState, useEffect } from 'react'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
+import client from '@/graphql/config'
+
 export default function aspirantate(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -26,9 +31,7 @@ export default function aspirantate(props: { localization: Localization }) {
   }
   return (
     <Layout title={props.localization.translations.permanentEducation}>
-      <>
-        <PEducationScreen />
-      </>
+      <>{dataCMS && data && <PEducationScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

@@ -35,10 +35,7 @@ const MisionScreen = (props: PropsScreens) => {
                           <img src="/images/franciscan/dommie_carousel.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                         </div>
                         <div className="text">
-                          <TargetText
-                            title={'MISION'}
-                            text={props?.dataCMS?.}
-                          />
+                          <TargetText title={'MISION'} text={props?.dataCMS?.title} />
                         </div>
                       </div>
                     </div>

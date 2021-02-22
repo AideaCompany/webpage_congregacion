@@ -1,8 +1,6 @@
 //i18ns
 import { PropsScreens } from '@/types/types'
 import Header from '../header'
-import { lorem_ipsum } from '../lorem_ipsum'
-
 import TargetText from '../TargetText'
 
 const AspirantateScreen = (props: PropsScreens) => {

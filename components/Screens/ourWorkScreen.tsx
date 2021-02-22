@@ -46,7 +46,7 @@ const OurWork = (props: PropsScreens) => {
                 </div>
               </div>
               <div className="secondary__title">
-                <h1>{props?.dataCMS?.}</h1>
+                <h1>{props?.dataCMS?.title}</h1>
               </div>
             </div>
           </div>

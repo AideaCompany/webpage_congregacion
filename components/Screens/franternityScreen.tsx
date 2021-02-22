@@ -43,7 +43,7 @@ const FraternityScreen = (props: PropsScreens) => {
                       <img src="/images/fraternity/fraternity.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                       <div className="text__fraternity">
                         <TargetText
-                          text={props?.dataCMS?.}
+                          text={props?.dataCMS?.title}
                         />
                       </div>
                     </div>

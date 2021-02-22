@@ -3,9 +3,12 @@ import SaintScreen from '@/components/Screens/SaintScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
-
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 export default function sanFranciscoDeAsis(props: { localization: Localization }) {
-  const [dataCMS, setDataCMS] = useState<any>()
+  const [, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
 
   useEffect(() => {

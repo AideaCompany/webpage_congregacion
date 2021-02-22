@@ -22,7 +22,7 @@ const PaperScreen = (props: PropsScreens) => {
         <Image width={1297} height={732} src="/images/rectangleLight.png" className="body__rect"></Image>
         <div className="body__content">
           <div className="body__content__tittle">
-            <h1>{props?.dataCMS?.}</h1>
+            <h1>{props?.dataCMS?.title}</h1>
           </div>
           <div className="body__content__btn">
             <Button size="large" className="body__content__btn-primary">

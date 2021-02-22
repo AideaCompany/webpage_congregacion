@@ -31,7 +31,7 @@ export default function aspirantate(props: { localization: Localization }) {
   return (
     <Layout title={props.localization.translations.junerado}>
       <>
-        <JuneradoScreen />
+        <>{dataCMS && data && <JuneradoScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>{' '}
       </>
     </Layout>
   )

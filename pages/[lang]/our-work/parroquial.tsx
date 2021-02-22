@@ -4,6 +4,10 @@ import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
 
 import MisionScreen from '@/components/Screens/MisionsScreen'
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 
 export default function misions(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
@@ -20,7 +24,7 @@ export default function misions(props: { localization: Localization }) {
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'parochial' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
@@ -28,7 +32,7 @@ export default function misions(props: { localization: Localization }) {
   return (
     <Layout title={props.localization.translations.misions}>
       <>
-        <MisionScreen />
+        <>{dataCMS && data && <MisionScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

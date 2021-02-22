@@ -3,7 +3,10 @@ import MadreScreen from '@/components/Screens/MadreScreen'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 import { Localization } from '../../../i18n/types'
-
+import { useEffect, useState } from 'react'
+import client from '@/graphql/config'
+import { gql } from '@apollo/client'
+import { getPages } from '@/graphql/queries'
 export default function madreCaridadBrader(props: { localization: Localization }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -27,7 +30,7 @@ export default function madreCaridadBrader(props: { localization: Localization }
   return (
     <Layout title={props.localization.translations.madreCaridadBraderZanher}>
       <>
-        <MadreScreen />
+        <>{dataCMS && data && <MadreScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )
