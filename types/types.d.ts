@@ -108,6 +108,7 @@ export type Province = {
   phone1: string
   phone2: string
   fax: string
+  photo: fileType
   email: string
   opened: string
   closed: string

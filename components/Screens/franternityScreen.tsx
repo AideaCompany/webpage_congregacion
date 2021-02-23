@@ -1,6 +1,6 @@
 import client from '@/graphql/config'
 import { listFraternity } from '@/graphql/queries'
-import { IFraternity, PropsScreens } from '@/types/types'
+import { IFraternity } from '@/types/types'
 import { gql } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
 //i18n
@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../header'
 import TargetText from '../TargetText'
 
-const FraternityScreen = (props: PropsScreens) => {
+const FraternityScreen = () => {
   // const { t } = useTranslation()
 
   const [fraternities, setFraternities] = useState<IFraternity[]>()
@@ -28,10 +28,10 @@ const FraternityScreen = (props: PropsScreens) => {
   }
   return (
     <>
-      <Header image={props?.mainPhoto}>
+      <Header>
         <>
-          {fraternities?.slice(0, 5)?.map(fraternity => (
-            <div className="main__section">
+          {fraternities?.slice(0, 5)?.map((fraternity, i) => (
+            <div key={i} className="main__section">
               <div className="fraternity__container">
                 <div className="secondary__title">
                   <h1>{fraternity.name}</h1>
@@ -42,9 +42,7 @@ const FraternityScreen = (props: PropsScreens) => {
                       <div className="mask"></div>
                       <img src="/images/fraternity/fraternity.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                       <div className="text__fraternity">
-                        <TargetText
-                          text={props?.dataCMS?.title}
-                        />
+                        <TargetText text={fraternity.address} />
                       </div>
                     </div>
                   </div>
