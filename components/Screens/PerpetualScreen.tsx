@@ -11,7 +11,7 @@ const PerpetualScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="eucharistic__index">
               <div className="video__about">
-                <video src="" controls></video>
+                <video src={props.dataCMS.video} controls></video>
                 <div className="secondary__title">
                   <h1>{props?.dataCMS?.title}</h1>
                 </div>

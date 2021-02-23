@@ -9,7 +9,7 @@ import { gql } from '@apollo/client'
 import { getPages } from '@/graphql/queries'
 
 export default function santaClaraDeAsis(props: { localization: Localization }) {
-  const [, setDataCMS] = useState<any>()
+  const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function santaClaraDeAsis(props: { localization: Localization }) 
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'santaClaraDeAsis' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
@@ -31,7 +31,7 @@ export default function santaClaraDeAsis(props: { localization: Localization }) 
   return (
     <Layout title={props.localization.translations.santaClaraDeAsis}>
       <>
-        <SaintScreen img="/images/spirituality/santa-clara-de-asis.png" title="SANTA CLARA DE ASÍS" background="/images/spirituality/index.png" />
+        <>{dataCMS && data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

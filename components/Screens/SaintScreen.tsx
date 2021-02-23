@@ -17,7 +17,7 @@ const SaintScreen = (props: PropsScreens) => {
               <div className="img__card">
                 <TargetText text={lorem_ipsum} />
                 <div className="img__cont">
-                  <img src={props.mainPhoto} alt="" />
+                  <img src={props.photos?.find(e => e.name === 'photograhy').photos[0].key} alt="" />
                 </div>
               </div>
             </div>

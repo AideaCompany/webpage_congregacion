@@ -1,8 +1,6 @@
 //i18ns
 import { PropsScreens } from '@/types/types'
 import Header from '../header'
-import { lorem_ipsum } from '../lorem_ipsum'
-
 import TargetText from '../TargetText'
 
 const EucharisticScreen = (props: PropsScreens) => {
@@ -16,7 +14,7 @@ const EucharisticScreen = (props: PropsScreens) => {
                 <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="half__card">
-                <TargetText text={lorem_ipsum} />
+                <TargetText text={props?.dataCMS?.mainText} />
               </div>
             </div>
           </div>
