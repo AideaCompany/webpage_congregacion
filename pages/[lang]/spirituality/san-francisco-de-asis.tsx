@@ -8,7 +8,7 @@ import client from '@/graphql/config'
 import { gql } from '@apollo/client'
 import { getPages } from '@/graphql/queries'
 export default function sanFranciscoDeAsis(props: { localization: Localization }) {
-  const [, setDataCMS] = useState<any>()
+  const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function sanFranciscoDeAsis(props: { localization: Localization }
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'sanFranciscoDeAsis' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
@@ -30,7 +30,7 @@ export default function sanFranciscoDeAsis(props: { localization: Localization }
   return (
     <Layout title={props.localization.translations.sanFranciscoDeAsis}>
       <>
-        <SaintScreen img="/images/spirituality/san-francisco-de-asis.png" title="SAN FRANCISCO DE ASÍS" background="/images/spirituality/index.png" />
+        <>{dataCMS && data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

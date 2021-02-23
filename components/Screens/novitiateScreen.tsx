@@ -14,7 +14,7 @@ const novitiateScreen = (props: PropsScreens) => {
                 <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="half__card">
-                <TargetText text={props?.dataCMS?.title} />
+                <TargetText text={props?.dataCMS?.mainText} />
               </div>
             </div>
           </div>
