@@ -1,19 +1,15 @@
 //i18ns
+import { fileType, INews, PropsMadreScreen } from '@/types/types'
+import { Carousel } from 'antd'
+import React from 'react'
 import Header from '../header'
-import { lorem_ipsum } from '../lorem_ipsum'
+import HeaderCard from '../HeaderCard'
 
 import TargetText from '../TargetText'
-import HeaderCard from '../HeaderCard'
-import React from 'react'
-import { Carousel } from 'antd'
-import { PropsScreens } from '@/types/types'
 
-const MadreScreen = (props: PropsScreens) => {
-  let entries = [0, 1, 2, 3].map(i => ({
-    title: `Entrada ${i}`,
-    cont: lorem_ipsum,
-    img: '/images/spirituality/header.png'
-  }))
+const MadreScreen = (props: PropsMadreScreen) => {
+  console.log(props.dataBlogs)
+
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -48,16 +44,15 @@ const MadreScreen = (props: PropsScreens) => {
               </div>
               <div className="blog__entries">
                 <div className="container__carousel">
-                  {}
                   <Carousel>
-                    {entries
-                      .map((e, ie) => ie % 2 == 0 && [e, entries[ie + 1]])
+                    {props.dataBlogs
+                      .map((e, ie) => ie % 2 == 0 && [e, props.dataBlogs[ie + 1]])
                       .filter(e => e)
                       .map((ge, gi) => (
                         <div key={gi} className="item">
-                          {(ge as any[]).map((en: any, eni: any) => (
+                          {(ge as INews[]).map((en, eni) => (
                             <div key={eni} className="entrada">
-                              <HeaderCard title={en.title} text={en.cont} img={en.img} />
+                              <HeaderCard title={en.title as string} text={en.description as string} img={(en.image as fileType).key} />
                             </div>
                           ))}
                         </div>

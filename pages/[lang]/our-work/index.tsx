@@ -27,7 +27,7 @@ export default function index(props: { localization: Localization; data_news: IN
   return (
     <Layout title={props.localization.translations.ourWork}>
       <>
-        <>{dataCMS && data && <OurWork dataNews={news} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>{dataCMS && data && <OurWork dataNews={news as INews[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

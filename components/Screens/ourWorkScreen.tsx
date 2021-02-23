@@ -1,8 +1,7 @@
 import { fileType, PropsOurWorkScreen } from '@/types/types'
 //antd
 import { List } from 'antd'
-import { title } from 'process'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
@@ -12,16 +11,6 @@ import { News } from '../News'
 
 const OurWork = (props: PropsOurWorkScreen) => {
   // const { t } = useTranslation()
-
-  const [data, setData] = useState<any[]>()
-
-  useEffect(() => {
-    var temp = []
-    for (let k = 0; k < 50; k++) {
-      temp.push(k)
-    }
-    setData(temp)
-  }, [])
 
   return (
     <>

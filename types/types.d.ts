@@ -439,6 +439,10 @@ export interface PropsOurWorkScreen extends PropsScreens {
   dataNews: INews[]
 }
 
+export interface PropsMadreScreen extends PropsScreens {
+  dataBlogs: INews[]
+}
+
 export interface INews extends Document {
   key?: string
   _id?: string

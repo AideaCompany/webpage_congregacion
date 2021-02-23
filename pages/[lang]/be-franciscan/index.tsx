@@ -1,23 +1,20 @@
-import Layout from '../../../components/Layout'
 import FranciscanScreen from '@/components/Screens/franciscanScreen'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { getLocalizationProps } from '../../../providers/LenguageContext'
-import { Localization } from '../../../i18n/types'
-import { useEffect, useState } from 'react'
 import client from '@/graphql/config'
+import { getPages } from '@/graphql/queries'
 import { gql } from '@apollo/client'
-import { getPages, listNews } from '@/graphql/queries'
-import { INews } from '@/types/types'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useEffect, useState } from 'react'
+import Layout from '../../../components/Layout'
+import { Localization } from '../../../i18n/types'
+import { getLocalizationProps } from '../../../providers/LenguageContext'
 
-export default function beFranciscan(props: { localization: Localization; data_news: INews[]; data: any }) {
+export default function beFranciscan(props: { localization: Localization; data: any }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
-  const [news, setNews] = useState<INews[]>()
 
   useEffect(() => {
     setDataCMS(props.data[props.localization.locale])
     setData(props.data)
-    setNews(props.data_news)
   }, [])
 
   useEffect(() => {
@@ -36,12 +33,10 @@ export default function beFranciscan(props: { localization: Localization; data_n
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'beFranciscan' } })) as { data: { getPages: any } }).data.getPages
-  const data_news = ((await client.query({ query: gql(listNews) })) as { data: { listNews: INews[] } }).data.listNews
   return {
     props: {
       localization,
-      data,
-      data_news
+      data
     }
   }
 }
