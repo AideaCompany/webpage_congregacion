@@ -13,6 +13,21 @@ export const getAcademicLevels = /* GraphQL */ `
     }
   }
 `
+export const getBlogs = /* GraphQL */ `
+  query getBlogs($_id: inputId) {
+    getBlogs(_id: $_id) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const getCargos = /* GraphQL */ `
   query getCargos($_id: inputId) {
     getCargos(_id: $_id) {
@@ -695,6 +710,36 @@ export const getHermanas = /* GraphQL */ `
     }
   }
 `
+export const getLastBlog = /* GraphQL */ `
+  query getLastBlog {
+    getLastBlog {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
+export const getLastNews = /* GraphQL */ `
+  query getLastNews {
+    getLastNews {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const getMision = /* GraphQL */ `
   query getMision($_id: inputId) {
     getMision(_id: $_id) {
@@ -718,6 +763,21 @@ export const getMotiveRetreat = /* GraphQL */ `
       name
       createdAt
       updatedAt
+    }
+  }
+`
+export const getNews = /* GraphQL */ `
+  query getNews($_id: inputId) {
+    getNews(_id: $_id) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
     }
   }
 `
@@ -902,14 +962,14 @@ export const getPages = /* GraphQL */ `
       de
       it
       mainPhoto {
-        key
         filename
+        key
       }
       photos {
         name
         photos {
-          key
           filename
+          key
         }
       }
     }
@@ -1068,6 +1128,21 @@ export const listAcademicLevels = /* GraphQL */ `
       name
       createdAt
       updatedAt
+    }
+  }
+`
+export const listBlogs = /* GraphQL */ `
+  query listBlogs {
+    listBlogs {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
     }
   }
 `
@@ -1776,6 +1851,21 @@ export const listMotiveRetreat = /* GraphQL */ `
       name
       createdAt
       updatedAt
+    }
+  }
+`
+export const listNews = /* GraphQL */ `
+  query listNews {
+    listNews {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
     }
   }
 `

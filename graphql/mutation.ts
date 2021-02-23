@@ -36,6 +36,21 @@ export const createAcademicLevels = /* GraphQL */ `
     }
   }
 `
+export const createBlogs = /* GraphQL */ `
+  mutation createBlogs($input: BlogsInput) {
+    createBlogs(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const createCargos = /* GraphQL */ `
   mutation createCargos($input: CargosInput) {
     createCargos(input: $input) {
@@ -51,6 +66,7 @@ export const createContentType = /* GraphQL */ `
     createContentType(input: $input) {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -103,6 +119,7 @@ export const createElementContentType = /* GraphQL */ `
     createElementContentType(colletionID: $colletionID, input: $input) {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -112,6 +129,20 @@ export const createElementContentType = /* GraphQL */ `
         required
       }
       type
+    }
+  }
+`
+export const createEvents = /* GraphQL */ `
+  mutation createEvents($input: EventsInput) {
+    createEvents(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
     }
   }
 `
@@ -179,6 +210,11 @@ export const createFraternity = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -205,6 +241,7 @@ export const createFraternity = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -223,6 +260,7 @@ export const createFraternity = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -270,6 +308,11 @@ export const createFraternity = /* GraphQL */ `
           email
           opened
           closed
+          photo {
+            filename
+            key
+          }
+          shouldShow
         }
         state
         city
@@ -292,6 +335,11 @@ export const createFraternity = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
     }
   }
 `
@@ -363,6 +411,11 @@ export const createHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -381,6 +434,7 @@ export const createHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -407,6 +461,7 @@ export const createHermanas = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -422,6 +477,11 @@ export const createHermanas = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -456,6 +516,7 @@ export const createHermanas = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -472,6 +533,7 @@ export const createHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -487,6 +549,7 @@ export const createHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -532,6 +595,11 @@ export const createHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -716,6 +784,21 @@ export const createMotiveRetreat = /* GraphQL */ `
     }
   }
 `
+export const createNews = /* GraphQL */ `
+  mutation createNews($input: NewsInput) {
+    createNews(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const createObras = /* GraphQL */ `
   mutation createObras($input: ObrasInput) {
     createObras(input: $input) {
@@ -753,6 +836,11 @@ export const createObras = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -771,6 +859,7 @@ export const createObras = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -797,6 +886,7 @@ export const createObras = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -812,6 +902,11 @@ export const createObras = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -846,6 +941,7 @@ export const createObras = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       country {
         _id
@@ -924,6 +1020,11 @@ export const createProvinces = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
       createdAt
       updatedAt
     }
@@ -956,6 +1057,20 @@ export const deleteAcademicLevels = /* GraphQL */ `
 export const deleteAcademicLevelsAll = /* GraphQL */ `
   mutation deleteAcademicLevelsAll {
     deleteAcademicLevelsAll {
+      _id
+    }
+  }
+`
+export const deleteBlogs = /* GraphQL */ `
+  mutation deleteBlogs($input: inputId) {
+    deleteBlogs(input: $input) {
+      _id
+    }
+  }
+`
+export const deleteBlogsAll = /* GraphQL */ `
+  mutation deleteBlogsAll {
+    deleteBlogsAll {
       _id
     }
   }
@@ -1019,6 +1134,20 @@ export const deleteDocumentTypeAll = /* GraphQL */ `
 export const deleteElementContentType = /* GraphQL */ `
   mutation deleteElementContentType($colletionID: ID, $input: ID) {
     deleteElementContentType(colletionID: $colletionID, input: $input) {
+      _id
+    }
+  }
+`
+export const deleteEvents = /* GraphQL */ `
+  mutation deleteEvents($input: inputId) {
+    deleteEvents(input: $input) {
+      _id
+    }
+  }
+`
+export const deleteEventsAll = /* GraphQL */ `
+  mutation deleteEventsAll {
+    deleteEventsAll {
       _id
     }
   }
@@ -1117,6 +1246,20 @@ export const deleteMotiveRetreat = /* GraphQL */ `
 export const deleteMotiveRetreatAll = /* GraphQL */ `
   mutation deleteMotiveRetreatAll {
     deleteMotiveRetreatAll {
+      _id
+    }
+  }
+`
+export const deleteNews = /* GraphQL */ `
+  mutation deleteNews($input: inputId) {
+    deleteNews(input: $input) {
+      _id
+    }
+  }
+`
+export const deleteNewsAll = /* GraphQL */ `
+  mutation deleteNewsAll {
+    deleteNewsAll {
       _id
     }
   }
@@ -1228,6 +1371,21 @@ export const updateAcademicLevels = /* GraphQL */ `
     }
   }
 `
+export const updateBlogs = /* GraphQL */ `
+  mutation updateBlogs($input: updateBlogsInput) {
+    updateBlogs(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const updateCargos = /* GraphQL */ `
   mutation updateCargos($input: updateCargosInput) {
     updateCargos(input: $input) {
@@ -1243,6 +1401,7 @@ export const updateContentType = /* GraphQL */ `
     updateContentType(input: $input) {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -1295,6 +1454,7 @@ export const updateElementContentType = /* GraphQL */ `
     updateElementContentType(colletionID: $colletionID, input: $input) {
       _id
       name
+      dbName
       elements {
         _id
         key
@@ -1304,6 +1464,20 @@ export const updateElementContentType = /* GraphQL */ `
         required
       }
       type
+    }
+  }
+`
+export const updateEvents = /* GraphQL */ `
+  mutation updateEvents($input: updateEventsInput) {
+    updateEvents(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
     }
   }
 `
@@ -1364,6 +1538,11 @@ export const updateFraternity = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1390,6 +1569,7 @@ export const updateFraternity = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1408,6 +1588,7 @@ export const updateFraternity = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1455,6 +1636,11 @@ export const updateFraternity = /* GraphQL */ `
           email
           opened
           closed
+          photo {
+            filename
+            key
+          }
+          shouldShow
         }
         state
         city
@@ -1477,6 +1663,11 @@ export const updateFraternity = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
     }
   }
 `
@@ -1548,6 +1739,11 @@ export const updateHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1566,6 +1762,7 @@ export const updateHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1592,6 +1789,7 @@ export const updateHermanas = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1607,6 +1805,11 @@ export const updateHermanas = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -1641,6 +1844,7 @@ export const updateHermanas = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       obras {
         _id
@@ -1657,6 +1861,7 @@ export const updateHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1672,6 +1877,7 @@ export const updateHermanas = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
         }
         country {
           _id
@@ -1717,6 +1923,11 @@ export const updateHermanas = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1901,6 +2112,21 @@ export const updateMotiveRetreat = /* GraphQL */ `
     }
   }
 `
+export const updateNews = /* GraphQL */ `
+  mutation updateNews($input: updateNewsInput) {
+    updateNews(input: $input) {
+      _id
+      date
+      description
+      title
+      image {
+        filename
+        key
+      }
+      text
+    }
+  }
+`
 export const updateObras = /* GraphQL */ `
   mutation updateObras($input: updateObrasInput) {
     updateObras(input: $input) {
@@ -1938,6 +2164,11 @@ export const updateObras = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }
@@ -1956,6 +2187,7 @@ export const updateObras = /* GraphQL */ `
           email
           opened
           closed
+          shouldShow
           createdAt
           updatedAt
         }
@@ -1982,6 +2214,7 @@ export const updateObras = /* GraphQL */ `
             email
             opened
             closed
+            shouldShow
             createdAt
             updatedAt
           }
@@ -1997,6 +2230,11 @@ export const updateObras = /* GraphQL */ `
             email
             opened
             closed
+            photo {
+              filename
+              key
+            }
+            shouldShow
           }
           country {
             _id
@@ -2031,6 +2269,7 @@ export const updateObras = /* GraphQL */ `
         email
         opened
         closed
+        shouldShow
       }
       country {
         _id
@@ -2055,6 +2294,30 @@ export const updateObras = /* GraphQL */ `
       opened
       closed
       finality
+    }
+  }
+`
+export const updatePages = /* GraphQL */ `
+  mutation updatePages($input: updatePagesInput) {
+    updatePages(input: $input) {
+      _id
+      name
+      es
+      en
+      fr
+      de
+      it
+      mainPhoto {
+        filename
+        key
+      }
+      photos {
+        name
+        photos {
+          filename
+          key
+        }
+      }
     }
   }
 `
@@ -2109,6 +2372,11 @@ export const updateProvinces = /* GraphQL */ `
       email
       opened
       closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
       createdAt
       updatedAt
     }
@@ -2176,6 +2444,11 @@ export const updateUser = /* GraphQL */ `
         email
         opened
         closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
         createdAt
         updatedAt
       }

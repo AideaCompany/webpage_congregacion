@@ -1,15 +1,16 @@
+import { fileType, PropsOurWorkScreen } from '@/types/types'
+//antd
+import { List } from 'antd'
+import { title } from 'process'
 import React, { useEffect, useState } from 'react'
-import { News } from '../News'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
+import { News } from '../News'
 
-//antd
-import { List } from 'antd'
-import { PropsScreens } from '@/types/types'
 // import TargetText from '../TargetText'
 
-const OurWork = (props: PropsScreens) => {
+const OurWork = (props: PropsOurWorkScreen) => {
   // const { t } = useTranslation()
 
   const [data, setData] = useState<any[]>()
@@ -30,18 +31,24 @@ const OurWork = (props: PropsScreens) => {
             <div className="ourwork__container">
               <div className="container__news">
                 <div className="main__news">
-                  <News />
+                  <News
+                    title={props.dataNews[0].title as string}
+                    img={(props.dataNews[0].image as fileType).key}
+                    description={props.dataNews[0].description as string}
+                  />
                 </div>
                 <div className="news">
                   <List
                     size="default"
                     pagination={{ pageSize: 2 }}
-                    dataSource={data}
-                    renderItem={item => (
-                      <List.Item>
-                        <News />
-                      </List.Item>
-                    )}
+                    dataSource={props.dataNews}
+                    renderItem={item => {
+                      return (
+                        <List.Item>
+                          <News title={item.title as string} img={(item.image as fileType).key} description={item.description as string} />
+                        </List.Item>
+                      )
+                    }}
                   />
                 </div>
               </div>

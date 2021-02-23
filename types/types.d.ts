@@ -430,3 +430,21 @@ export type PropsScreens = {
   mainPhoto?: any
   photos?: any[]
 }
+
+export interface PropsHomeScreen extends PropsScreens {
+  dataNews?: INews
+}
+
+export interface PropsOurWorkScreen extends PropsScreens {
+  dataNews: INews[]
+}
+
+export interface INews extends Document {
+  key?: string
+  _id?: string
+  title?: string
+  date?: string | Date
+  description?: string
+  image: fileType | string | any
+  text: string
+}

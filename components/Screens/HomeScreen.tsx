@@ -1,17 +1,16 @@
 import React from 'react'
-// import useTranslation from '../../hooks/useTranslations'
+import useTranslation from '../../hooks/useTranslations'
 //components
 import Header from '@/components/header'
 import TargetText from '../TargetText'
 //antd
 import { Carousel } from 'antd'
 import { News } from '../News'
-import { PropsScreens } from '@/types/types'
+import { fileType, PropsHomeScreen } from '@/types/types'
+import Link from 'next/link'
 
-const HomeScreen = (props: PropsScreens) => {
-  // const { t } = useTranslation()
-
-  console.log(props.dataCMS)
+const HomeScreen = (props: PropsHomeScreen) => {
+  const { locale } = useTranslation()
 
   return (
     <>
@@ -61,7 +60,14 @@ const HomeScreen = (props: PropsScreens) => {
           </div>
           <div className="main__section">
             <div className="news__index">
-              <News />
+              <News
+                title={props.dataNews?.title as string}
+                description={props.dataNews?.description as string}
+                img={(props.dataNews?.image as fileType).key}
+              />
+              <Link href={{ pathname: '/[lang]/be-franciscan', query: { lang: locale } }}>
+                <span className="link">Ir a noticias</span>
+              </Link>
             </div>
           </div>
         </>

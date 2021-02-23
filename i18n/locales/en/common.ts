@@ -27,6 +27,7 @@ const common = {
   congregationHistory: 'Congregation History',
   ourCharisma: 'Our Charisma',
   provinces: 'Provinces',
+  goToNews: 'Go to News',
   //footer
   newsletter: 'Suscribe to our Newsletter',
   email: 'Email',
