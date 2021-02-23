@@ -1,7 +1,7 @@
 // ./src/translations/config.ts
 export const defaultLocale = 'es' as const
 
-export const locales = ['es', 'en'] as const
+export const locales = ['es', 'en', 'fr', 'de', 'it'] as const
 
 export const languageNames = {
   es: 'Español',

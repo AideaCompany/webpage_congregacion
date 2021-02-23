@@ -23,14 +23,15 @@ export default function index(props: { localization: Localization }) {
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: 'eucharisticSoul' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'eucharisticSpirituality' } })) as { data: { getPages: any } }
+    console.log(res)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)
   }
   return (
     <Layout title={props.localization.translations.where}>
       <>
-        <> {dataCMS && data && <EuchSpiritualityScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <> {dataCMS && data && <EuchSpiritualityScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

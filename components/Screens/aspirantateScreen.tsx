@@ -14,7 +14,7 @@ const AspirantateScreen = (props: PropsScreens) => {
                 <h1>{props?.dataCMS?.title}</h1>
               </div>
               <div className="half__card">
-                <TargetText text={props?.dataCMS?.mainTexy} />
+                <TargetText text={props?.dataCMS?.mainText} />
               </div>
             </div>
           </div>

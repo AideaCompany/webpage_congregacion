@@ -23,7 +23,7 @@ export default function postulancy(props: { localization: Localization }) {
   }, [props.localization.locale])
 
   const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: '' } })) as { data: { getPages: any } }
+    const res = (await client.query({ query: gql(getPages), variables: { name: 'postulancy' } })) as { data: { getPages: any } }
     console.log(res.data.getPages)
     setDataCMS(res.data.getPages[props.localization.locale])
     setData(res.data.getPages)

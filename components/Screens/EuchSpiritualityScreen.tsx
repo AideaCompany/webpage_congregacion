@@ -4,6 +4,7 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const EuchSpiritualityScreen = (props: PropsScreens) => {
+  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -15,7 +16,7 @@ const EuchSpiritualityScreen = (props: PropsScreens) => {
               </div>
               <div className="half__card">
                 <div className="cont__img">
-                  <img src="/images/eucharistic/espiritualidad.png" alt="" />
+                  <img src={props.photos?.find(e => e.name === 'photoMain').photos[0].key} alt="" />
                 </div>
                 <TargetText text={props?.dataCMS?.mainText} />
               </div>
