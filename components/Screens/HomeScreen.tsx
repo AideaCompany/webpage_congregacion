@@ -1,16 +1,15 @@
-import React from 'react'
-import useTranslation from '../../hooks/useTranslations'
 //components
 import Header from '@/components/header'
-import TargetText from '../TargetText'
+import { fileType, IdiomsType, PropsHomeScreen } from '@/types/types'
 //antd
-import { Carousel } from 'antd'
+import { Carousel, List } from 'antd'
+import React from 'react'
+import useTranslation from '../../hooks/useTranslations'
 import { News } from '../News'
-import { fileType, PropsHomeScreen } from '@/types/types'
-import Link from 'next/link'
+import TargetText from '../TargetText'
 
 const HomeScreen = (props: PropsHomeScreen) => {
-  const { locale } = useTranslation()
+  const { t, locale } = useTranslation()
 
   return (
     <>
@@ -59,15 +58,39 @@ const HomeScreen = (props: PropsHomeScreen) => {
             </div>
           </div>
           <div className="main__section">
-            <div className="news__index">
-              <News
-                title={props.dataNews?.title as string}
-                description={props.dataNews?.description as string}
-                img={(props.dataNews?.image as fileType).key}
-              />
-              <Link href={{ pathname: '/[lang]/be-franciscan', query: { lang: locale } }}>
-                <span className="link">Ir a noticias</span>
-              </Link>
+            <div className="ourwork__container">
+              <div className="container__news">
+                <div className="main__news">
+                  <News
+                    _id={props.dataNews[0]._id as string}
+                    title={props.dataNews[0][locale as IdiomsType]?.title as string}
+                    img={(props.dataNews[0].image as fileType).key}
+                    description={props.dataNews[0][locale as IdiomsType]?.description as string}
+                  />
+                </div>
+                <div className="news">
+                  <List
+                    size="default"
+                    pagination={{ pageSize: 2 }}
+                    dataSource={props.dataNews}
+                    renderItem={item => {
+                      return (
+                        <List.Item>
+                          <News
+                            _id={item._id as string}
+                            title={item[locale as IdiomsType]?.title as string}
+                            img={(item.image as fileType).key}
+                            description={item[locale as IdiomsType]?.description as string}
+                          />
+                        </List.Item>
+                      )
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="secondary__title">
+                <h1>{t('lastNews')}</h1>
+              </div>
             </div>
           </div>
         </>

@@ -1,6 +1,7 @@
 import { fileType, PropsOurWorkScreen } from '@/types/types'
 //antd
 import { List } from 'antd'
+import useTranslation from 'hooks/useTranslations'
 import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
@@ -10,7 +11,7 @@ import { News } from '../News'
 // import TargetText from '../TargetText'
 
 const OurWork = (props: PropsOurWorkScreen) => {
-  // const { t } = useTranslation()
+  const { locale } = useTranslation()
 
   return (
     <>
@@ -21,9 +22,10 @@ const OurWork = (props: PropsOurWorkScreen) => {
               <div className="container__news">
                 <div className="main__news">
                   <News
-                    title={props.dataNews[0].title as string}
+                    _id={props.dataNews[0]._id as string}
+                    title={props.dataNews[0][locale]?.title as string}
                     img={(props.dataNews[0].image as fileType).key}
-                    description={props.dataNews[0].description as string}
+                    description={props.dataNews[0][locale]?.description as string}
                   />
                 </div>
                 <div className="news">
@@ -34,7 +36,12 @@ const OurWork = (props: PropsOurWorkScreen) => {
                     renderItem={item => {
                       return (
                         <List.Item>
-                          <News title={item.title as string} img={(item.image as fileType).key} description={item.description as string} />
+                          <News
+                            _id={item._id as string}
+                            title={item[locale]?.title as string}
+                            img={(item.image as fileType).key}
+                            description={item[locale]?.description as string}
+                          />
                         </List.Item>
                       )
                     }}

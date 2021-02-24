@@ -18,13 +18,35 @@ export const getBlogs = /* GraphQL */ `
     getBlogs(_id: $_id) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -710,18 +732,45 @@ export const getHermanas = /* GraphQL */ `
     }
   }
 `
+export const getIds = /* GraphQL */ `
+  query getIds {
+    getIds
+  }
+`
 export const getLastBlog = /* GraphQL */ `
   query getLastBlog {
     getLastBlog {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -730,13 +779,35 @@ export const getLastNews = /* GraphQL */ `
     getLastNews {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -771,13 +842,35 @@ export const getNews = /* GraphQL */ `
     getNews(_id: $_id) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -1136,13 +1229,35 @@ export const listBlogs = /* GraphQL */ `
     listBlogs {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -1859,13 +1974,35 @@ export const listNews = /* GraphQL */ `
     listNews {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `

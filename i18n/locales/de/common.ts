@@ -27,6 +27,7 @@ const common = {
   congregationHistory: 'Historia de la congregación',
   ourCharisma: 'Nuestro Carisma',
   provinces: 'Provincias',
+  lastNews: 'LastNews',
 
   //footer
   newsletter: '¿QUIERES  RECIBIR  LAS ULTIMAS NOTICIAS?',

@@ -433,23 +433,40 @@ export type PropsScreens = {
 }
 
 export interface PropsHomeScreen extends PropsScreens {
-  dataNews?: INews
+  dataNews: NewsOBject[]
 }
 
 export interface PropsOurWorkScreen extends PropsScreens {
-  dataNews: INews[]
+  dataNews: NewsOBject[]
 }
 
 export interface PropsMadreScreen extends PropsScreens {
-  dataBlogs: INews[]
+  dataBlogs: NewsOBject[]
 }
 
-export interface INews extends Document {
+export interface PropsNewsScreen extends PropsScreens {
+  dataNews: NewsOBject
+}
+
+export interface INews extends BlogObjetc {
   key?: string
   _id?: string
-  title?: string
   date?: string | Date
+  image?: fileType | string | any
+}
+
+export type BlogObjetc = {
+  es?: NewsOBject
+  en?: NewsOBject
+  fr?: NewsOBject
+  de?: NewsOBject
+  it?: NewsOBject
+}
+
+export type IdiomsType = 'es' | 'en' | 'fr' | 'de' | 'it'
+
+export interface NewsOBject extends INews {
+  text?: string
+  title?: string
   description?: string
-  image: fileType | string | any
-  text: string
 }

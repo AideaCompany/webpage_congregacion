@@ -1,7 +1,7 @@
 import MadreScreen from '@/components/Screens/MadreScreen'
 import client from '@/graphql/config'
 import { getPages, listBlogs } from '@/graphql/queries'
-import { INews } from '@/types/types'
+import { NewsOBject } from '@/types/types'
 import { gql } from '@apollo/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
@@ -9,10 +9,10 @@ import Layout from '../../../components/Layout'
 import { Localization } from '../../../i18n/types'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 
-export default function madreCaridadBrader(props: { localization: Localization; data: any; blogs: INews[] }) {
+export default function madreCaridadBrader(props: { localization: Localization; data: any; blogs: NewsOBject[] }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
-  const [blogs, setBlogs] = useState<INews[]>()
+  const [blogs, setBlogs] = useState<NewsOBject[]>()
 
   useEffect(() => {
     setDataCMS(props.data[props.localization.locale])
@@ -29,7 +29,9 @@ export default function madreCaridadBrader(props: { localization: Localization; 
   return (
     <Layout title={props.localization.translations.madreCaridadBraderZanher}>
       <>
-        <>{dataCMS && data && <MadreScreen dataBlogs={blogs as INews[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {dataCMS && data && <MadreScreen dataBlogs={blogs as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}
+        </>
       </>
     </Layout>
   )
@@ -38,7 +40,7 @@ export default function madreCaridadBrader(props: { localization: Localization; 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'braderZanher' } })) as { data: { getPages: any } }).data.getPages
-  const blogs = ((await client.query({ query: gql(listBlogs) })) as { data: { listBlogs: INews[] } }).data.listBlogs
+  const blogs = ((await client.query({ query: gql(listBlogs) })) as { data: { listBlogs: NewsOBject[] } }).data.listBlogs
   return {
     props: {
       localization,

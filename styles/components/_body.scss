@@ -10,7 +10,7 @@
     height: auto;
     position: relative;
     > :nth-child(1) {
-      height: calc(100vh - 70px);
+      min-height: calc(100vh - 70px);
     }
     .main__section {
       width: 100%;
@@ -36,10 +36,10 @@
   }
 
   .body__btn {
-    position: absolute;
+    position: fixed;
     top: 90vh;
     right: 3%;
-    z-index: 4;
+    z-index: 01;
     display: flex;
     // background-color: $lightBlue;
     .body__btn-primary {

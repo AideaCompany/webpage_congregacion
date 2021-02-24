@@ -1,15 +1,14 @@
 //i18ns
-import { fileType, INews, PropsMadreScreen } from '@/types/types'
+import { fileType, NewsOBject, PropsMadreScreen } from '@/types/types'
 import { Carousel } from 'antd'
+import useTranslation from 'hooks/useTranslations'
 import React from 'react'
 import Header from '../header'
 import HeaderCard from '../HeaderCard'
-
 import TargetText from '../TargetText'
 
 const MadreScreen = (props: PropsMadreScreen) => {
-  console.log(props.dataBlogs)
-
+  const { locale } = useTranslation()
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -50,9 +49,13 @@ const MadreScreen = (props: PropsMadreScreen) => {
                       .filter(e => e)
                       .map((ge, gi) => (
                         <div key={gi} className="item">
-                          {(ge as INews[]).map((en, eni) => (
+                          {(ge as NewsOBject[]).map((en, eni) => (
                             <div key={eni} className="entrada">
-                              <HeaderCard title={en.title as string} text={en.description as string} img={(en.image as fileType).key} />
+                              <HeaderCard
+                                title={en[locale]?.title as string}
+                                text={en[locale]?.description as string}
+                                img={(en.image as fileType).key}
+                              />
                             </div>
                           ))}
                         </div>

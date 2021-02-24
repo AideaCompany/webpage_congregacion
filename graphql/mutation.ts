@@ -41,13 +41,35 @@ export const createBlogs = /* GraphQL */ `
     createBlogs(input: $input) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -789,13 +811,35 @@ export const createNews = /* GraphQL */ `
     createNews(input: $input) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -1376,13 +1420,35 @@ export const updateBlogs = /* GraphQL */ `
     updateBlogs(input: $input) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -2117,13 +2183,35 @@ export const updateNews = /* GraphQL */ `
     updateNews(input: $input) {
       _id
       date
-      description
-      title
       image {
         filename
         key
       }
-      text
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `

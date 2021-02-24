@@ -28,6 +28,7 @@ const common = {
   ourCharisma: 'Nuestro Carisma',
   provinces: 'Provincias',
   goToNews: 'Ir a noticias',
+  lastNews: 'Ultimas Noticias',
 
   //footer
   newsletter: '¿QUIERES  RECIBIR  LAS ULTIMAS NOTICIAS?',

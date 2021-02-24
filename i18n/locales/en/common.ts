@@ -28,6 +28,7 @@ const common = {
   ourCharisma: 'Our Charisma',
   provinces: 'Provinces',
   goToNews: 'Go to News',
+  lastNews: 'Last News',
   //footer
   newsletter: 'Suscribe to our Newsletter',
   email: 'Email',

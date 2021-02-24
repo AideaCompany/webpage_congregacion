@@ -1,0 +1,42 @@
+.news__container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  padding-top: 30vh;
+  .container__text {
+    width: 1200px;
+    // height: 70vh;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 10vh;
+    img {
+      width: 70%;
+      height: 400px;
+      object-fit: cover;
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+    .content {
+      margin-top: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      //   justify-content: center;
+      align-items: center;
+      h1 {
+        font-family: Montserrat-Regular;
+      }
+      p {
+        font-family: Montserrat-Regular;
+      }
+      span {
+        width: 100%;
+        font-family: Montserrat-Regular;
+      }
+    }
+  }
+}
