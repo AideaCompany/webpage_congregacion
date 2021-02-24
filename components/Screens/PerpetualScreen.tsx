@@ -4,8 +4,6 @@ import React from 'react'
 import Header from '../header'
 
 const PerpetualScreen = (props: PropsScreens) => {
-  console.log(props.dataCMS)
-
   return (
     <>
       <Header image={props?.mainPhoto}>

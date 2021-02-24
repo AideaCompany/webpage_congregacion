@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  await client.cache.reset()
   const _ids = ((await client.query({ query: gql(getIds) })) as { data: { getIds: string[] } }).data.getIds
   return {
     paths: _ids.map(news => ['es', 'en'].map(lang => ({ params: { lang, news } }))).flat(),

@@ -34,6 +34,7 @@ export default function index(props: { localization: Localization; data_news: Ne
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
+  await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
   const data_news = ((await client.query({ query: gql(listNews) })) as { data: { listNews: NewsOBject[] } }).data.listNews
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'homePage' } })) as { data: { getPages: any } }).data.getPages
