@@ -1,17 +1,13 @@
 import React from 'react'
-import ChangeLanguage from './ChangeLanguage'
-//antd
-import { Button } from 'antd'
-//next
-import Image from 'next/image'
 //i18n
 import useTranslation from '../hooks/useTranslations'
 import { propsHeader } from '../types/types'
+import ChangeLanguage from './ChangeLanguage'
 import Footer from './Footer/Footer'
 
 const Header = (props: propsHeader) => {
   //hooks
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <>

@@ -8,6 +8,7 @@ import Navigation from './Navigation'
 const Layout = (props: propsLayout) => {
   //props
   const { children, title } = props
+
   return (
     <>
       <Head>
