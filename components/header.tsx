@@ -26,7 +26,7 @@ const Header = (props: propsHeader) => {
         <div className="body__children">{props.children}</div>
         <Footer />
         <div className="body__btn">
-          <Button size="large" className="body__btn-primary">
+          {/* <Button size="large" className="body__btn-primary">
             <span> {t('vocationMinistry').toUpperCase()}</span>
             <Image width={40} height={40} src="/images/body/mass.svg"></Image>
           </Button>
@@ -34,7 +34,7 @@ const Header = (props: propsHeader) => {
             <span>{t('vocationOrientation').toUpperCase()}</span>
 
             <Image width={40} height={40} src="/images/body/namaste.svg"></Image>
-          </Button>
+          </Button> */}
           <ChangeLanguage />
         </div>
       </div>
