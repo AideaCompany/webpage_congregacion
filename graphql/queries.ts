@@ -181,6 +181,7 @@ export const getFraternity = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -212,6 +213,7 @@ export const getFraternity = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -231,6 +233,7 @@ export const getFraternity = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -382,6 +385,7 @@ export const getHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -405,6 +409,7 @@ export const getHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -432,6 +437,7 @@ export const getHermanas = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -504,6 +510,7 @@ export const getHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -566,6 +573,7 @@ export const getHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -908,6 +916,7 @@ export const getObras = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -931,6 +940,7 @@ export const getObras = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -958,6 +968,7 @@ export const getObras = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -1116,6 +1127,52 @@ export const getProvinces = /* GraphQL */ `
       phone1
       phone2
       fax
+      link
+      email
+      opened
+      closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
+      createdAt
+      updatedAt
+    }
+  }
+`
+export const getProvincesWeb = /* GraphQL */ `
+  query getProvincesWeb {
+    getProvincesWeb {
+      _id
+      name
+      country {
+        _id
+        name
+        latlng
+        translations {
+          de
+          es
+          fr
+          ja
+          it
+          br
+          pt
+          nl
+          hr
+          fa
+        }
+        nativeName
+        createdAt
+        updatedAt
+      }
+      state
+      city
+      address
+      phone1
+      phone2
+      fax
+      link
       email
       opened
       closed
@@ -1188,6 +1245,7 @@ export const getUser = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -1392,6 +1450,7 @@ export const listFraternity = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -1423,6 +1482,7 @@ export const listFraternity = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -1442,6 +1502,7 @@ export const listFraternity = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -1593,6 +1654,7 @@ export const listHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -1616,6 +1678,7 @@ export const listHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -1643,6 +1706,7 @@ export const listHermanas = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -1715,6 +1779,7 @@ export const listHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -1777,6 +1842,7 @@ export const listHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2040,6 +2106,7 @@ export const listObras = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2063,6 +2130,7 @@ export const listObras = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -2090,6 +2158,7 @@ export const listObras = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -2224,6 +2293,7 @@ export const listProvinces = /* GraphQL */ `
       phone1
       phone2
       fax
+      link
       email
       opened
       closed
@@ -2296,6 +2366,7 @@ export const listUser = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2387,6 +2458,7 @@ export const newHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2410,6 +2482,7 @@ export const newHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -2437,6 +2510,7 @@ export const newHermanas = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -2509,6 +2583,7 @@ export const newHermanas = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -2571,6 +2646,7 @@ export const newHermanas = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2802,6 +2878,7 @@ export const newHermanasDeath = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -2825,6 +2902,7 @@ export const newHermanasDeath = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -2852,6 +2930,7 @@ export const newHermanasDeath = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -2924,6 +3003,7 @@ export const newHermanasDeath = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -2986,6 +3066,7 @@ export const newHermanasDeath = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -3217,6 +3298,7 @@ export const newHermanasRetired = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -3240,6 +3322,7 @@ export const newHermanasRetired = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -3267,6 +3350,7 @@ export const newHermanasRetired = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -3339,6 +3423,7 @@ export const newHermanasRetired = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -3401,6 +3486,7 @@ export const newHermanasRetired = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -3647,6 +3733,7 @@ export const totalHermanasDeath = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -3670,6 +3757,7 @@ export const totalHermanasDeath = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -3697,6 +3785,7 @@ export const totalHermanasDeath = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -3769,6 +3858,7 @@ export const totalHermanasDeath = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -3831,6 +3921,7 @@ export const totalHermanasDeath = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -4062,6 +4153,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed
@@ -4085,6 +4177,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -4112,6 +4205,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
             phone1
             phone2
             fax
+            link
             email
             opened
             closed
@@ -4184,6 +4278,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
           phone1
           phone2
           fax
+          link
           email
           opened
           closed
@@ -4246,6 +4341,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
         phone1
         phone2
         fax
+        link
         email
         opened
         closed

@@ -10,6 +10,20 @@
     padding: 50px;
     height: auto;
     background-color: rgba($color: #fff, $alpha: 0.8);
+    .title {
+      color: $lightBlue;
+    }
+    ul {
+      li {
+        list-style: none;
+        font-size: 1.3em;
+        font-family: 'Montserrat-Regular';
+      }
+      a {
+        font-family: 'Montserrat-Regular';
+        text-decoration: underline;
+      }
+    }
     p {
       font-family: 'Montserrat-Regular';
       > div {

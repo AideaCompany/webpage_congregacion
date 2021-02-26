@@ -30,6 +30,12 @@ const common = {
   goToNews: 'Ir a noticias',
   lastNews: 'Ultimas Noticias',
 
+  //pages
+  country: 'Pais',
+  city: 'Ciudad',
+  address: 'Dirección',
+  phone: 'Teléfono',
+  webSite: 'Ir al Sitio Web',
   //footer
   newsletter: '¿QUIERES  RECIBIR  LAS ULTIMAS NOTICIAS?',
   email: 'Correo Electrónico',

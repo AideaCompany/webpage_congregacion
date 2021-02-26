@@ -37,7 +37,7 @@
 
   .body__btn {
     position: fixed;
-    top: 90vh;
+    bottom: 5vh;
     right: 3%;
     z-index: 01;
     display: flex;
@@ -70,6 +70,20 @@
       > * {
         margin: 0 5px 0 5px !important;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .body {
+    .body__btn {
+      .body__btn-primary {
+        width: auto;
+        height: 40px;
+        span {
+          font-size: 1em;
+        }
       }
     }
   }

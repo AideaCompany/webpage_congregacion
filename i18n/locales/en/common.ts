@@ -29,6 +29,12 @@ const common = {
   provinces: 'Provinces',
   goToNews: 'Go to News',
   lastNews: 'Last News',
+  //pages
+  country: 'Country',
+  city: 'City',
+  address: 'Address',
+  phone: 'Phone',
+  webSite: 'Go to Web Site',
   //footer
   newsletter: 'Suscribe to our Newsletter',
   email: 'Email',

@@ -1,30 +1,15 @@
-import client from '@/graphql/config'
-import { listProvinces } from '@/graphql/queries'
-import { Province } from '@/types/types'
-import { gql } from '@apollo/client'
+import { iCountry, Province } from '@/types/types'
+import { capitalize } from 'fogg-utils'
+import useTranslation from 'hooks/useTranslations'
+import React from 'react'
 
-import React, { useEffect, useState } from 'react'
 import Header from '../header'
+import TargetText from '../TargetText'
 
-const ProvinceScreen = () => {
-  const [itemsSlider, setItemsSlider] = useState<Province[]>()
+const ProvinceScreen = (props: { provinces: Province[] }) => {
+  const { t } = useTranslation()
 
-  useEffect(() => {
-    getData()
-  }, [])
-
-  //functions
-
-  const getData = async () => {
-    try {
-      await client.cache.reset()
-      const res = (await client.query({ query: gql(listProvinces) })) as { data: { listProvinces: Province[] } }
-      console.log(res)
-      setItemsSlider(res.data.listProvinces)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  const { provinces: itemsSlider } = props
 
   return (
     <Header>
@@ -33,7 +18,26 @@ const ProvinceScreen = () => {
           <div key={i} className="main__section">
             <div className="province__container">
               <div className="secondary__title">
-                <h1>{e.name}</h1>
+                <TargetText title={e.name as string}>
+                  <>
+                    <ul>
+                      <li>
+                        {t('country')}: {capitalize((e.country as iCountry).name)}
+                      </li>
+                      <li>
+                        {t('city')}: {capitalize(e.city)}
+                      </li>
+                      <li>
+                        {t('address')}: {capitalize(e.address)}
+                      </li>
+                      <li>
+                        <a target="__blank" href={e.link}>
+                          {t('webSite')}
+                        </a>
+                      </li>
+                    </ul>
+                  </>
+                </TargetText>
               </div>
               <div className="carousel__provinces">
                 <div>

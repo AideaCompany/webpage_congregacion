@@ -105,6 +105,7 @@ export type Province = {
   state: string
   city: string
   address: string
+  link: string
   phone1: string
   phone2: string
   fax: string
