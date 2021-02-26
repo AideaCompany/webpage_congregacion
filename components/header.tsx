@@ -1,6 +1,4 @@
 import React from 'react'
-//i18n
-import useTranslation from '../hooks/useTranslations'
 import { propsHeader } from '../types/types'
 import ChangeLanguage from './ChangeLanguage'
 import Footer from './Footer/Footer'
