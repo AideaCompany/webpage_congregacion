@@ -16,7 +16,7 @@ import client from '@/graphql/config'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
-    if (router.pathname === '/') {
+    if (router.pathname === '/_error') {
       router.push(`/${getInitialLocale()}`)
     }
   }, [router])

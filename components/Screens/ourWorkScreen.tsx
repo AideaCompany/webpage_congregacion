@@ -31,7 +31,7 @@ const OurWork = (props: PropsOurWorkScreen) => {
                 <div className="news">
                   <List
                     size="default"
-                    pagination={{ pageSize: 2 }}
+                    pagination={{ pageSize: 2, style: { width: '100%' }, showLessItems: true }}
                     dataSource={props.dataNews}
                     renderItem={item => {
                       return (

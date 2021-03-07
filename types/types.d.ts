@@ -176,6 +176,7 @@ export interface IFraternity extends Document {
   misionApostol: IMisionApostol | string
   state: string
   city: string
+  photo: fileType
   address: string
   phone1: string
   phone2: string
@@ -431,6 +432,10 @@ export type PropsScreens = {
   dataCMS: any
   mainPhoto?: any
   photos?: any[]
+}
+
+export interface PropsMisionScreen extends PropsScreens {
+  misions: NewsOBject[]
 }
 
 export interface PropsHomeScreen extends PropsScreens {

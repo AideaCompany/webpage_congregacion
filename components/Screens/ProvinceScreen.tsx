@@ -17,8 +17,8 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
         {itemsSlider?.map((e, i) => (
           <div key={i} className="main__section">
             <div className="province__container">
-              <div className="secondary__title">
-                <TargetText title={e.name as string}>
+              <div className="secondary__title cardProvinces">
+                <TargetText classname="provincesTarget" title={e.name as string}>
                   <>
                     <ul>
                       <li>

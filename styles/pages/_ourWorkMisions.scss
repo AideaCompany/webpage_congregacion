@@ -15,15 +15,39 @@
       justify-content: center;
       align-items: center;
       > div {
-        width: 100%;
+        width: 50%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        .misionsTarget {
+          padding: 1em;
+          width: 100%;
+          height: auto;
+        }
         img {
           width: 90%;
           height: 70%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mision__container {
+    min-height: calc(100vh - 70px);
+    .carousel__mision {
+      margin-top: 10vh;
+
+      height: auto;
+      .item {
+        height: 80vh;
+        flex-direction: column;
+        > div {
+          height: 50%;
+          width: 100%;
         }
       }
     }

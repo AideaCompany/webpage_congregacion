@@ -18,3 +18,23 @@
   align-items: center;
   padding: 30px;
 }
+
+@media screen and (max-width: 450px) {
+  .video__about {
+    padding: 0;
+    height: auto;
+    padding-top: 100px;
+
+    video {
+      width: 95%;
+    }
+  }
+  .text__history {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+}

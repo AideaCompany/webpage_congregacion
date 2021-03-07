@@ -29,3 +29,11 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .cardProvinces {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}

@@ -88,3 +88,13 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .body {
+    .body__children {
+      > :nth-child(1) {
+        min-height: fit-content;
+      }
+    }
+  }
+}

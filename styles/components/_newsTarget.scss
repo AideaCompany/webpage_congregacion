@@ -1,9 +1,10 @@
 .news__target {
-  width: 800px;
+  width: 100%;
+  height: 50%;
   cursor: pointer;
   .header__news {
     background-color: $backgroundDark;
-    height: 100%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +13,8 @@
     }
   }
   .body__news {
+    height: 80%;
+    width: 100%;
     display: flex;
     > div {
       width: 50%;
@@ -21,6 +24,8 @@
       background-color: #fff;
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       p {
         padding: 20px;
@@ -30,29 +35,36 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
   .news__target {
-    width: 80%;
     .header__news {
-      h1 {
-        font-size: 16pt;
-      }
-    }
-    .body__news {
-      display: block;
-      > div {
-        width: 100%;
-        img {
-          width: 50%;
-        }
-        p {
-          padding: 10px;
-          font-size: 10pt;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
     }
   }
 }
+
+// @media screen and (max-width: 1024px) {
+//   .news__target {
+//     width: 80%;
+//     .header__news {
+//       h1 {
+//         font-size: 16pt;
+//       }
+//     }
+//     .body__news {
+//       display: block;
+//       > div {
+//         width: 100%;
+//         img {
+//           width: 50%;
+//         }
+//         p {
+//           padding: 10px;
+//           font-size: 10pt;
+//           white-space: nowrap;
+//           overflow: hidden;
+//           text-overflow: ellipsis;
+//         }
+//       }
+//     }
+//   }
+// }

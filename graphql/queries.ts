@@ -320,6 +320,179 @@ export const getFraternity = /* GraphQL */ `
     }
   }
 `
+export const getFraternityWeb = /* GraphQL */ `
+  query getFraternityWeb {
+    getFraternityWeb {
+      _id
+      name
+      province {
+        _id
+        name
+        country {
+          _id
+          name
+          latlng
+          translations {
+            de
+            es
+            fr
+            ja
+            it
+            br
+            pt
+            nl
+            hr
+            fa
+          }
+          nativeName
+          createdAt
+          updatedAt
+        }
+        state
+        city
+        address
+        phone1
+        phone2
+        fax
+        link
+        email
+        opened
+        closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
+        createdAt
+        updatedAt
+      }
+      country {
+        _id
+        name
+        latlng
+        nativeName
+        createdAt
+        updatedAt
+      }
+      misionApostol {
+        _id
+        name
+        province {
+          _id
+          name
+          state
+          city
+          address
+          phone1
+          phone2
+          fax
+          link
+          email
+          opened
+          closed
+          shouldShow
+          createdAt
+          updatedAt
+        }
+        fraternity {
+          _id
+          name
+          province {
+            _id
+            name
+            state
+            city
+            address
+            phone1
+            phone2
+            fax
+            link
+            email
+            opened
+            closed
+            shouldShow
+            createdAt
+            updatedAt
+          }
+          country {
+            _id
+            name
+            latlng
+            nativeName
+            createdAt
+            updatedAt
+          }
+          misionApostol {
+            _id
+            name
+            country {
+              _id
+              name
+              latlng
+              nativeName
+              createdAt
+              updatedAt
+            }
+            mision {
+              _id
+              name
+            }
+            state
+            city
+            address
+            phone1
+            phone2
+            cel
+            email
+            fax
+            opened
+            closed
+            finality
+          }
+          state
+          city
+          address
+          phone1
+          phone2
+          cel
+          email
+          opened
+          closed
+          photo {
+            filename
+            key
+          }
+          shouldShow
+        }
+        state
+        city
+        address
+        phone1
+        phone2
+        cel
+        email
+        fax
+        opened
+        closed
+        finality
+      }
+      state
+      city
+      address
+      phone1
+      phone2
+      cel
+      email
+      opened
+      closed
+      photo {
+        filename
+        key
+      }
+      shouldShow
+    }
+  }
+`
 export const getHermanas = /* GraphQL */ `
   query getHermanas($_id: inputId) {
     getHermanas(_id: $_id) {
@@ -617,6 +790,7 @@ export const getHermanas = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -832,6 +1006,82 @@ export const getMisionApostol = /* GraphQL */ `
     getMisionApostol(_id: $_id) {
       _id
       name
+    }
+  }
+`
+export const getMisionWebToWeb = /* GraphQL */ `
+  query getMisionWebToWeb($type: String) {
+    getMisionWebToWeb(type: $type) {
+      _id
+      date
+      image {
+        filename
+        key
+      }
+      type
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
+    }
+  }
+`
+export const getMisionsWeb = /* GraphQL */ `
+  query getMisionsWeb($_id: inputId) {
+    getMisionsWeb(_id: $_id) {
+      _id
+      date
+      image {
+        filename
+        key
+      }
+      type
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -1886,6 +2136,7 @@ export const listHermanas = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -2022,6 +2273,44 @@ export const listMisionApostol = /* GraphQL */ `
     listMisionApostol {
       _id
       name
+    }
+  }
+`
+export const listMisionsWeb = /* GraphQL */ `
+  query listMisionsWeb {
+    listMisionsWeb {
+      _id
+      date
+      image {
+        filename
+        key
+      }
+      type
+      es {
+        text
+        title
+        description
+      }
+      en {
+        text
+        title
+        description
+      }
+      fr {
+        text
+        title
+        description
+      }
+      de {
+        text
+        title
+        description
+      }
+      it {
+        text
+        title
+        description
+      }
     }
   }
 `
@@ -2690,6 +2979,7 @@ export const newHermanas = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -3110,6 +3400,7 @@ export const newHermanasDeath = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -3530,6 +3821,7 @@ export const newHermanasRetired = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -3965,6 +4257,7 @@ export const totalHermanasDeath = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills
@@ -4385,6 +4678,7 @@ export const totalHermanasRetreat = /* GraphQL */ `
       }
       bloodGroupRh
       bloodPressure
+      diabetes
       healthRecord
       impediments
       skills

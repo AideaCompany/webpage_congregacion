@@ -143,3 +143,25 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .mainContainer {
+    .footer {
+      height: auto;
+      .newsletter {
+        flex-direction: column;
+        > div {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .contact {
+        flex-direction: column;
+        > div {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

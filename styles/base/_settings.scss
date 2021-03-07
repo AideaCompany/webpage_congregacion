@@ -59,6 +59,14 @@ $textFooter: #fff;
   top: 0;
 }
 
+//link
+.link {
+  cursor: pointer;
+  font-size: 40pt;
+  color: #fff;
+  font-family: 'PlayFair' !important;
+}
+
 @media screen and (max-width: 1024px) {
   .main__title {
     bottom: 10%;
@@ -67,7 +75,12 @@ $textFooter: #fff;
     }
   }
 
+  .title {
+    font-size: 20pt;
+  }
+
   .secondary__title {
+    width: 80%;
     bottom: 10%;
     h1 {
       font-size: 2vw;
@@ -75,10 +88,33 @@ $textFooter: #fff;
   }
 }
 
-//link
-.link {
-  cursor: pointer;
-  font-size: 40pt;
-  color: #fff;
-  font-family: 'PlayFair' !important;
+@media screen and (max-width: 450px) {
+  .main__title {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 5%;
+    width: 100%;
+    h1 {
+      color: $textFooter;
+      font-family: 'PlayFair' !important;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+  }
+
+  .secondary__title {
+    position: absolute;
+    z-index: 3;
+    top: 40px;
+    left: 5%;
+    height: auto;
+    width: 90%;
+    h1 {
+      color: $textFooter;
+      font-family: 'PlayFair' !important;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+  }
 }

@@ -41,8 +41,21 @@
 
 @media screen and (max-width: 1024px) {
   .text {
+    width: 100%;
     .div__text {
       padding: 10px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .text {
+    padding: 1em;
+    .div__text {
+      ul {
+        li {
+          font-size: 1em;
+        }
+      }
     }
   }
 }

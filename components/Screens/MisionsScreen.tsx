@@ -1,25 +1,15 @@
-import { PropsScreens } from '@/types/types'
+import { fileType, PropsMisionScreen } from '@/types/types'
 import { Carousel } from 'antd'
-import React, { useEffect, useState } from 'react'
+import useTranslation from 'hooks/useTranslations'
+import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
-const MisionScreen = (props: PropsScreens) => {
-  // const { t } = useTranslation()
-
-  const [data, setData] = useState<any[]>()
-
-  useEffect(() => {
-    var temp = []
-    for (let k = 0; k < 10; k++) {
-      temp.push(k)
-    }
-    setData(temp)
-  }, [])
-
+const MisionScreen = (props: PropsMisionScreen) => {
+  const { locale } = useTranslation()
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -28,14 +18,14 @@ const MisionScreen = (props: PropsScreens) => {
             <div className="mision__container">
               <div className="carousel__mision">
                 <Carousel>
-                  {data?.map(e => (
-                    <div>
+                  {props.misions?.map(mision => (
+                    <div key={mision._id}>
                       <div className="item">
                         <div className="media">
-                          <img src="/images/franciscan/dommie_carousel.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                          <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                         </div>
-                        <div className="text">
-                          <TargetText title={'MISION'} text={props?.dataCMS?.title} />
+                        <div className="text_mision">
+                          <TargetText classname="misionsTarget" title={mision[locale]?.title} text={mision[locale]?.description} />
                         </div>
                       </div>
                     </div>
@@ -43,7 +33,7 @@ const MisionScreen = (props: PropsScreens) => {
                 </Carousel>
               </div>
               <div className="secondary__title">
-                <h1>OBRAS DE MISIÓN</h1>
+                <h1>{props.dataCMS.title}</h1>
               </div>
             </div>
           </div>
