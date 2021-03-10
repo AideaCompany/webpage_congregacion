@@ -74,7 +74,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
                 <div className="news">
                   <List
                     size="default"
-                    pagination={{ pageSize: 2, style: { width: '100%' } }}
+                    pagination={{ pageSize: 2, style: { width: '100%' }, showLessItems: true }}
                     dataSource={props.dataNews}
                     style={{ width: '100%' }}
                     renderItem={item => {
