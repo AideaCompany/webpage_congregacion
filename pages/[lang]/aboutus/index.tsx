@@ -7,12 +7,13 @@ import { useState, useEffect } from 'react'
 import client from '@/graphql/config'
 import { gql } from '@apollo/client'
 import { getPages } from '@/graphql/queries'
-export default function aboutUs(props: { localization: Localization }) {
+export default function aboutUs(props: { localization: Localization; data: any }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
 
   useEffect(() => {
-    getData()
+    setDataCMS(props.data[props.localization.locale])
+    setData(props.data)
   }, [])
 
   useEffect(() => {
@@ -21,26 +22,21 @@ export default function aboutUs(props: { localization: Localization }) {
     }
   }, [props.localization.locale])
 
-  const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: 'about' } })) as { data: { getPages: any } }
-    console.log(res.data.getPages)
-    setDataCMS(res.data.getPages[props.localization.locale])
-    setData(res.data.getPages)
-  }
   return (
     <Layout title={'Inicio'}>
-      <>
-        <AboutUsScreen dataCMS={dataCMS} />
-      </>
+      <>{dataCMS && <AboutUsScreen dataCMS={dataCMS} />}</>
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
+  await client.cache.reset()
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'about' } })) as { data: { getPages: any } }).data.getPages
   return {
     props: {
-      localization
+      localization,
+      data
     }
   }
 }

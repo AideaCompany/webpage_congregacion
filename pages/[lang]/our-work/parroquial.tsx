@@ -36,6 +36,7 @@ export default function misions(props: { localization: Localization; data_mision
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
+  await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'parochial' } })) as { data: { getPages: any } }).data.getPages
   const data_misions = ((await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Parroquiales' } })) as {

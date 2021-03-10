@@ -60,6 +60,9 @@ const HomeScreen = (props: PropsHomeScreen) => {
           <div className="main__section">
             <div className="news__container_index">
               <div className="container__news">
+                <div className="secondary__title">
+                  <h1>{t('lastNews')}</h1>
+                </div>
                 <div className="main__news">
                   <News
                     _id={props.dataNews[0]._id as string}
@@ -88,9 +91,6 @@ const HomeScreen = (props: PropsHomeScreen) => {
                     }}
                   />
                 </div>
-              </div>
-              <div className="secondary__title">
-                <h1>{t('lastNews')}</h1>
               </div>
             </div>
           </div>

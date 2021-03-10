@@ -42,7 +42,6 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
               <div className="carousel__provinces">
                 <div>
                   <div className="item">
-                    <div className="mask"></div>
                     <img
                       src={e.photo?.key ? e.photo?.key : '/images/provinces/province.jpg'}
                       alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA"

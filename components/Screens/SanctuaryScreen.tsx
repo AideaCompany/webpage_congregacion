@@ -10,11 +10,11 @@ const SanctuaryScreen = (props: PropsScreens) => {
         <>
           <div className="main__section">
             <div className="eucharistic__index">
-              <div className="video__about">
+              <div className="secondary__title">
+                <h1>{props?.dataCMS?.title}</h1>
+              </div>
+              <div className="video__about_san">
                 <video src="" controls></video>
-                <div className="secondary__title">
-                  <h1>{props?.dataCMS?.title}</h1>
-                </div>
               </div>
             </div>
           </div>

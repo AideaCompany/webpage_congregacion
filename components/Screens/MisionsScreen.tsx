@@ -16,6 +16,9 @@ const MisionScreen = (props: PropsMisionScreen) => {
         <>
           <div className="main__section">
             <div className="mision__container">
+              <div className="secondary__title">
+                <h1>{props.dataCMS.title}</h1>
+              </div>
               <div className="carousel__mision">
                 <Carousel>
                   {props.misions?.map(mision => (
@@ -31,9 +34,6 @@ const MisionScreen = (props: PropsMisionScreen) => {
                     </div>
                   ))}
                 </Carousel>
-              </div>
-              <div className="secondary__title">
-                <h1>{props.dataCMS.title}</h1>
               </div>
             </div>
           </div>

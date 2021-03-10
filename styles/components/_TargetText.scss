@@ -13,10 +13,16 @@
     .title {
       color: $lightBlue;
     }
+    .contact_subtitle {
+      h2 {
+        font-size: 1.3em;
+        font-family: 'PlayFair';
+      }
+    }
     ul {
       li {
         list-style: none;
-        font-size: 1.3em;
+        font-size: 1em;
         font-family: 'Montserrat-Regular';
       }
       a {

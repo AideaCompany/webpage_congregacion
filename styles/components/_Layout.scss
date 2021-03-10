@@ -10,7 +10,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 50000;
+    z-index: 100000;
+    height: 70px;
+    .hamburger {
+      display: none;
+    }
     .navBar {
       width: 100%;
       margin-bottom: 0;
@@ -62,7 +66,7 @@
     height: 530px;
     overflow: hidden;
     position: relative;
-    z-index: 2;
+    z-index: 1001;
 
     .newsletter {
       width: 100%;
@@ -145,7 +149,66 @@
 }
 
 @media screen and (max-width: 450px) {
+  .ant-drawer-body {
+    padding: 0;
+    background-color: $backgroundDark;
+
+    .ham__Container {
+      width: 100%;
+      height: 100vh;
+      background-color: $backgroundDark;
+      .ant-menu {
+        background-color: transparent;
+      }
+      ul {
+        padding-inline-start: 0px;
+        padding: 10px;
+        * {
+          color: $textFooter;
+        }
+        li {
+          margin-top: 10px;
+          list-style: none;
+          // height: 50px;
+
+          display: flex;
+          flex-direction: column;
+          background-color: rgba($color: $textFooter, $alpha: 0.2);
+          div {
+            font-size: 8pt;
+            display: flex;
+          }
+          a {
+            width: 100%;
+            height: 100%;
+            font-size: 8pt;
+            font-family: 'Montserrat-Regular';
+          }
+        }
+      }
+    }
+  }
+
   .mainContainer {
+    .mainContainerNav {
+      .hamburger {
+        display: flex;
+        height: 70px;
+        background-color: $backgroundDark;
+        width: 100vw;
+        padding: 10px;
+        justify-content: flex-end;
+        align-items: center;
+        svg {
+          cursor: pointer;
+          font-size: 20pt;
+          color: white;
+        }
+      }
+      .navBar {
+        display: none;
+      }
+    }
     .footer {
       height: auto;
       .newsletter {
@@ -160,6 +223,46 @@
         > div {
           width: 100%;
           height: auto;
+        }
+      }
+    }
+  }
+}
+
+.ant-menu-item:active,
+.ant-menu-submenu-title:active {
+  background: rgba($color: $textFooter, $alpha: 0.2);
+}
+
+// .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-expand-icon,
+// .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+//   color: #fff;
+// }
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: rgba($color: $textFooter, $alpha: 0.2);
+}
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+  color: #fff;
+}
+.ant-menu-inline .ant-menu-item-selected::after {
+  opacity: 0;
+}
+
+.ant-menu-item-only-child {
+  padding-left: 10px !important;
+}
+.ant-menu-submenu-title {
+  padding-left: 10px !important;
+}
+@media screen and (max-width: 350px) {
+  .ant-drawer-body {
+    .ham__Container {
+      ul {
+        li {
+          a {
+            font-size: 7pt;
+          }
         }
       }
     }

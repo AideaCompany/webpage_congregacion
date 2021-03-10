@@ -37,10 +37,11 @@
 
 @media screen and (max-width: 450px) {
   .mision__container {
-    min-height: calc(100vh - 70px);
+    flex-direction: column;
+    height: auto;
     .carousel__mision {
-      margin-top: 10vh;
-
+      margin-top: 0vh;
+      width: 100%;
       height: auto;
       .item {
         height: 80vh;

@@ -3,18 +3,18 @@
   height: calc(100vh - 70px);
   .container__photos {
     width: 100%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     align-items: center;
     .container__carousel {
       width: 80%;
-      height: 70vh;
-      background-color: rgba($color: #fff, $alpha: 0.8);
+      height: 60vh;
       .item {
         width: 100%;
-        height: 70vh;
+        height: 60vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,10 +31,10 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 33%);
-    div {
-      div {
-        width: 80%
+    grid-template-columns: repeat(3, 50%);
+    > div {
+      > div {
+        width: 80%;
       }
     }
   }
@@ -42,11 +42,25 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(1, 100%);
     div {
       div {
-        width: 70%
+        width: 70%;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .franciscan__index {
+    height: auto;
+    .card__holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .half__card {
+      height: auto;
     }
   }
 }

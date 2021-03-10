@@ -9,7 +9,6 @@
       height: calc(100vh - 70px);
       position: relative;
       display: flex;
-
       img {
         width: 100%;
         object-fit: cover;
@@ -29,6 +28,8 @@
 
 @media screen and (max-width: 450px) {
   .fraternity__container {
+    position: relative;
+    height: calc(100vh - 70px);
     .carousel__fraternity {
       .item {
         img {
@@ -36,6 +37,7 @@
         }
         .text__fraternity {
           // border: 1px solid black;
+          width: 100%;
           bottom: 3%;
           display: flex;
           justify-content: center;

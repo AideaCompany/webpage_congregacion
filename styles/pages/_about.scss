@@ -23,10 +23,9 @@
   .video__about {
     padding: 0;
     height: auto;
-    padding-top: 100px;
-
+    flex-direction: column-reverse;
     video {
-      width: 95%;
+      width: 90%;
     }
   }
   .text__history {
@@ -35,6 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 10px;
   }
 }

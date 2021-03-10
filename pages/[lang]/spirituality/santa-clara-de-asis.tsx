@@ -8,12 +8,13 @@ import client from '@/graphql/config'
 import { gql } from '@apollo/client'
 import { getPages } from '@/graphql/queries'
 
-export default function santaClaraDeAsis(props: { localization: Localization }) {
+export default function santaClaraDeAsis(props: { localization: Localization; data: any }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
 
   useEffect(() => {
-    getData()
+    setDataCMS(props.data[props.localization.locale])
+    setData(props.data)
   }, [])
 
   useEffect(() => {
@@ -22,12 +23,6 @@ export default function santaClaraDeAsis(props: { localization: Localization }) 
     }
   }, [props.localization.locale])
 
-  const getData = async () => {
-    const res = (await client.query({ query: gql(getPages), variables: { name: 'santaClaraDeAsis' } })) as { data: { getPages: any } }
-    console.log(res.data.getPages)
-    setDataCMS(res.data.getPages[props.localization.locale])
-    setData(res.data.getPages)
-  }
   return (
     <Layout title={props.localization.translations.santaClaraDeAsis}>
       <>
@@ -39,9 +34,12 @@ export default function santaClaraDeAsis(props: { localization: Localization }) 
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'santaClaraDeAsis' } })) as { data: { getPages: any } }).data.getPages
+
   return {
     props: {
-      localization
+      localization,
+      data
     }
   }
 }

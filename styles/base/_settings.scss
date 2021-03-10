@@ -81,20 +81,23 @@ $textFooter: #fff;
 
   .secondary__title {
     width: 80%;
-    bottom: 10%;
+    bottom: 5%;
     h1 {
-      font-size: 2vw;
+      font-size: 20pt;
     }
   }
 }
 
 @media screen and (max-width: 450px) {
   .main__title {
-    position: absolute;
+    position: inherit;
     z-index: 3;
-    bottom: 0;
-    left: 5%;
+    top: 0;
+    left: inherit;
+    height: calc(100vh - 70px);
     width: 100%;
+    display: flex;
+    align-items: flex-end;
     h1 {
       color: $textFooter;
       font-family: 'PlayFair' !important;
@@ -104,12 +107,14 @@ $textFooter: #fff;
   }
 
   .secondary__title {
-    position: absolute;
+    position: relative;
     z-index: 3;
-    top: 40px;
-    left: 5%;
+    top: inherit;
+    left: inherit;
     height: auto;
     width: 90%;
+    margin-top: 50px;
+    padding-left: 10px;
     h1 {
       color: $textFooter;
       font-family: 'PlayFair' !important;

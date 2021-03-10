@@ -29,9 +29,9 @@
 
 @media screen and (max-width: 450px) {
   .ourwork__container {
+    flex-direction: column-reverse;
     height: auto;
     .container__news {
-      margin-top: 100px;
       height: auto;
       flex-direction: column;
       margin-bottom: 30px;

@@ -6,9 +6,12 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    div {
-      div {
-        width: 70%;
+
+    > div {
+      padding: 1em;
+
+      > div {
+        width: 100%;
         overflow: auto;
       }
     }
@@ -24,16 +27,47 @@
       }
     }
   }
-  .video__about {
-    width: 90%;
-    margin: auto;
+  .video__about_san {
+    width: 100%;
+    min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    video {
+      width: 70%;
+    }
+  }
+  .video__about {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    height: 0;
+    position: relative;
+    padding-top: 56.25%;
     iframe {
-      width: 1080px;
-      height: 720px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80%;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .eucharistic__index {
+    height: auto;
+    margin-bottom: 50px;
+    .half__card {
+      grid-template-columns: repeat(1, 100%);
+      > div {
+        > div {
+          width: 90%;
+          overflow: auto;
+        }
+      }
+    }
+    .video__about_san {
+      height: auto;
     }
   }
 }

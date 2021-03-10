@@ -13,6 +13,12 @@ import { Localization } from '../i18n/types'
 import { getInitialLocale } from '../i18n/getInitialLocale'
 import { ApolloProvider } from '@apollo/client'
 import client from '@/graphql/config'
+import { ConfigProvider } from 'antd'
+//
+import locale from 'antd/lib/locale-provider/es_ES'
+import moment from 'moment'
+import 'moment/locale/en-gb' // important!
+moment.locale('es') // important!
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
@@ -38,9 +44,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <ApolloProvider client={client}>
-      <LanguageProvider localization={getLenguaje(pageProps.lang)}>
-        <Component {...pageProps} />
-      </LanguageProvider>
+      <ConfigProvider locale={locale}>
+        <LanguageProvider localization={getLenguaje(pageProps.lang)}>
+          <Component {...pageProps} />
+        </LanguageProvider>
+      </ConfigProvider>
     </ApolloProvider>
   )
 }

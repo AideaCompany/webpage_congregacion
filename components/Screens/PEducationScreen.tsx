@@ -1,21 +1,26 @@
 //i18ns
 import Header from '../header'
-import CardImage from '../CardImage'
 import { PropsScreens } from '@/types/types'
+import TargetText from '../TargetText'
 
 const PEducationScreen = (props: PropsScreens) => {
+  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
-            <div className="franciscan__index">
+            <div className="spirituality__index">
               <div className="secondary__title">
                 <h1>{props?.dataCMS?.title}</h1>
               </div>
-              <div className="half__card" style={{ width: '80%', margin: 'auto' }}>
-                <CardImage title="REFRAMI" img={props?.photos?.find(e => e.name === 'photoOne')} />
-                <CardImage title="MIFRAMI" img={props?.photos?.find(e => e.name === 'photoTwo')} />
+              <div className="img__card">
+                <TargetText text={props.dataCMS.text}>
+                  <a target="__blank" href={props.dataCMS.link}>
+                    Enlance Asambleas
+                  </a>
+                </TargetText>
+                <div className="img__cont">{props.photos && <img src={props.photos?.find(e => e.name === 'photoOne').photos[0].key} alt="" />}</div>
               </div>
             </div>
           </div>

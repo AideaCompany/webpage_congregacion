@@ -32,6 +32,7 @@
 
 @media screen and (max-width: 450px) {
   .cardProvinces {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: flex-end;

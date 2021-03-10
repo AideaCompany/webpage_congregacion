@@ -432,6 +432,11 @@ export type PropsScreens = {
   dataCMS: any
   mainPhoto?: any
   photos?: any[]
+  data?:any
+}
+
+export interface PropsBeFranciscan extends PropsScreens {
+  data: any
 }
 
 export interface PropsMisionScreen extends PropsScreens {

@@ -17,6 +17,7 @@ export default function index(props: { localization: Localization; fraternities:
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
+  await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
   const fraternities = ((await client.query({ query: gql(getFraternityWeb) })) as { data: { getFraternityWeb: IFraternity[] } }).data.getFraternityWeb
   return {
