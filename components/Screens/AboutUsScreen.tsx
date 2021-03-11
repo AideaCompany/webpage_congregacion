@@ -11,7 +11,7 @@ const AboutUsScreen = (props: PropsScreens) => {
 
   return (
     <>
-      <Header image={dataCMS.mainPhoto}>
+      <Header image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="video__about">
