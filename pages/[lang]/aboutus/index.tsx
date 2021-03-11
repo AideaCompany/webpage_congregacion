@@ -22,9 +22,11 @@ export default function aboutUs(props: { localization: Localization; data: any }
     }
   }, [props.localization.locale])
 
+  console.log(dataCMS)
+
   return (
     <Layout title={'Inicio'}>
-      <>{dataCMS && <AboutUsScreen dataCMS={dataCMS} />}</>
+      <>{data && <AboutUsScreen dataCMS={dataCMS} />}</>
     </Layout>
   )
 }
