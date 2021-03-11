@@ -1,13 +1,14 @@
+import { PropsScreens } from '@/types/types'
 import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
 import TargetText from '../TargetText'
 
-const AboutUsScreen = (props: { dataCMS: any }) => {
+const AboutUsScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
   const { dataCMS } = props
-  console.log(dataCMS.mainPhoto)
+
   return (
     <>
       <Header image={dataCMS.mainPhoto}>
