@@ -25,7 +25,7 @@ export default function beFranciscan(props: { localization: Localization; data: 
 
   return (
     <Layout title={props.localization.translations.beFranciscan}>
-      <>{dataCMS && data && <FranciscanScreen data={data} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>{data && <FranciscanScreen data={data} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

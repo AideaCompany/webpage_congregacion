@@ -27,7 +27,7 @@ export default function index(props: { localization: Localization; data_news: Ne
   return (
     <Layout title={props.localization.translations.ourWork}>
       <>
-        <>{dataCMS && data && <NewsScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} dataNews={news as NewsOBject} />}</>
+        <>{data && <NewsScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} dataNews={news as NewsOBject} />}</>
       </>
     </Layout>
   )

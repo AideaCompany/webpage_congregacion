@@ -26,7 +26,7 @@ export default function index(props: { localization: Localization; data: any }) 
   return (
     <Layout title={props.localization.translations.where}>
       <>
-        <> {dataCMS && data && <EuchSpiritualityScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <> {data && <EuchSpiritualityScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

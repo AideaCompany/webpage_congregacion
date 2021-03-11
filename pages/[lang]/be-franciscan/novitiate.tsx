@@ -25,7 +25,7 @@ export default function aspirantate(props: { localization: Localization; data: a
 
   return (
     <Layout title={props.localization.translations.novitiate}>
-      <>{dataCMS && data && <NovitiateScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>{data && <NovitiateScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

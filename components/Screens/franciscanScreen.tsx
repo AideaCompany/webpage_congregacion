@@ -19,7 +19,6 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
 
   const [events, setEvents] = useState<IEvent[]>([])
 
-  console.log(events)
   //effect
   useEffect(() => {
     getData()

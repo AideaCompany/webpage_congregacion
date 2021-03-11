@@ -7,7 +7,7 @@ import Header from '../header'
 
 const CarismaScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
-  console.log(props)
+
   return (
     <>
       <Header image={props?.mainPhoto}>

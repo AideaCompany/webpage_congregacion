@@ -25,7 +25,7 @@ export default function sanFranciscoDeAsis(props: { localization: Localization; 
   return (
     <Layout title={props.localization.translations.sanFranciscoDeAsis}>
       <>
-        <>{dataCMS && data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>{data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

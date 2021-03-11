@@ -4,7 +4,6 @@ import { PropsScreens } from '@/types/types'
 import TargetText from '../TargetText'
 
 const PEducationScreen = (props: PropsScreens) => {
-  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>

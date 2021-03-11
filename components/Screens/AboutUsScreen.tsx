@@ -7,9 +7,10 @@ import TargetText from '../TargetText'
 const AboutUsScreen = (props: { dataCMS: any }) => {
   // const { t } = useTranslation()
   const { dataCMS } = props
+  console.log(dataCMS.mainPhoto)
   return (
     <>
-      <Header image={'/images/body/firenze_santa.png'}>
+      <Header image={dataCMS.mainPhoto}>
         <>
           <div className="main__section">
             <div className="video__about">

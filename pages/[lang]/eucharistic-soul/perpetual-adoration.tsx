@@ -26,7 +26,7 @@ export default function perpetualAdoration(props: { localization: Localization; 
 
   return (
     <Layout title={props.localization.translations.perpetualAdoration}>
-      <>{dataCMS && data && <PerpetualScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>{data && <PerpetualScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

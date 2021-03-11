@@ -26,7 +26,7 @@ export default function santaClaraDeAsis(props: { localization: Localization; da
   return (
     <Layout title={props.localization.translations.santaClaraDeAsis}>
       <>
-        <>{dataCMS && data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>{data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

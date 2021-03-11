@@ -29,9 +29,7 @@ export default function madreCaridadBrader(props: { localization: Localization; 
   return (
     <Layout title={props.localization.translations.madreCaridadBraderZanher}>
       <>
-        <>
-          {dataCMS && data && <MadreScreen dataBlogs={blogs as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}
-        </>
+        <>{data && <MadreScreen dataBlogs={blogs as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )

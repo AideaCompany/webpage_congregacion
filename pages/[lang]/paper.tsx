@@ -31,7 +31,7 @@ export default function paper(props: { localization: Localization }) {
 
   return (
     <Layout title={'Inicio'}>
-      <>{dataCMS && data && <PaperScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>{data && <PaperScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

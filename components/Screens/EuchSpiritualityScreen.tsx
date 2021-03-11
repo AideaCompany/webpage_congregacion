@@ -4,7 +4,6 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const EuchSpiritualityScreen = (props: PropsScreens) => {
-  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>

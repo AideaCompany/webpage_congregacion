@@ -26,7 +26,7 @@ export default function eucharisticSoul(props: { localization: Localization; dat
   return (
     <Layout title={props.localization.translations.eucharisticSoul}>
       <>
-        <>{dataCMS && data && <EucharisticScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>{data && <EucharisticScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )
