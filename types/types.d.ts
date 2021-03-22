@@ -87,7 +87,7 @@ export type iCountry = {
   latlng?: [number, number]
   nativeName?: string
   _id: string
-  translations?: Translations
+  translations?: Translations[]
 }
 //User Secction
 
@@ -432,7 +432,7 @@ export type PropsScreens = {
   dataCMS: any
   mainPhoto?: any
   photos?: any[]
-  data?:any
+  data?: any
 }
 
 export interface PropsBeFranciscan extends PropsScreens {

@@ -321,8 +321,8 @@ export const getFraternity = /* GraphQL */ `
   }
 `
 export const getFraternityWeb = /* GraphQL */ `
-  query getFraternityWeb {
-    getFraternityWeb {
+  query getFraternityWeb($country: ID) {
+    getFraternityWeb(country: $country) {
       _id
       name
       province {

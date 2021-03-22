@@ -42,7 +42,7 @@ const Navigation = () => {
               </Menu.Item>
             </Menu.SubMenu>
             <Menu.Item>
-              <Link href={{ pathname: '/[lang]/fraternity', query: { lang: router.query.lang } }}>
+              <Link href={{ pathname: '/[lang]/find_us', query: { lang: router.query.lang } }}>
                 <a>{t('where').toUpperCase()}</a>
               </Link>
             </Menu.Item>
@@ -181,7 +181,7 @@ const Navigation = () => {
             </ul>
           </li>
           <li>
-            <Link href={{ pathname: '/[lang]/fraternity', query: { lang: router.query.lang } }}>
+            <Link href={{ pathname: '/[lang]/find_us', query: { lang: router.query.lang } }}>
               <a>{t('where').toUpperCase()}</a>
             </Link>
           </li>
