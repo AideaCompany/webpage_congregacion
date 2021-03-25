@@ -15,11 +15,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
     <>
       <Header image={props?.mainPhoto}>
         <>
-          <div className="main__section">
-            <div className="main__title">
-              <h1>{(props.dataCMS?.title as string).toUpperCase()}</h1>
-            </div>
-          </div>
+          <div className="main__section"></div>
           <div className="main__section">
             <div className="about__summary">
               <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
