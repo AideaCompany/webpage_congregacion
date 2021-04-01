@@ -1,3 +1,9 @@
+.animation__home {
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .about__summary {
   width: 100%;
   height: 100vh;
@@ -141,6 +147,9 @@
 }
 
 @media screen and (max-width: 450px) {
+  .first__home {
+    height: 100vh;
+  }
   .about__summary {
     height: auto;
     display: block;

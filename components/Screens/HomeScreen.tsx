@@ -7,19 +7,39 @@ import React from 'react'
 import useTranslation from '../../hooks/useTranslations'
 import { News } from '../News'
 import TargetText from '../TargetText'
+import * as animationData from 'public/animation.json'
+import Lottie from 'react-lottie'
+import { useMediaQuery } from 'react-responsive'
 
+const dataAnim = animationData as any
 const HomeScreen = (props: PropsHomeScreen) => {
   const { t, locale } = useTranslation()
 
+  const isMobile = useMediaQuery({
+    query: '(max-width: 450px)'
+  })
+  console.log(isMobile)
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    speed: 1,
+    animationData: dataAnim.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
   return (
     <>
       <Header image={props?.mainPhoto}>
         <>
-          <div className="main__section"></div>
+          <div className="main__section first__home">
+            <div className="animation__home">
+              <Lottie options={defaultOptions} height={!isMobile ? '80%' : '50%'} width={isMobile ? '100%' : '80%'} />
+            </div>
+          </div>
           <div className="main__section">
             <div className="about__summary">
               <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
-
               <div className="images">
                 <div>
                   <div className="left__images">

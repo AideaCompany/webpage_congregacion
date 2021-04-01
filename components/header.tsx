@@ -12,7 +12,7 @@ const Header = (props: propsHeader) => {
       {props.image && (
         <div className="background">
           <img src={props.image} className="background__image" alt={`CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA ${props.title}`} />
-          <div className="background__layout"></div>
+          {/* <div className="background__layout"></div> */}
         </div>
       )}
 
