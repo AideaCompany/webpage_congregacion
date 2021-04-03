@@ -18,7 +18,6 @@ const HomeScreen = (props: PropsHomeScreen) => {
   const isMobile = useMediaQuery({
     query: '(max-width: 450px)'
   })
-  console.log(isMobile)
   const defaultOptions = {
     loop: false,
     autoplay: true,
