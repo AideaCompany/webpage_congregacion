@@ -40,15 +40,17 @@ const HomeScreen = (props: PropsHomeScreen) => {
             <div className="about__summary">
               <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
               <div className="images">
-                <div>
-                  <div className="left__images">
-                    <img src={'/images/index/hermana1.png'} />
-                    <img src={'/images/index/hermana2.png'} />
-                  </div>
-                  <div className="right__images">
-                    <img src={'/images/index/hermana3.png'} />
-                  </div>
-                </div>
+                <Carousel>
+                  {props.photos
+                    ?.find(e => (e.name = 'photoUs'))
+                    .photos.map((photo: any, i: number) => (
+                      <div key={i}>
+                        <div className="image__us">
+                          <img src={photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                        </div>
+                      </div>
+                    ))}
+                </Carousel>
               </div>
             </div>
           </div>
@@ -62,7 +64,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
                       .photos.map((photo: any, i: number) => (
                         <div key={i}>
                           <div className="item">
-                            <img src={photo.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                            <img src={photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                           </div>
                         </div>
                       ))}
