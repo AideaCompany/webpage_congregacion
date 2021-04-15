@@ -1030,169 +1030,21 @@ export const listFraternity = /* GraphQL */ `
     listFraternity(province: $province) {
       _id
       name
-      province {
-        _id
-        name
-        country {
-          _id
-          name
-          latlng
-          translations {
-            de
-            es
-            fr
-            ja
-            it
-            br
-            pt
-            nl
-            hr
-            fa
-          }
-          nativeName
-          createdAt
-          updatedAt
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        fax
-        link
-        email
-        opened
-        closed
-        photo {
-          filename
-          key
-        }
-        shouldShow
-        createdAt
-        updatedAt
-      }
       country {
         _id
-        name
         latlng
-        nativeName
-        createdAt
-        updatedAt
-      }
-      misionApostol {
-        _id
-        name
-        province {
-          _id
-          name
-          state
-          city
-          address
-          phone1
-          phone2
-          fax
-          link
-          email
-          opened
-          closed
-          shouldShow
-          createdAt
-          updatedAt
+        translations {
+          de
+          es
+          fr
+          ja
+          it
+          br
+          pt
+          nl
+          hr
+          fa
         }
-        fraternity {
-          _id
-          name
-          province {
-            _id
-            name
-            state
-            city
-            address
-            phone1
-            phone2
-            fax
-            link
-            email
-            opened
-            closed
-            shouldShow
-            createdAt
-            updatedAt
-          }
-          country {
-            _id
-            name
-            latlng
-            nativeName
-            createdAt
-            updatedAt
-          }
-          misionApostol {
-            _id
-            name
-            country {
-              _id
-              name
-              latlng
-              nativeName
-              createdAt
-              updatedAt
-            }
-            mision {
-              _id
-              name
-            }
-            state
-            city
-            address
-            phone1
-            phone2
-            cel
-            email
-            fax
-            opened
-            closed
-            finality
-          }
-          state
-          city
-          address
-          phone1
-          phone2
-          cel
-          email
-          opened
-          closed
-          photo {
-            filename
-            key
-          }
-          shouldShow
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        cel
-        email
-        fax
-        opened
-        closed
-        finality
-      }
-      state
-      city
-      address
-      phone1
-      phone2
-      cel
-      email
-      opened
-      closed
-      photo {
-        filename
-        key
       }
       shouldShow
     }
