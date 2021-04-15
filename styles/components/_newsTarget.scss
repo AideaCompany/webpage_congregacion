@@ -10,6 +10,8 @@
     align-items: center;
     h1 {
       color: $textFooter;
+      margin: 0;
+      font-size: 15pt;
     }
   }
   .body__news {
@@ -31,13 +33,6 @@
         padding: 20px;
         font-family: 'Montserrat-Regular';
       }
-    }
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  .news__target {
-    .header__news {
     }
   }
 }

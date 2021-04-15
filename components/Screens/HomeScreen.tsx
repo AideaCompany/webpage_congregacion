@@ -33,7 +33,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
         <>
           <div className="main__section first__home">
             <div className="animation__home">
-              <Lottie options={defaultOptions} height={!isMobile ? '80%' : '50%'} width={isMobile ? '100%' : '80%'} />
+              <Lottie options={defaultOptions} height={!isMobile ? '100%' : '50%'} width={isMobile ? '100%' : '80%'} />
             </div>
           </div>
           <div className="main__section">
