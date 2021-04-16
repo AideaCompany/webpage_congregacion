@@ -61,7 +61,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
                   <Carousel>
                     {props.photos
                       ?.find(e => e.name === 'photoOurHeadquarters')
-                      .photos.map((photo: any, i: number) => (
+                      ?.photos?.map((photo: any, i: number) => (
                         <div key={i}>
                           <div className="item">
                             <img src={photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
