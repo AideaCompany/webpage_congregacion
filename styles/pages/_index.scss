@@ -21,6 +21,19 @@
       width: 100%;
       height: 50%;
       padding: 20px;
+      .item {
+        width: 100%;
+        height: calc(25vw);
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        > img {
+          width: 100%;
+          height: 25vw;
+          object-fit: cover;
+          background-color: rgba($color: #fff, $alpha: 0.8);
+        }
+      }
     }
   }
 }

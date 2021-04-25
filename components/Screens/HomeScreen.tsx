@@ -40,12 +40,12 @@ const HomeScreen = (props: PropsHomeScreen) => {
             <div className="about__summary">
               <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
               <div className="images">
-                <Carousel>
+                <Carousel autoplay={true}>
                   {props.photos
                     ?.find(e => (e.name = 'photoUs'))
-                    .photos.map((photo: any, i: number) => (
+                    ?.photos.map((photo: any, i: number) => (
                       <div key={i}>
-                        <div className="image__us">
+                        <div className="item">
                           <img src={photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                         </div>
                       </div>

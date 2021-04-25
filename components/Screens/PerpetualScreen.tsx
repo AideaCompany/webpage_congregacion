@@ -9,7 +9,7 @@ const PerpetualScreen = (props: PropsScreens) => {
       <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
-            <div className="eucharistic__index">
+            <div className="eucharistic__index perpetual__container">
               <div className="secondary__title">
                 <h1>{props?.dataCMS?.title}</h1>
               </div>

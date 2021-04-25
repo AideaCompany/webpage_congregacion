@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  height: calc(100vh - 70px);
   video {
-    width: 80%;
+    width: 70%;
     height: auto;
   }
 }

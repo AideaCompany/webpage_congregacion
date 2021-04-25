@@ -22,7 +22,7 @@ $textFooter: #fff;
   z-index: 3;
   bottom: 0;
   left: 5%;
-  width: 40%;
+  width: 60%;
   h1 {
     color: $textFooter;
     font-family: 'PlayFair' !important;
@@ -34,9 +34,9 @@ $textFooter: #fff;
 .secondary__title {
   position: absolute;
   z-index: 3;
-  bottom: 3%;
+  top: 3%;
   left: 5%;
-  width: 40%;
+  width: 60%;
   h1 {
     color: $textFooter;
     font-family: 'PlayFair' !important;

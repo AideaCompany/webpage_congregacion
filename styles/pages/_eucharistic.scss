@@ -6,12 +6,14 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-
     > div {
       padding: 1em;
-
+      position: relative;
       > div {
-        width: 100%;
+        position: absolute;
+        width: 90%;
+        bottom: 30px;
+
         overflow: auto;
       }
     }
@@ -38,21 +40,24 @@
     }
   }
   .video__about {
-    width: 80%;
-    margin: auto;
-    margin-top: 60px;
-    height: 0;
     position: relative;
-    padding-top: 56.25%;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
     iframe {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 80%;
+      top: 50%; /* position the top  edge of the element at the middle of the parent */
+      left: 50%; /* position the left edge of the element at the middle of the parent */
+
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 60%;
+      border: none;
     }
   }
 }
+
 @media screen and (max-width: 450px) {
   .eucharistic__index {
     height: auto;
@@ -64,6 +69,12 @@
           width: 90%;
           overflow: auto;
         }
+      }
+    }
+    .video__about {
+      iframe {
+        width: 90%;
+        height: 90%;
       }
     }
     .video__about_san {

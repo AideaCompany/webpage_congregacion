@@ -60,7 +60,15 @@
     }
   }
   .half__card__madre {
-    grid-template-columns: repeat(1, 100%);
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    grid-template-columns: repeat(1, 50%);
+    > div {
+      div {
+        height: auto;
+      }
+    }
   }
   .blog__entries {
     width: 100%;
