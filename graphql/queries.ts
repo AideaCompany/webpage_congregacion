@@ -35,24 +35,7 @@ export const getBlogs = /* GraphQL */ `
     }
   }
 `
-export const getContentType = /* GraphQL */ `
-  query getContentType($_id: inputId) {
-    getContentType(_id: $_id) {
-      _id
-      name
-      dbName
-      elements {
-        _id
-        key
-        name
-        type
-        unique
-        required
-      }
-      type
-    }
-  }
-`
+
 export const getCountry = /* GraphQL */ `
   query getCountry($_id: inputId) {
     getCountry(_id: $_id) {
@@ -91,161 +74,31 @@ export const getEvents = /* GraphQL */ `
     }
   }
 `
-export const getFraternity = /* GraphQL */ `
-  query getFraternity($_id: inputId) {
-    getFraternity(_id: $_id) {
+
+export const listFraternityWeb = /* GraphQL */ `
+  query listFraternityWeb {
+    listFraternityWeb {
       _id
       name
-      province {
-        _id
-        name
-        country {
-          _id
-          name
-          latlng
-          translations {
-            de
-            es
-            fr
-            ja
-            it
-            br
-            pt
-            nl
-            hr
-            fa
-          }
-          nativeName
-          createdAt
-          updatedAt
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        fax
-        link
-        email
-        opened
-        closed
-        photo {
-          filename
-          key
-        }
-        shouldShow
-        createdAt
-        updatedAt
-      }
       country {
         _id
         name
         latlng
+        translations {
+          de
+          es
+          fr
+          ja
+          it
+          br
+          pt
+          nl
+          hr
+          fa
+        }
         nativeName
         createdAt
         updatedAt
-      }
-      misionApostol {
-        _id
-        name
-        province {
-          _id
-          name
-          state
-          city
-          address
-          phone1
-          phone2
-          fax
-          link
-          email
-          opened
-          closed
-          shouldShow
-          createdAt
-          updatedAt
-        }
-        fraternity {
-          _id
-          name
-          province {
-            _id
-            name
-            state
-            city
-            address
-            phone1
-            phone2
-            fax
-            link
-            email
-            opened
-            closed
-            shouldShow
-            createdAt
-            updatedAt
-          }
-          country {
-            _id
-            name
-            latlng
-            nativeName
-            createdAt
-            updatedAt
-          }
-          misionApostol {
-            _id
-            name
-            country {
-              _id
-              name
-              latlng
-              nativeName
-              createdAt
-              updatedAt
-            }
-            mision {
-              _id
-              name
-            }
-            state
-            city
-            address
-            phone1
-            phone2
-            cel
-            email
-            fax
-            opened
-            closed
-            finality
-          }
-          state
-          city
-          address
-          phone1
-          phone2
-          cel
-          email
-          opened
-          closed
-          photo {
-            filename
-            key
-          }
-          shouldShow
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        cel
-        email
-        fax
-        opened
-        closed
-        finality
       }
       state
       city
@@ -264,52 +117,12 @@ export const getFraternity = /* GraphQL */ `
     }
   }
 `
+
 export const getFraternityWeb = /* GraphQL */ `
   query getFraternityWeb($country: ID) {
     getFraternityWeb(country: $country) {
       _id
       name
-      province {
-        _id
-        name
-        country {
-          _id
-          name
-          latlng
-          translations {
-            de
-            es
-            fr
-            ja
-            it
-            br
-            pt
-            nl
-            hr
-            fa
-          }
-          nativeName
-          createdAt
-          updatedAt
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        fax
-        link
-        email
-        opened
-        closed
-        photo {
-          filename
-          key
-        }
-        shouldShow
-        createdAt
-        updatedAt
-      }
       country {
         _id
         name
@@ -317,108 +130,6 @@ export const getFraternityWeb = /* GraphQL */ `
         nativeName
         createdAt
         updatedAt
-      }
-      misionApostol {
-        _id
-        name
-        province {
-          _id
-          name
-          state
-          city
-          address
-          phone1
-          phone2
-          fax
-          link
-          email
-          opened
-          closed
-          shouldShow
-          createdAt
-          updatedAt
-        }
-        fraternity {
-          _id
-          name
-          province {
-            _id
-            name
-            state
-            city
-            address
-            phone1
-            phone2
-            fax
-            link
-            email
-            opened
-            closed
-            shouldShow
-            createdAt
-            updatedAt
-          }
-          country {
-            _id
-            name
-            latlng
-            nativeName
-            createdAt
-            updatedAt
-          }
-          misionApostol {
-            _id
-            name
-            country {
-              _id
-              name
-              latlng
-              nativeName
-              createdAt
-              updatedAt
-            }
-            mision {
-              _id
-              name
-            }
-            state
-            city
-            address
-            phone1
-            phone2
-            cel
-            email
-            fax
-            opened
-            closed
-            finality
-          }
-          state
-          city
-          address
-          phone1
-          phone2
-          cel
-          email
-          opened
-          closed
-          photo {
-            filename
-            key
-          }
-          shouldShow
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        cel
-        email
-        fax
-        opened
-        closed
-        finality
       }
       state
       city
@@ -513,22 +224,6 @@ export const getLastNews = /* GraphQL */ `
         title
         description
       }
-    }
-  }
-`
-export const getMision = /* GraphQL */ `
-  query getMision($_id: inputId) {
-    getMision(_id: $_id) {
-      _id
-      name
-    }
-  }
-`
-export const getMisionApostol = /* GraphQL */ `
-  query getMisionApostol($_id: inputId) {
-    getMisionApostol(_id: $_id) {
-      _id
-      name
     }
   }
 `
@@ -645,179 +340,6 @@ export const getNews = /* GraphQL */ `
     }
   }
 `
-export const getObras = /* GraphQL */ `
-  query getObras($_id: inputId) {
-    getObras(_id: $_id) {
-      _id
-      name
-      province {
-        _id
-        name
-        country {
-          _id
-          name
-          latlng
-          translations {
-            de
-            es
-            fr
-            ja
-            it
-            br
-            pt
-            nl
-            hr
-            fa
-          }
-          nativeName
-          createdAt
-          updatedAt
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        fax
-        link
-        email
-        opened
-        closed
-        photo {
-          filename
-          key
-        }
-        shouldShow
-        createdAt
-        updatedAt
-      }
-      fraternity {
-        _id
-        name
-        province {
-          _id
-          name
-          state
-          city
-          address
-          phone1
-          phone2
-          fax
-          link
-          email
-          opened
-          closed
-          shouldShow
-          createdAt
-          updatedAt
-        }
-        country {
-          _id
-          name
-          latlng
-          nativeName
-          createdAt
-          updatedAt
-        }
-        misionApostol {
-          _id
-          name
-          province {
-            _id
-            name
-            state
-            city
-            address
-            phone1
-            phone2
-            fax
-            link
-            email
-            opened
-            closed
-            shouldShow
-            createdAt
-            updatedAt
-          }
-          fraternity {
-            _id
-            name
-            state
-            city
-            address
-            phone1
-            phone2
-            cel
-            email
-            opened
-            closed
-            photo {
-              filename
-              key
-            }
-            shouldShow
-          }
-          country {
-            _id
-            name
-            latlng
-            nativeName
-            createdAt
-            updatedAt
-          }
-          mision {
-            _id
-            name
-          }
-          state
-          city
-          address
-          phone1
-          phone2
-          cel
-          email
-          fax
-          opened
-          closed
-          finality
-        }
-        state
-        city
-        address
-        phone1
-        phone2
-        cel
-        email
-        opened
-        closed
-        shouldShow
-      }
-      country {
-        _id
-        name
-        latlng
-        nativeName
-        createdAt
-        updatedAt
-      }
-      mision {
-        _id
-        name
-      }
-      state
-      city
-      address
-      phone1
-      phone2
-      cel
-      email
-      fax
-      opened
-      closed
-      finality
-    }
-  }
-`
 export const getPages = /* GraphQL */ `
   query getPages($name: String) {
     getPages(name: $name) {
@@ -842,51 +364,7 @@ export const getPages = /* GraphQL */ `
     }
   }
 `
-export const getProvinces = /* GraphQL */ `
-  query getProvinces($_id: inputId) {
-    getProvinces(_id: $_id) {
-      _id
-      name
-      country {
-        _id
-        name
-        latlng
-        translations {
-          de
-          es
-          fr
-          ja
-          it
-          br
-          pt
-          nl
-          hr
-          fa
-        }
-        nativeName
-        createdAt
-        updatedAt
-      }
-      state
-      city
-      address
-      phone1
-      phone2
-      fax
-      link
-      email
-      opened
-      closed
-      photo {
-        filename
-        key
-      }
-      shouldShow
-      createdAt
-      updatedAt
-    }
-  }
-`
+
 export const getProvincesWeb = /* GraphQL */ `
   query getProvincesWeb {
     getProvincesWeb {
@@ -932,6 +410,7 @@ export const getProvincesWeb = /* GraphQL */ `
     }
   }
 `
+
 export const listBlogs = /* GraphQL */ `
   query listBlogs {
     listBlogs {
@@ -969,24 +448,7 @@ export const listBlogs = /* GraphQL */ `
     }
   }
 `
-export const listContentType = /* GraphQL */ `
-  query listContentType {
-    listContentType {
-      _id
-      name
-      dbName
-      elements {
-        _id
-        key
-        name
-        type
-        unique
-        required
-      }
-      type
-    }
-  }
-`
+
 export const listCountry = /* GraphQL */ `
   query listCountry {
     listCountry {
@@ -1025,47 +487,7 @@ export const listEvents = /* GraphQL */ `
     }
   }
 `
-export const listFraternity = /* GraphQL */ `
-  query listFraternity($province: ID) {
-    listFraternity(province: $province) {
-      _id
-      name
-      country {
-        _id
-        latlng
-        translations {
-          de
-          es
-          fr
-          ja
-          it
-          br
-          pt
-          nl
-          hr
-          fa
-        }
-      }
-      shouldShow
-    }
-  }
-`
-export const listMision = /* GraphQL */ `
-  query listMision {
-    listMision {
-      _id
-      name
-    }
-  }
-`
-export const listMisionApostol = /* GraphQL */ `
-  query listMisionApostol {
-    listMisionApostol {
-      _id
-      name
-    }
-  }
-`
+
 export const listMisionsWeb = /* GraphQL */ `
   query listMisionsWeb {
     listMisionsWeb {

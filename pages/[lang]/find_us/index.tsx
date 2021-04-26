@@ -1,6 +1,6 @@
 import FindUsScreen from '@/components/Screens/FindUsScreen'
 import client from '@/graphql/config'
-import { listFraternity } from '@/graphql/queries'
+import { listFraternityWeb } from '@/graphql/queries'
 import { iCountry, IFraternity } from '@/types/types'
 import { gql } from '@apollo/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -19,7 +19,7 @@ export default function index(props: { localization: Localization }) {
 
   const getData = async () => {
     await client.cache.reset()
-    const fraternityCountry = (await client.query({ query: gql(listFraternity) })).data.listFraternity as IFraternity[]
+    const fraternityCountry = (await client.query({ query: gql(listFraternityWeb) })).data.listFraternityWeb as IFraternity[]
     const countries = _.uniq(fraternityCountry, x => {
       return (x.country as iCountry)._id
     })

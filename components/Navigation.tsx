@@ -67,40 +67,55 @@ const Navigation = () => {
                   <a>{t('parochial').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
-            </Menu.SubMenu>
-            <Menu.SubMenu title={t('vocationMinistry').toUpperCase()}>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional', query: { lang: router.query.lang } }}>
-                  <a>{t('vocationMinistry').toUpperCase()}</a>
+                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                  <a>{t('social').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/aspirantate', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                  <a>{t('adgente').toUpperCase()}</a>
+                </Link>
+              </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.Item>
+              <Link href={{ pathname: '/[lang]/pastoral-vocacional', query: { lang: router.query.lang } }}>
+                <a>{t('vocationMinistry').toUpperCase()}</a>
+              </Link>
+            </Menu.Item>
+            <Menu.SubMenu title={t('vocationalFormation').toUpperCase()}>
+              <Menu.Item>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional', query: { lang: router.query.lang } }}>
+                  <a>{t('vocationalFormation').toUpperCase()}</a>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/aspirantate', query: { lang: router.query.lang } }}>
                   <a>{t('aspirantate').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/postulancy', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/postulancy', query: { lang: router.query.lang } }}>
                   <a>{t('postulancy').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/novitiate', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/novitiate', query: { lang: router.query.lang } }}>
                   <a>{t('novitiate').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/junerado', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/junerado', query: { lang: router.query.lang } }}>
                   <a>{t('junerado').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/permanent-education', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/permanent-education', query: { lang: router.query.lang } }}>
                   <a>{t('permanentEducation').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/lay-branch', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/lay-branch', query: { lang: router.query.lang } }}>
                   <a>{t('layBranch').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
@@ -205,40 +220,55 @@ const Navigation = () => {
                   <a>{t('parochial')}</a>
                 </Link>
               </li>
+              <li>
+                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                  <a>{t('social')}</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                  <a>{t('adgente')}</a>
+                </Link>
+              </li>
             </ul>
           </li>
           <li>
             <Link href={{ pathname: '/[lang]/pastoral-vocacional', query: { lang: router.query.lang } }}>
               <a>{t('vocationMinistry').toUpperCase()}</a>
             </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: '/[lang]/formacion-vocacional', query: { lang: router.query.lang } }}>
+              <a>{t('vocationalFormation').toUpperCase()}</a>
+            </Link>
             <ul className="navBar__subMenu">
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/aspirantate', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/aspirantate', query: { lang: router.query.lang } }}>
                   <a>{t('aspirantate')}</a>
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/postulancy', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/postulancy', query: { lang: router.query.lang } }}>
                   <a>{t('postulancy')}</a>
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/novitiate', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/novitiate', query: { lang: router.query.lang } }}>
                   <a>{t('novitiate')}</a>
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/junerado', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/junerado', query: { lang: router.query.lang } }}>
                   <a>{t('junerado')}</a>
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/permanent-education', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/permanent-education', query: { lang: router.query.lang } }}>
                   <a>{t('permanentEducation')}</a>
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/pastoral-vocacional/lay-branch', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/formacion-vocacional/lay-branch', query: { lang: router.query.lang } }}>
                   <a>{t('layBranch')}</a>
                 </Link>
               </li>

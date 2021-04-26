@@ -1,14 +1,14 @@
-import FraternityScreen from '../../../components/Screens/FraternityScreen'
 import client from '@/graphql/config'
-import { getFraternityWeb, listProvinces } from '@/graphql/queries'
-import { IFraternity, Province, iCountry } from '@/types/types'
+import { getFraternityWeb, listFraternityWeb } from '@/graphql/queries'
+import { iCountry, IFraternity } from '@/types/types'
 import { gql } from '@apollo/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import _ from 'underscore'
 import Layout from '../../../components/Layout'
+import FraternityScreen from '../../../components/Screens/FraternityScreen'
 import { Localization } from '../../../i18n/types'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
-import _ from 'underscore'
-import { ParsedUrlQuery } from 'querystring'
 
 export default function index(props: { localization: Localization; fraternities: IFraternity[] }) {
   return (
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   await client.cache.reset()
-  const provinceContry = (await client.query({ query: gql(listProvinces) })).data.listProvinces as Province[]
+  const provinceContry = (await client.query({ query: gql(listFraternityWeb) })).data.listFraternityWeb as IFraternity[]
   const countries = _.uniq(provinceContry, x => {
     return (x.country as iCountry)._id
   })
