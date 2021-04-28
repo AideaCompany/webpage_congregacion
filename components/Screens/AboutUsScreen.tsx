@@ -16,23 +16,12 @@ const AboutUsScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="video__about">
               <video src="" controls></video>
-              <div className="secondary__title">
-                <h1>{dataCMS?.title}</h1>
-              </div>
+              <div className="secondary__title" dangerouslySetInnerHTML={{ __html: dataCMS?.title }}></div>
             </div>
           </div>
           <div className="main__section">
             <div className="text__history">
-              <TargetText
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam,
-                    excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at
-                    perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut
-                    veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Ipsum ea repellendus sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis
-                    in. Repudiandae dolores at perspiciatis. Non, illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea repellendus
-                    sequi fugit, placeat aut veniam ducimus rem numquam, excepturi eius ab omnis in. Repudiandae dolores at perspiciatis. Non, illo."
-              />
+              <TargetText background={props.colors?.find(e => e.name === 'textAbout_ColorBack').color} text={props.dataCMS.textAbout} />
             </div>
           </div>
         </>

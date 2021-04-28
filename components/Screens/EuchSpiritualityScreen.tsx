@@ -10,9 +10,7 @@ const EuchSpiritualityScreen = (props: PropsScreens) => {
         <>
           <div className="main__section">
             <div className="eucharistic__index">
-              <div className="secondary__title">
-                <h1>{props?.dataCMS?.title}</h1>
-              </div>
+              <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="half__card">
                 <div className="cont__img">
                   <img src={props.photos?.find(e => e.name === 'photoMain').photos[0].key} alt="" />

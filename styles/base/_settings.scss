@@ -37,10 +37,10 @@ $textFooter: #fff;
   top: 3%;
   left: 5%;
   width: 60%;
-  h1 {
+  > * {
     color: $textFooter;
     font-family: 'PlayFair' !important;
-    font-size: 2vw;
+    font-size: 25pt;
     font-weight: bold;
   }
 }

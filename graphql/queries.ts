@@ -357,9 +357,14 @@ export const getPages = /* GraphQL */ `
       photos {
         name
         photos {
+          _id
           filename
           key
         }
+      }
+      colors {
+        name
+        color
       }
     }
   }

@@ -10,9 +10,7 @@ const AspirantateScreen = (props: PropsScreens) => {
         <>
           <div className="main__section">
             <div className="franciscan__index">
-              <div className="secondary__title">
-                <h1>{props?.dataCMS?.title}</h1>
-              </div>
+              <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="half__card">
                 <TargetText text={props?.dataCMS?.mainText} />
               </div>

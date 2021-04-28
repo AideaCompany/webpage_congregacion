@@ -27,6 +27,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
       preserveAspectRatio: 'xMidYMid slice'
     }
   }
+  // console.log(props.colors)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -38,7 +39,11 @@ const HomeScreen = (props: PropsHomeScreen) => {
           </div>
           <div className="main__section">
             <div className="about__summary">
-              <TargetText title={props.dataCMS?.titleUs} text={props.dataCMS?.textUs} />
+              <TargetText
+                background={props.colors?.find(e => e.name === 'textUs_ColorBack').color}
+                title={props.dataCMS?.titleUs}
+                text={props.dataCMS?.textUs}
+              />
               <div className="images">
                 <Carousel autoplay={true}>
                   {props.photos
@@ -117,4 +122,4 @@ const HomeScreen = (props: PropsHomeScreen) => {
   )
 }
 
-export default HomeScreen
+export default React.memo(HomeScreen)

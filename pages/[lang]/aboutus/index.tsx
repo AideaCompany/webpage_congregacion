@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import client from '@/graphql/config'
 import { gql } from '@apollo/client'
 import { getPages } from '@/graphql/queries'
+
 export default function aboutUs(props: { localization: Localization; data: any }) {
   const [dataCMS, setDataCMS] = useState<any>()
   const [data, setData] = useState<any>()
@@ -23,8 +24,8 @@ export default function aboutUs(props: { localization: Localization; data: any }
   }, [props.localization.locale])
 
   return (
-    <Layout title={'Inicio'}>
-      <>{data && <AboutUsScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+    <Layout title={props.localization.translations.about}>
+      <>{data && <AboutUsScreen colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
     </Layout>
   )
 }

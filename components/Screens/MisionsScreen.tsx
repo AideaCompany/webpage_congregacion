@@ -28,7 +28,9 @@ const MisionScreen = (props: PropsMisionScreen) => {
                           <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                         </div>
                         <div className="text_mision">
-                          <TargetText classname="misionsTarget" title={mision[locale]?.title} text={mision[locale]?.description} />
+                          <div>
+                            <TargetText classname="misionsTarget" title={mision[locale]?.title} text={mision[locale]?.description} />
+                          </div>
                         </div>
                       </div>
                     </div>

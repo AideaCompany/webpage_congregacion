@@ -10,9 +10,7 @@ const SanctuaryScreen = (props: PropsScreens) => {
         <>
           <div className="main__section">
             <div className="eucharistic__index">
-              <div className="secondary__title">
-                <h1>{props?.dataCMS?.title}</h1>
-              </div>
+              <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="video__about_san">
                 <video src="" controls></video>
               </div>

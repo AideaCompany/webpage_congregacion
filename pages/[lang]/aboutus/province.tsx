@@ -10,7 +10,7 @@ import { getLocalizationProps } from '../../../providers/LenguageContext'
 
 export default function ProvincePage(props: { localization: Localization; provinces: Province[] }) {
   return (
-    <Layout title={'Inicio'}>
+    <Layout title={props.localization.translations.provinces}>
       <ProvinceScreen provinces={props.provinces} />
     </Layout>
   )

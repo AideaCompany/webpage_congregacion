@@ -15,7 +15,6 @@ const LayBranchScreen = (props: PropsScreens) => {
               </div>
               <div className="img__card">
                 <TargetText title={props.dataCMS.titleMiframi} text={props.dataCMS.mainText} />
-
                 <div className="img__cont">
                   {props.photos && <img src={props.photos?.find(e => e.name === 'photoMiframi').photos[0].key} alt="" />}
                 </div>

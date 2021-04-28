@@ -433,6 +433,7 @@ export type PropsScreens = {
   mainPhoto?: any
   photos?: any[]
   data?: any
+  colors?: any[]
 }
 
 export interface PropsBeFranciscan extends PropsScreens {

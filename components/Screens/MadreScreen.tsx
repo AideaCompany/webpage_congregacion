@@ -11,9 +11,7 @@ const MadreScreen = (props: PropsMadreScreen) => {
         <>
           <div className="main__section">
             <div className="spirituality__index">
-              <div className="secondary__title">
-                <h1>{props?.dataCMS?.title}</h1>
-              </div>
+              <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="half__card half__card__madre">
                 <TargetText text={props?.dataCMS?.mainText} />
               </div>

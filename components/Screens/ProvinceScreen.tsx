@@ -18,7 +18,7 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
           <div key={i} className="main__section">
             <div className="province__container">
               <div className="secondary__title cardProvinces">
-                <TargetText classname="provincesTarget" title={e.name as string}>
+                <TargetText classname="provincesTarget" title={`<h2>${e.name as string}</h2>`}>
                   <>
                     <ul>
                       <li>

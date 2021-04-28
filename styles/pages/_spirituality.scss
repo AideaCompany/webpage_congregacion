@@ -6,35 +6,48 @@
   justify-content: center;
   align-items: center;
   .img__card {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
     > div {
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 10%;
-      width: 55%;
-      min-width: 350px;
-      div {
-        padding: 20px;
-        p {
-          font-size: 0.9em;
-          margin: 0;
-        }
-      }
-    }
-    .img__cont {
-      z-index: 1;
-      background-color: #303030d0;
-      position: absolute;
       width: 50%;
-      height: 70%;
-      top: 10%;
-      left: 30%;
-      > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
       }
     }
+    .text {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      > div {
+        width: auto;
+      }
+    }
+    // .img__cont {
+    //   z-index: 1;
+    //   background-color: #303030d0;
+    //   position: absolute;
+    //   width: 50%;
+    //   height: 70%;
+    //   top: 10%;
+    //   left: 30%;
+    //   > img {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    //   }
+    // }
   }
   .half__card {
     width: 90%;
@@ -99,7 +112,7 @@
 
 @media screen and (max-width: 1366px) {
   .spirituality__index {
-    height: auto;
+    height: calc(100vh - 70px);
     .img__card {
       > div {
         top: 40%;
@@ -128,20 +141,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       > div {
-        position: relative;
-        top: inherit;
-        left: inherit;
-      }
-      .img__cont {
-        z-index: 1;
-        background-color: #303030d0;
-        position: relative;
-        width: 50%;
-        height: 70%;
-        top: inherit;
-        left: inherit;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 93%;
+          height: 70%;
+        }
       }
     }
     .half__card {

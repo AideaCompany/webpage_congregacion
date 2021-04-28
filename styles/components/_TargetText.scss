@@ -6,12 +6,28 @@
   padding: 5em;
   .div__text {
     width: 100%;
-
-    padding: 50px;
+    // border: 3px solid lightblue;
+    padding: 30px;
     height: auto;
-    background-color: rgba($color: #fff, $alpha: 0.8);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
     .title {
-      color: $lightBlue;
+      h2,
+      h2,
+      h1 {
+        color: $lightBlue;
+        font-family: 'PlayFair';
+        margin: 0;
+      }
+      h1 {
+        font-size: 30pt;
+      }
+      h2 {
+        font-size: 25pt;
+      }
+    }
+    .text_template {
+      margin: 10px 0;
     }
     .contact_subtitle {
       h2 {
@@ -21,8 +37,9 @@
     }
     ul {
       li {
+        color: $dark-grey;
         list-style: none;
-        font-size: 1em;
+        font-size: 14pt;
         font-family: 'Montserrat-Regular';
       }
       a {

@@ -25,7 +25,7 @@ export default function Carisma(props: { localization: Localization; data: any }
 
   return (
     <Layout title={'Inicio'}>
-      <> {data && <CarismaScreen mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />} </>
+      <> {data && <CarismaScreen colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />} </>
     </Layout>
   )
 }
