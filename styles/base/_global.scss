@@ -44,7 +44,7 @@ a:hover {
   outline: none;
 }
 
-.ql-font-Roboto {
+span.ql-font-Roboto {
   font-family: 'Roboto';
 }
 
@@ -52,22 +52,14 @@ a:hover {
   font-family: 'Raleway';
 }
 
-h1.ql-font-Montserrat,
-h2.ql-font-Montserrat,
-h3.ql-font-Montserrat {
-  font-family: 'Montserrat-Bold';
-}
-
-p.ql-font-Montserrat,
-span.ql-font-Montserrat,
-.ql-font-Montserrat {
+span.ql-font-Montserrat {
   font-family: 'Montserrat-Regular';
 }
 
-.ql-font-Playfair {
+span.ql-font-Playfair {
   font-family: 'PlayFair';
 }
 
-.ql-font-Rubik {
+span.ql-font-Rubik {
   font-family: 'Rubik';
 }

@@ -26,7 +26,7 @@ export default function santaClaraDeAsis(props: { localization: Localization; da
   return (
     <Layout title={props.localization.translations.santaClaraDeAsis}>
       <>
-        <>{data && <SaintScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>{data && <SaintScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
       </>
     </Layout>
   )
@@ -34,7 +34,9 @@ export default function santaClaraDeAsis(props: { localization: Localization; da
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'santaClaraDeAsis' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'santaClaraDeAsis' } })) as {
+    data: { getPages: any }
+  }).data.getPages
 
   return {
     props: {

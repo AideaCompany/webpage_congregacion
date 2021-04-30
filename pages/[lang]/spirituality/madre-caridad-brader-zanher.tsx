@@ -29,7 +29,17 @@ export default function madreCaridadBrader(props: { localization: Localization; 
   return (
     <Layout title={props.localization.translations.madreCaridadBraderZanher}>
       <>
-        <>{data && <MadreScreen dataBlogs={blogs as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && (
+            <MadreScreen
+              colors={data.colors}
+              dataBlogs={blogs as NewsOBject[]}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
+          )}
+        </>
       </>
     </Layout>
   )
@@ -38,7 +48,9 @@ export default function madreCaridadBrader(props: { localization: Localization; 
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'braderZanher' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'braderZanher' } })) as {
+    data: { getPages: any }
+  }).data.getPages
   const blogs = ((await client.query({ query: gql(listBlogs) })) as { data: { listBlogs: NewsOBject[] } }).data.listBlogs
   return {
     props: {
