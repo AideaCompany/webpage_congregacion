@@ -73,7 +73,7 @@ const Navigation = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/our-work/adgente', query: { lang: router.query.lang } }}>
                   <a>{t('adgente').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
@@ -150,7 +150,9 @@ const Navigation = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/eucharistic-soul/eucharistic-spirituality', query: { lang: router.query.lang } }}>
+                <Link
+                  href={{ pathname: '/[lang]/eucharistic-soul/eucharistic-spirituality', query: { lang: router.query.lang } }}
+                >
                   <a>{t('eucharisticSpirituality').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
@@ -226,7 +228,7 @@ const Navigation = () => {
                 </Link>
               </li>
               <li>
-                <Link href={{ pathname: '/[lang]/our-work/parroquial', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/our-work/adgente', query: { lang: router.query.lang } }}>
                   <a>{t('adgente')}</a>
                 </Link>
               </li>
@@ -302,7 +304,9 @@ const Navigation = () => {
             </Link>
             <ul className="navBar__subMenu">
               <li>
-                <Link href={{ pathname: '/[lang]/eucharistic-soul/eucharistic-spirituality', query: { lang: router.query.lang } }}>
+                <Link
+                  href={{ pathname: '/[lang]/eucharistic-soul/eucharistic-spirituality', query: { lang: router.query.lang } }}
+                >
                   <a>{t('eucharisticSpirituality')}</a>
                 </Link>
               </li>

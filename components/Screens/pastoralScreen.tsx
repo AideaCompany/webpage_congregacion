@@ -4,7 +4,7 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const PastoralScreen = (props: PropsScreens) => {
-  console.log(props.colors)
+  console.log(props.dataCMS)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -18,6 +18,15 @@ const PastoralScreen = (props: PropsScreens) => {
                   title={props?.dataCMS?.titleOrientation}
                   text={props?.dataCMS?.textOrientation}
                 />
+                <div className="video__pastoral">
+                  <div>
+                    <iframe
+                      src={props.dataCMS.linkVideo}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

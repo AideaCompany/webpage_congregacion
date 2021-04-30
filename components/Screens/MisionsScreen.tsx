@@ -9,6 +9,7 @@ import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const MisionScreen = (props: PropsMisionScreen) => {
+  console.log(props.dataCMS)
   const { locale } = useTranslation()
   return (
     <>
@@ -16,9 +17,7 @@ const MisionScreen = (props: PropsMisionScreen) => {
         <>
           <div className="main__section">
             <div className="mision__container">
-              <div className="secondary__title">
-                <h1>{props.dataCMS.title}</h1>
-              </div>
+              <div dangerouslySetInnerHTML={{ __html: props.dataCMS.title }} className="secondary__title"></div>
               <div className="carousel__mision">
                 <Carousel>
                   {props.misions?.map(mision => (
@@ -29,7 +28,11 @@ const MisionScreen = (props: PropsMisionScreen) => {
                         </div>
                         <div className="text_mision">
                           <div>
-                            <TargetText classname="misionsTarget" title={mision[locale]?.title} text={mision[locale]?.description} />
+                            <TargetText
+                              classname="misionsTarget"
+                              title={mision[locale]?.title}
+                              text={mision[locale]?.description}
+                            />
                           </div>
                         </div>
                       </div>
