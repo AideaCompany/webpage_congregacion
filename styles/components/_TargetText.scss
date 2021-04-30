@@ -27,6 +27,16 @@
       }
     }
     .text_template {
+      h2,
+      h2,
+      h1 {
+        color: $lightBlue;
+        font-family: 'PlayFair';
+        margin: 0;
+      }
+      span {
+        font-family: 'Montserrat-Regular';
+      }
       margin: 10px 0;
     }
     .contact_subtitle {

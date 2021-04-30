@@ -4,7 +4,7 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const PastoralScreen = (props: PropsScreens) => {
-  console.log(props.dataCMS)
+  console.log(props.colors)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -13,7 +13,11 @@ const PastoralScreen = (props: PropsScreens) => {
             <div className="franciscan__index">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="half__card">
-                <TargetText title={props?.dataCMS?.titleOrientation} text={props?.dataCMS?.textOrientation} />
+                <TargetText
+                  background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}
+                  title={props?.dataCMS?.titleOrientation}
+                  text={props?.dataCMS?.textOrientation}
+                />
               </div>
             </div>
           </div>

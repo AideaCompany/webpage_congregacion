@@ -15,7 +15,10 @@ const EuchSpiritualityScreen = (props: PropsScreens) => {
                 <div className="cont__img">
                   <img src={props.photos?.find(e => e.name === 'photoMain').photos[0].key} alt="" />
                 </div>
-                <TargetText text={props?.dataCMS?.mainText} />
+                <TargetText
+                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
+                  text={props?.dataCMS?.mainText}
+                />
               </div>
             </div>
           </div>

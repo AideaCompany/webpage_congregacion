@@ -26,7 +26,9 @@ export default function aspirantate(props: { localization: Localization; data: a
   return (
     <Layout title={props.localization.translations.aspirantate}>
       <>
-        <>{data && <PastoralScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && <PastoralScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}
+        </>
       </>
     </Layout>
   )
@@ -35,7 +37,9 @@ export default function aspirantate(props: { localization: Localization; data: a
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'vocationMinistry2' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'vocationMinistry2' } })) as {
+    data: { getPages: any }
+  }).data.getPages
 
   return {
     props: {

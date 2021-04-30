@@ -27,7 +27,17 @@ export default function index(props: { localization: Localization; data_news: Ne
   return (
     <Layout title={props.localization.translations.ourWork}>
       <>
-        <>{data && <OurWork dataNews={news as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && (
+            <OurWork
+              colors={data.colors}
+              dataNews={news as NewsOBject[]}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
+          )}
+        </>
       </>
     </Layout>
   )
@@ -36,7 +46,8 @@ export default function index(props: { localization: Localization; data_news: Ne
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'ourWork' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'ourWork' } })) as { data: { getPages: any } })
+    .data.getPages
   const data_news = ((await client.query({ query: gql(listNews) })) as { data: { listNews: NewsOBject[] } }).data.listNews
   return {
     props: {

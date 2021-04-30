@@ -1,11 +1,9 @@
 import client from '@/graphql/config'
 import { listEvents } from '@/graphql/queries'
 import { IEvent, PropsBeFranciscan } from '@/types/types'
-import { capitalize } from '@/utils/utils'
 import { gql } from '@apollo/client'
 import { Carousel } from 'antd'
 import React, { useEffect, useState } from 'react'
-import CardSubtitle from '../CardSubtitle'
 import EventCalendar from '../EventCalendar'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
@@ -33,15 +31,15 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
     }
   }
 
+  console.log(props.colors)
+
   return (
     <>
       <Header image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="franciscan__index">
-              <div className="secondary__title">
-                <h1>{capitalize(props.dataCMS.title)}</h1>
-              </div>
+              <div dangerouslySetInnerHTML={{ __html: props.dataCMS.title }} className="secondary__title"></div>
               <div className="container__photos">
                 <div className="container__carousel">
                   <Carousel>
@@ -63,20 +61,22 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
           </div>
           <div className="main__section">
             <div className="franciscan__index">
-              <div className="secondary__title">
-                <h1>{props?.dataCMS?.titleEvents}</h1>
-              </div>
+              <div dangerouslySetInnerHTML={{ __html: props?.dataCMS?.titleEvents }} className="secondary__title"></div>
               <div className="calendar">{events && <EventCalendar event={events} />}</div>
             </div>
           </div>
           <div className="main__section">
             <div className="franciscan__index">
-              <div className="secondary__title">
-                <h1>{props.dataCMS.contactTitle}</h1>
-              </div>
+              <div dangerouslySetInnerHTML={{ __html: props.dataCMS.contactTitle }} className="secondary__title"></div>
               <div className="card__holder">
-                <TargetText text={props.dataCMS.textContact} />
-                <CardSubtitle text={props.dataCMS.contact} />
+                <TargetText
+                  background={props.colors?.find(e => e.name === 'textContact_ColorBack').color}
+                  text={props.dataCMS.textContact}
+                />
+                <TargetText
+                  background={props.colors?.find(e => e.name === 'contact_ColorBack').color}
+                  text={props.dataCMS.contact}
+                />
               </div>
             </div>
           </div>

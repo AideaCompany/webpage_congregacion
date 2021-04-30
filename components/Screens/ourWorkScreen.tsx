@@ -14,7 +14,7 @@ import TargetText from '../TargetText'
 const OurWork = (props: PropsOurWorkScreen) => {
   const { locale } = useTranslation()
 
-  console.log(props.dataCMS)
+  console.log(props.colors)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -23,7 +23,10 @@ const OurWork = (props: PropsOurWorkScreen) => {
             <div className="ourwork__container">
               <div className="container__news">
                 <div className="main__news">
-                  <TargetText text={props?.dataCMS?.textOurWork} />
+                  <TargetText
+                    background={props.colors?.find(e => e.name === 'textOurWork_ColorBack').color}
+                    text={props?.dataCMS?.textOurWork}
+                  />
                 </div>
                 <div className="news">
                   <List

@@ -42,6 +42,12 @@ $textFooter: #fff;
     font-family: 'PlayFair' !important;
     font-size: 25pt;
     font-weight: bold;
+    > span {
+      color: $textFooter;
+      font-family: 'PlayFair';
+      font-size: 25pt;
+      font-weight: bold;
+    }
   }
 }
 
