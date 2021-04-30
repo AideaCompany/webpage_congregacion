@@ -5,14 +5,3 @@ module.exports = withImages({
     return config
   }
 })
-
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/es'
-      }
-    ]
-  }
-}
