@@ -1,10 +1,9 @@
 .news__target {
   width: 100%;
-  height: 50%;
   cursor: pointer;
   .header__news {
     background-color: $backgroundDark;
-    height: 20%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +11,12 @@
       color: $textFooter;
       margin: 0;
       font-size: 15pt;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
     }
   }
   .body__news {
@@ -21,17 +26,37 @@
     > div {
       width: 50%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      flex-direction: column;
       background-color: #fff;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-      p {
-        padding: 20px;
+      .summary__text {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          padding: 20px;
+          font-family: 'Montserrat-Regular';
+          width: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+        }
+      }
+
+      span {
         font-family: 'Montserrat-Regular';
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 10pt;
       }
     }
   }

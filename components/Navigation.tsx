@@ -161,11 +161,11 @@ const Navigation = () => {
                   <a>{t('perpetualAdoration').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
-              <Menu.Item>
+              {/* <Menu.Item>
                 <Link href={{ pathname: '/[lang]/eucharistic-soul/santuario', query: { lang: router.query.lang } }}>
                   <a>{t('santuario').toUpperCase()}</a>
                 </Link>
-              </Menu.Item>
+              </Menu.Item> */}
             </Menu.SubMenu>
           </Menu>
         </div>
@@ -315,11 +315,11 @@ const Navigation = () => {
                   <a>{t('perpetualAdoration')}</a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href={{ pathname: '/[lang]/eucharistic-soul/santuario', query: { lang: router.query.lang } }}>
                   <a>{t('santuario')}</a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
         </ul>

@@ -2,8 +2,9 @@ import { capitalize } from 'fogg-utils'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
+import moment from 'moment'
 
-export const News = (props: { title: string; description: string; img: string; _id: string }) => {
+export const News = (props: { title: string; description: string; img: string; _id: string; date: string }) => {
   const router = useRouter()
   return (
     <Link href={{ pathname: '/[lang]/our-work/[news]', query: { lang: router.query.lang, news: props._id } }}>
@@ -13,7 +14,10 @@ export const News = (props: { title: string; description: string; img: string; _
         </div>
         <div className="body__news">
           <div className="summary__news">
-            <p>{props.description}</p>
+            <div className="summary__text">
+              <p>{props.description}</p>
+            </div>
+            <span>{moment(parseInt(props.date)).format('DD/MM/YYYY')}</span>
           </div>
           <div className="img__news">
             <img src={props.img} alt={`Congregación de Franciscanas de María Inmaculada ${props.title}`} />

@@ -1,10 +1,6 @@
-import client from '@/graphql/config'
-import { listEvents } from '@/graphql/queries'
-import { IEvent, PropsBeFranciscan } from '@/types/types'
-import { gql } from '@apollo/client'
+import { PropsBeFranciscan } from '@/types/types'
 import { Carousel } from 'antd'
-import React, { useEffect, useState } from 'react'
-import EventCalendar from '../EventCalendar'
+import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
@@ -14,24 +10,6 @@ import TargetText from '../TargetText'
 
 const FranciscanScreen = (props: PropsBeFranciscan) => {
   // const { t } = useTranslation()
-
-  const [events, setEvents] = useState<IEvent[]>([])
-
-  //effect
-  useEffect(() => {
-    getData()
-  }, [])
-
-  const getData = async () => {
-    try {
-      const resEvents = (await client.query({ query: gql(listEvents) })) as { data: { listEvents: IEvent[] } }
-      setEvents(resEvents.data.listEvents)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  console.log(props.colors)
 
   return (
     <>
@@ -57,12 +35,6 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
                   </Carousel>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="main__section">
-            <div className="franciscan__index">
-              <div dangerouslySetInnerHTML={{ __html: props?.dataCMS?.titleEvents }} className="secondary__title"></div>
-              <div className="calendar">{events && <EventCalendar event={events} />}</div>
             </div>
           </div>
           <div className="main__section">
