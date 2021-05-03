@@ -1,11 +1,18 @@
 import { hexToRgb } from '@/utils/utils'
 import React from 'react'
 
-const TargetText = (props: { title?: string; text?: string; children?: JSX.Element; classname?: string; background?: string }) => {
+const TargetText = (props: {
+  title?: string
+  text?: string
+  children?: JSX.Element
+  classname?: string
+  background?: string
+}) => {
   const hexBack = hexToRgb(props.background as string)
 
   const styles: React.CSSProperties = {
-    backgroundColor: hexBack ? `rgba(${hexBack.r},${hexBack.g},${hexBack.b},0.8)` : 'rgba(255,255,255,0.8)'
+    backgroundColor: hexBack ? `rgba(${hexBack.r},${hexBack.g},${hexBack.b},0.8)` : '',
+    boxShadow: hexBack ? '5px 5px 15px 5px rgba(0, 0, 0, 0.2)' : ''
   }
 
   return (

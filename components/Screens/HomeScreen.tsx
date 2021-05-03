@@ -27,6 +27,8 @@ const HomeScreen = (props: PropsHomeScreen) => {
       preserveAspectRatio: 'xMidYMid slice'
     }
   }
+
+  console.log(props.colors)
   return (
     <>
       <Header image={props?.mainPhoto}>

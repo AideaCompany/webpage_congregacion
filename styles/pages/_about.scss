@@ -4,19 +4,24 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 70px);
-  video {
-    width: 70%;
-    height: auto;
+  > div {
+    width: 50%;
+    height: 100%;
   }
-}
-
-.text__history {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  .container__video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+      width: 90%;
+    }
+  }
+  .text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+  }
 }
 
 @media screen and (max-width: 450px) {

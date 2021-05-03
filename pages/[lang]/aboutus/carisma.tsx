@@ -25,7 +25,12 @@ export default function Carisma(props: { localization: Localization; data: any }
 
   return (
     <Layout title={'Inicio'}>
-      <> {data && <CarismaScreen colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />} </>
+      <>
+        {' '}
+        {data && (
+          <CarismaScreen photos={data.photos} colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+        )}{' '}
+      </>
     </Layout>
   )
 }
@@ -33,7 +38,8 @@ export default function Carisma(props: { localization: Localization; data: any }
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'ourCharisma' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'ourCharisma' } })) as { data: { getPages: any } })
+    .data.getPages
   return {
     props: {
       localization,
