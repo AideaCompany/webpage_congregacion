@@ -28,7 +28,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
     }
   }
 
-  console.log(props.colors)
+  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>
