@@ -22,9 +22,9 @@ $textFooter: #fff;
   justify-content: center;
   align-items: center;
   .ant-carousel {
-    height: 50%;
+    height: auto;
     width: 90%;
-    border: 1px solid black;
+
     // overflow: hidden;
     .item {
       width: 100%;
@@ -81,7 +81,7 @@ $textFooter: #fff;
 //divs
 
 .mask {
-  background-color: rgba($color: #000, $alpha: 0.3);
+  background-color: rgba($color: #000, $alpha: 0.35);
   z-index: 1;
   transition: 0.4s ease-in-out;
   width: 100%;

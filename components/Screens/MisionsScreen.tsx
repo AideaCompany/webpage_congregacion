@@ -9,7 +9,6 @@ import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const MisionScreen = (props: PropsMisionScreen) => {
-  console.log(props.dataCMS)
   const { locale } = useTranslation()
   return (
     <>
@@ -24,7 +23,7 @@ const MisionScreen = (props: PropsMisionScreen) => {
                     <div key={mision._id}>
                       <div className="item">
                         <div className="media">
-                          <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                          {/* <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" /> */}
                         </div>
                         <div className="text_mision">
                           <div>

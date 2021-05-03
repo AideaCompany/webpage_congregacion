@@ -1,14 +1,16 @@
 import { Carousel } from 'antd'
 import React from 'react'
 
-const Gallery = ({ photos }: { photos?: any[] }) => {
-  console.log(photos)
+const Gallery = ({ photos, contain }: { photos?: any[]; contain?: boolean }) => {
+  const styles: React.CSSProperties = {
+    objectFit: contain ? 'contain' : 'cover'
+  }
   return (
     <div className="gallery">
       <Carousel autoplay={true}>
         {photos?.map((photo, i) => (
           <div className="item" key={i}>
-            <img src={photo.key} alt="" />
+            <img style={styles} src={photo.key} alt="" />
           </div>
         ))}
       </Carousel>

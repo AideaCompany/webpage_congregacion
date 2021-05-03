@@ -4,7 +4,6 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const PastoralScreen = (props: PropsScreens) => {
-  console.log(props.dataCMS)
   return (
     <>
       <Header image={props?.mainPhoto}>

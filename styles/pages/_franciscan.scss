@@ -38,44 +38,39 @@
       }
     }
   }
-  .half__card {
+  .container__franciscan {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row-reverse;
     > div {
+      height: 100%;
       width: 50%;
-      position: relative;
-      > div {
-        bottom: 30px;
-        right: 10%;
-        position: absolute;
-        width: auto;
-      }
     }
     .video__pastoral {
-      // border: 1px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .iframe__video {
       position: relative;
-      width: 50%;
-      > div {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        right: 0%;
-        padding-top: 56.25%;
-        > iframe {
-          position: absolute;
-          top: 50%; /* position the top  edge of the element at the middle of the parent */
-          left: 50%; /* position the left edge of the element at the middle of the parent */
-          transform: translate(-50%, -50%);
-          width: 80%;
-          height: 80%;
-          border: none;
-        }
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        top: 50%; /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        border: none;
       }
+    }
+    .text {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
   }
 }
@@ -88,27 +83,10 @@
       flex-direction: column;
       justify-content: center;
     }
-    .half__card {
-      flex-direction: column-reverse;
-      height: calc(100vh - 150px);
+    .container__franciscan {
+      flex-direction: column;
       > div {
         width: 100%;
-
-        > div {
-          position: inherit;
-          width: 100%;
-          right: auto;
-        }
-      }
-      .video__pastoral {
-        width: 100%;
-        > div {
-          margin-top: 20px;
-          > iframe {
-            width: 90%;
-            height: 90%;
-          }
-        }
       }
     }
   }
