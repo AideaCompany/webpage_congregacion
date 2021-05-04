@@ -35,7 +35,9 @@ export default function index(props: { localization: Localization; data_news: Ne
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'beFranciscan' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'beFranciscan' } })) as {
+    data: { getPages: any }
+  }).data.getPages
   const data_news = ((await client.query({ query: gql(getNews), variables: { _id: { _id: ctx.params?.news as string } } })) as {
     data: { getNews: NewsOBject }
   }).data.getNews
@@ -52,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   await client.cache.reset()
   const _ids = ((await client.query({ query: gql(getIds) })) as { data: { getIds: string[] } }).data.getIds
   return {
-    paths: _ids.map(news => ['es', 'en'].map(lang => ({ params: { lang, news } }))).flat(),
+    paths: _ids.map(news => ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang, news } }))).flat(),
     fallback: false
   }
 }

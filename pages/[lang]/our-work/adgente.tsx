@@ -29,7 +29,16 @@ export default function misions(props: { localization: Localization; data_mision
   return (
     <Layout title={props.localization.translations.misions}>
       <>
-        <>{data && <MisionScreen misions={misions as NewsOBject[]} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && (
+            <MisionScreen
+              misions={misions as NewsOBject[]}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
+          )}
+        </>
       </>
     </Layout>
   )
@@ -38,7 +47,8 @@ export default function misions(props: { localization: Localization; data_mision
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'adgente' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'adgente' } })) as { data: { getPages: any } })
+    .data.getPages
   const data_misions = ((await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Ad Gente' } })) as {
     data: { getMisionWebToWeb: any }
   }).data.getMisionWebToWeb
@@ -53,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['es', 'en'].map(lang => ({ params: { lang } })),
+    paths: ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang } })),
     fallback: false
   }
 }

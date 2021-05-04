@@ -33,7 +33,8 @@ export default function aboutUs(props: { localization: Localization; data: any }
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   await client.cache.reset()
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'about' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'about' } })) as { data: { getPages: any } }).data
+    .getPages
   return {
     props: {
       localization,
@@ -44,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['es', 'en'].map(lang => ({ params: { lang } })),
+    paths: ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang } })),
     fallback: false
   }
 }

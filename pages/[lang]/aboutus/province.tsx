@@ -19,7 +19,8 @@ export default function ProvincePage(props: { localization: Localization; provin
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   await client.cache.reset()
-  const provinces = ((await client.query({ query: gql(getProvincesWeb) })) as { data: { getProvincesWeb: Province[] } }).data.getProvincesWeb
+  const provinces = ((await client.query({ query: gql(getProvincesWeb) })) as { data: { getProvincesWeb: Province[] } }).data
+    .getProvincesWeb
   return {
     props: {
       localization,
@@ -30,7 +31,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['es', 'en'].map(lang => ({ params: { lang } })),
+    paths: ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang } })),
     fallback: false
   }
 }

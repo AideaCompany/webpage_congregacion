@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['es', 'en'].map(lang => ({ params: { lang } })),
+    paths: ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang } })),
     fallback: false
   }
 }

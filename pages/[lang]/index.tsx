@@ -30,7 +30,13 @@ export default function index(props: { localization: Localization; data_news: Ne
     <Layout title={props.localization.translations.index}>
       <>
         {data && (
-          <HomeScreen dataNews={news as NewsOBject[]} colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+          <HomeScreen
+            dataNews={news as NewsOBject[]}
+            colors={data.colors}
+            photos={data.photos}
+            mainPhoto={data.mainPhoto.key}
+            dataCMS={dataCMS}
+          />
         )}
       </>
     </Layout>
@@ -41,7 +47,8 @@ export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
   const data_news = ((await client.query({ query: gql(listNews) })) as { data: { listNews: NewsOBject[] } }).data.listNews
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'homePage' } })) as { data: { getPages: any } }).data.getPages
+  const data = ((await client.query({ query: gql(getPages), variables: { name: 'homePage' } })) as { data: { getPages: any } })
+    .data.getPages
 
   return {
     props: {
@@ -54,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: ['es', 'en'].map(lang => ({ params: { lang } })),
+    paths: ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang } })),
     fallback: false
   }
 }

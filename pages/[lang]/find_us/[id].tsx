@@ -45,7 +45,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   })
   const pathsCountry = countries.map(e => e.country as iCountry).filter(e => !!e)
   return {
-    paths: pathsCountry.map(country => ['es', 'en'].map(lang => ({ params: { lang, id: country._id } }))).flat(),
+    paths: pathsCountry
+      .map(country => ['es', 'en', 'fr', 'de', 'it'].map(lang => ({ params: { lang, id: country._id } })))
+      .flat(),
     fallback: false
   }
 }
