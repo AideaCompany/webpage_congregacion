@@ -80,6 +80,10 @@ export const listFraternityWeb = /* GraphQL */ `
     listFraternityWeb {
       _id
       name
+      province {
+        _id
+        name
+      }
       country {
         _id
         name
@@ -123,6 +127,47 @@ export const getFraternityWeb = /* GraphQL */ `
     getFraternityWeb(country: $country) {
       _id
       name
+      province {
+        _id
+        name
+        country {
+          _id
+          name
+          latlng
+          translations {
+            de
+            es
+            fr
+            ja
+            it
+            br
+            pt
+            nl
+            hr
+            fa
+          }
+          nativeName
+          createdAt
+          updatedAt
+        }
+        state
+        city
+        address
+        phone1
+        phone2
+        fax
+        link
+        email
+        opened
+        closed
+        photo {
+          filename
+          key
+        }
+        shouldShow
+        createdAt
+        updatedAt
+      }
       country {
         _id
         name
@@ -741,6 +786,62 @@ export const listObras = /* GraphQL */ `
     }
   }
 `
+
+export const getProvinces = /* GraphQL */ `
+  query getProvinces($_id: inputId) {
+    getProvinces(_id: $_id) {
+      _id
+      name
+      country {
+        _id
+        name
+      }
+      state
+      city
+      address
+      phone1
+      phone2
+      fax
+      link
+      email
+      opened
+      closed
+      photo {
+        filename
+        key
+      }
+    }
+  }
+`
+
+export const getProvincesWebByCountry = /* GraphQL */ `
+  query getProvincesWebByCountry($_id: inputId) {
+    getProvincesWebByCountry(_id: $_id) {
+      _id
+      name
+      country {
+        _id
+        name
+        nativeName
+      }
+      state
+      city
+      address
+      phone1
+      phone2
+      fax
+      link
+      email
+      opened
+      closed
+      photo {
+        filename
+        key
+      }
+    }
+  }
+`
+
 export const listProvinces = /* GraphQL */ `
   query listProvinces {
     listProvinces {

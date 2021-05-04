@@ -91,6 +91,11 @@ export type iCountry = {
 }
 //User Secction
 
+export type typeMapa = {
+  country: iCountry
+  province: Province
+}
+
 export type ButtonsCrudProps = {
   titleCreate?: string
   functionCreate?: () => void

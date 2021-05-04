@@ -1,4 +1,4 @@
-import { iCountry } from '@/types/types'
+import { typeMapa } from '@/types/types'
 import { mapStyle } from '@/utils/utils'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 import { Translations } from 'i18n/types'
@@ -18,7 +18,7 @@ const center = {
   lat: 10,
   lng: 0
 }
-const FindUsScreen = ({ countries }: { countries: iCountry[] }) => {
+const FindUsScreen = ({ countries }: { countries: typeMapa[] }) => {
   //props
 
   const router = useRouter()
@@ -61,14 +61,19 @@ const FindUsScreen = ({ countries }: { countries: iCountry[] }) => {
                   {/* Child components, such as markers, info windows, etc. */}
                   {countries.map(country => (
                     <Marker
-                      onClick={() => router.push({ pathname: `/[lang]/find_us/[id]`, query: { lang: router.query.lang, id: country._id } })}
+                      onClick={() =>
+                        router.push({
+                          pathname: `/[lang]/find_us/[id]`,
+                          query: { lang: router.query.lang, id: country.country._id }
+                        })
+                      }
                       options={{
-                        anchorPoint: new google.maps.Point(1, 0.5),
-                        title: (country?.translations as Translations[])[0][router.query.lang as string] as string
+                        anchorPoint: new google.maps.Point(0, 0),
+                        title: (country?.country?.translations as Translations[])[0][router.query.lang as string] as string
                       }}
                       icon={{ url: nun, anchor: new google.maps.Point(5, 28), scaledSize: new google.maps.Size(40, 40) }}
-                      key={country._id}
-                      position={{ lat: (country.latlng as number[])[0], lng: (country.latlng as number[])[1] }}
+                      key={country?.country?._id}
+                      position={{ lat: (country?.country?.latlng as number[])[0], lng: (country?.country.latlng as number[])[1] }}
                     />
                   ))}
                 </GoogleMap>

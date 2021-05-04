@@ -17,7 +17,7 @@ const FraternityScreen = (props: { fraternities: IFraternity[] }) => {
                   <div>
                     <div className="item">
                       <div className="mask"></div>
-                      <img src={fraternity.photo.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                      <img src={fraternity?.photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
                       <div className="text__fraternity">
                         <TargetText title={fraternity.name} text={fraternity.address} />
                       </div>

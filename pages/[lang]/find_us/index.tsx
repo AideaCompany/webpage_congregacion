@@ -1,7 +1,7 @@
 import FindUsScreen from '@/components/Screens/FindUsScreen'
 import client from '@/graphql/config'
 import { listFraternityWeb } from '@/graphql/queries'
-import { iCountry, IFraternity } from '@/types/types'
+import { iCountry, IFraternity, Province, typeMapa } from '@/types/types'
 import { gql } from '@apollo/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
@@ -11,7 +11,7 @@ import { Localization } from '../../../i18n/types'
 import { getLocalizationProps } from '../../../providers/LenguageContext'
 
 export default function index(props: { localization: Localization }) {
-  const [country, setCountry] = useState<iCountry[]>([])
+  const [country, setCountry] = useState<typeMapa[]>([])
 
   useEffect(() => {
     getData()
@@ -24,11 +24,15 @@ export default function index(props: { localization: Localization }) {
       return (x.country as iCountry)._id
     })
 
-    setCountry(countries.map(e => e.country as iCountry))
+    const newCountries = countries.map(e => {
+      return { country: e.country as iCountry, province: e.province as Province }
+    })
+
+    setCountry(newCountries)
   }
   return (
     <Layout title={props.localization.translations.where}>
-      <FindUsScreen countries={country as iCountry[]} />
+      <FindUsScreen countries={country} />
     </Layout>
   )
 }
