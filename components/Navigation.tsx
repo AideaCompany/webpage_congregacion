@@ -35,17 +35,19 @@ const Navigation = () => {
                   <a>{t('ourCharisma').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
+            </Menu.SubMenu>
+            <Menu.SubMenu title={t('where').toUpperCase()}>
+              <Menu.Item>
+                <Link href={{ pathname: '/[lang]/find_us', query: { lang: router.query.lang } }}>
+                  <a>{t('where').toUpperCase()}</a>
+                </Link>
+              </Menu.Item>
               <Menu.Item>
                 <Link href={{ pathname: '/[lang]/aboutus/province', query: { lang: router.query.lang } }}>
                   <a>{t('provinces').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.Item>
-              <Link href={{ pathname: '/[lang]/find_us', query: { lang: router.query.lang } }}>
-                <a>{t('where').toUpperCase()}</a>
-              </Link>
-            </Menu.Item>
             <Menu.SubMenu title={t('ourWork').toUpperCase()}>
               <Menu.Item>
                 <Link href={{ pathname: '/[lang]/our-work', query: { lang: router.query.lang } }}>
@@ -190,17 +192,19 @@ const Navigation = () => {
                   <a>{t('ourCharisma')}</a>
                 </Link>
               </li>
-              <li>
-                <Link href={{ pathname: '/[lang]/aboutus/province', query: { lang: router.query.lang } }}>
-                  <a>{t('provinces')}</a>
-                </Link>
-              </li>
             </ul>
           </li>
           <li>
             <Link href={{ pathname: '/[lang]/find_us', query: { lang: router.query.lang } }}>
               <a>{t('where').toUpperCase()}</a>
             </Link>
+            <ul className="navBar__subMenu">
+              <li>
+                <Link href={{ pathname: '/[lang]/find_us/province', query: { lang: router.query.lang } }}>
+                  <a>{t('provinces')}</a>
+                </Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link href={{ pathname: '/[lang]/our-work', query: { lang: router.query.lang } }}>

@@ -11,14 +11,9 @@ const PastoralScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="franciscan__index">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
-              <div className="half__card">
-                <TargetText
-                  background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}
-                  title={props?.dataCMS?.titleOrientation}
-                  text={props?.dataCMS?.textOrientation}
-                />
+              <div className="container__franciscan">
                 <div className="video__pastoral">
-                  <div>
+                  <div className="iframe__video">
                     <iframe
                       src={props.dataCMS.linkVideo}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,6 +21,11 @@ const PastoralScreen = (props: PropsScreens) => {
                     ></iframe>
                   </div>
                 </div>
+                <TargetText
+                  background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}
+                  title={props?.dataCMS?.titleOrientation}
+                  text={props?.dataCMS?.textOrientation}
+                />
               </div>
             </div>
           </div>
