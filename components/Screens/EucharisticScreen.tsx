@@ -16,7 +16,7 @@ const EucharisticScreen = (props: PropsScreens) => {
                 <Gallery photos={props.photos?.find(e => e.name === 'gallery').photos} />
 
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
                   text={props?.dataCMS?.mainText}
                 />
               </div>

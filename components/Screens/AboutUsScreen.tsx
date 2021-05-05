@@ -16,12 +16,9 @@ const AboutUsScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="video__about">
               <div className="container__video">
-                <video src="" controls></video>
+                <video src={props.photos?.find(e => e.name === 'video').photos[0].key} controls></video>
               </div>
-              <TargetText
-                background={props.colors?.find(e => e.name === 'textAbout_ColorBack').color}
-                text={props.dataCMS.textAbout}
-              />
+              <TargetText text={props.dataCMS.textAbout} />
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: dataCMS?.title }}></div>
             </div>
           </div>

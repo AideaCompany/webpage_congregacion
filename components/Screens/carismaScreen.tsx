@@ -20,7 +20,7 @@ const CarismaScreen = (props: PropsScreens) => {
               <Gallery photos={props.photos?.find(e => e.name === 'gallery').photos} />
               <div className="carisma__text">
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
                   text={props.dataCMS.mainText}
                 />
               </div>

@@ -42,11 +42,11 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
               <div dangerouslySetInnerHTML={{ __html: props.dataCMS.contactTitle }} className="secondary__title"></div>
               <div className="card__holder">
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'textContact_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'textContact_ColorBack').color}
                   text={props.dataCMS.textContact}
                 />
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'contact_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'contact_ColorBack').color}
                   text={props.dataCMS.contact}
                 />
               </div>

@@ -14,10 +14,7 @@ const AspirantateScreen = (props: PropsScreens) => {
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="container__franciscan">
                 <Gallery photos={props.photos?.find(e => e.name === 'gallery').photos} />
-                <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
-                  text={props?.dataCMS?.mainText}
-                />
+                <TargetText text={props?.dataCMS?.mainText} />
               </div>
             </div>
           </div>
