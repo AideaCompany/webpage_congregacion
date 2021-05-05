@@ -1,7 +1,8 @@
-import { fileType, PropsMisionScreen } from '@/types/types'
+import { PropsMisionScreen } from '@/types/types'
 import { Carousel } from 'antd'
 import useTranslation from 'hooks/useTranslations'
 import React from 'react'
+import Gallery from '../Gallery'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
 import Header from '../header'
@@ -16,13 +17,15 @@ const MisionScreen = (props: PropsMisionScreen) => {
         <>
           <div className="main__section">
             <div className="mision__container">
-              <div dangerouslySetInnerHTML={{ __html: props.dataCMS.title }} className="secondary__title"></div>
+              <div dangerouslySetInnerHTML={{ __html: props.dataCMS?.title }} className="secondary__title"></div>
               <div className="carousel__mision">
                 <Carousel>
                   {props.misions?.map(mision => (
                     <div key={mision._id}>
-                      <div className="item">
+                      <div className="item_carousel">
                         <div className="media">
+                          <Gallery photos={mision.gallery} />
+
                           {/* <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" /> */}
                         </div>
                         <div className="text_mision">

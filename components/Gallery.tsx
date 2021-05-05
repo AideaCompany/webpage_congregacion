@@ -5,6 +5,7 @@ const Gallery = ({ photos, contain }: { photos?: any[]; contain?: boolean }) => 
   const styles: React.CSSProperties = {
     objectFit: contain ? 'contain' : 'cover'
   }
+  console.log(photos)
   return (
     <div className="gallery">
       <Carousel autoplay={true}>

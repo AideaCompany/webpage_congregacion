@@ -9,6 +9,7 @@ import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const OurWork = (props: PropsOurWorkScreen) => {
+  console.log(props)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -18,10 +19,7 @@ const OurWork = (props: PropsOurWorkScreen) => {
               <div className="container__news">
                 <Gallery photos={props.photos?.find(e => e.name === 'photoOurWork').photos} />
 
-                <TargetText
-                  background={props.colors?.find(e => e.name === 'textOurWork_ColorBack').color}
-                  text={props?.dataCMS?.textOurWork}
-                />
+                <TargetText text={props?.dataCMS?.textOurWork} />
               </div>
 
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>

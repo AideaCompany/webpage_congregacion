@@ -486,4 +486,5 @@ export interface NewsOBject extends INews {
   text?: string
   title?: string
   description?: string
+  gallery?: fileType[] | string[]
 }

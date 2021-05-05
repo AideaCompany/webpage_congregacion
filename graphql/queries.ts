@@ -277,11 +277,12 @@ export const getMisionWebToWeb = /* GraphQL */ `
     getMisionWebToWeb(type: $type) {
       _id
       date
-      image {
+      type
+      gallery {
+        _id
         filename
         key
       }
-      type
       es {
         text
         title
@@ -310,6 +311,7 @@ export const getMisionWebToWeb = /* GraphQL */ `
     }
   }
 `
+
 export const getMisionsWeb = /* GraphQL */ `
   query getMisionsWeb($_id: inputId) {
     getMisionsWeb(_id: $_id) {
