@@ -22,7 +22,7 @@ const PastoralScreen = (props: PropsScreens) => {
                   </div>
                 </div>
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}
                   title={props?.dataCMS?.titleOrientation}
                   text={props?.dataCMS?.textOrientation}
                 />

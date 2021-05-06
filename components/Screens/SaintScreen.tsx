@@ -15,7 +15,7 @@ const SaintScreen = (props: PropsScreens) => {
               <div className="img__card">
                 <Gallery photos={props.photos?.find(e => e.name === 'photograhy').photos} />
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
                   text={props.dataCMS.mainText}
                 />
               </div>

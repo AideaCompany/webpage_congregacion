@@ -16,7 +16,7 @@ const MadreScreen = (props: PropsMadreScreen) => {
               <div className="img__card">
                 <div></div>
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
                   text={props?.dataCMS?.mainText}
                 />
               </div>

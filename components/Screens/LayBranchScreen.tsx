@@ -16,7 +16,7 @@ const LayBranchScreen = (props: PropsScreens) => {
                 <Gallery photos={props.photos?.find(e => e.name === 'photoMiframi').photos} />
 
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
                   title={props.dataCMS.titleMiframi}
                   text={props.dataCMS.mainText}
                 />

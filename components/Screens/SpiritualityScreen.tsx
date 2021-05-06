@@ -15,7 +15,7 @@ const SpiritualityScreen = (props: PropsScreens) => {
               <div className="container__franciscan">
                 <Gallery photos={props.photos?.find(e => e.name === 'gallery').photos} />
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
+                  // background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
                   text={props?.dataCMS?.mainText}
                 />
               </div>

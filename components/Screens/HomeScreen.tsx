@@ -28,7 +28,6 @@ const HomeScreen = (props: PropsHomeScreen) => {
     }
   }
 
-  console.log(props.photos)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -81,7 +80,7 @@ const HomeScreen = (props: PropsHomeScreen) => {
           <div className="main__section">
             <div className="about__summary">
               <TargetText
-                background={props.colors?.find(e => e.name === 'textUs_ColorBack').color}
+                // background={props.colors?.find(e => e.name === 'textUs_ColorBack').color}
                 title={props.dataCMS?.titleUs}
                 text={props.dataCMS?.textUs}
               />
