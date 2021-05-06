@@ -1,4 +1,6 @@
 .news__target {
+  position: relative;
+  z-index: 10;
   width: 100%;
   cursor: pointer;
   .header__news {
