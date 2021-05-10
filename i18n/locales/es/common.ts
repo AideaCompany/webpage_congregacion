@@ -5,7 +5,7 @@ const common = {
   where: '¿Dónde estamos?',
   ourWork: '¿Qué hacemos?',
   misions: 'Misiones',
-  educational: 'Pastoral Educativo',
+  educational: 'Pastoral Educativa',
   parochial: 'Pastoral Parroquial',
   social: 'Pastoral Social',
   adgente: 'Pastoral Ad Gente',
