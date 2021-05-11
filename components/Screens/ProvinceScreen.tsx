@@ -1,6 +1,7 @@
 import { Province } from '@/types/types'
 import useTranslation from 'hooks/useTranslations'
 import React from 'react'
+import Gallery from '../Gallery'
 import Header from '../header'
 import TargetText from '../TargetText'
 
@@ -8,6 +9,7 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
   const { locale } = useTranslation()
 
   const { provinces: itemsSlider } = props
+  console.log(itemsSlider)
   return (
     <Header>
       <>
@@ -18,7 +20,8 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
                 <TargetText classname="provincesTarget" text={e[locale]?.text}></TargetText>
               </div> */}
               <div className="content">
-                <div></div>
+                <Gallery photos={e?.carousel?.find(j => j.name === 'carousel')?.carousel}></Gallery>
+
                 <TargetText classname="provincesTarget" text={e[locale]?.text}></TargetText>
               </div>
               <div className="back"></div>

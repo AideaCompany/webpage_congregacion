@@ -167,6 +167,38 @@ export const getFraternityWeb = /* GraphQL */ `
         shouldShow
         createdAt
         updatedAt
+        es {
+          text
+        }
+        en {
+          text
+        }
+        fr {
+          text
+        }
+        de {
+          text
+        }
+        it {
+          text
+        }
+        carousel {
+          _id
+          name
+          carousel {
+            _id
+            photos {
+              _id
+              filename
+              key
+            }
+            es
+            en
+            fr
+            de
+            it
+          }
+        }
       }
       country {
         _id
@@ -477,6 +509,23 @@ export const getProvincesWeb = /* GraphQL */ `
       }
       it {
         text
+      }
+      carousel {
+        _id
+        name
+        carousel {
+          _id
+          photos {
+            _id
+            filename
+            key
+          }
+          es
+          en
+          fr
+          de
+          it
+        }
       }
     }
   }

@@ -125,6 +125,7 @@ export type Province = {
   fr?: provincesTexts
   de?: provincesTexts
   it?: provincesTexts
+  carousel: any[]
 }
 
 export interface provincesTexts extends Province {

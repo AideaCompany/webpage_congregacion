@@ -43,7 +43,7 @@ const Navigation = () => {
                 </Link>
               </Menu.Item>
               <Menu.Item>
-                <Link href={{ pathname: '/[lang]/aboutus/province', query: { lang: router.query.lang } }}>
+                <Link href={{ pathname: '/[lang]/find_us/province', query: { lang: router.query.lang } }}>
                   <a>{t('provinces').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
