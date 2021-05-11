@@ -24,6 +24,9 @@
       > div {
         width: 100%;
       }
+      .slick-dots {
+        bottom: -30px;
+      }
       .item {
         width: 100%;
         height: calc(25vw);
@@ -31,7 +34,21 @@
         flex-wrap: wrap;
         -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
         box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+        position: relative;
         // overflow: hidden;
+        .text {
+          position: absolute;
+          width: 100%;
+          height: 50px;
+          bottom: 0;
+          background-color: rgba($color: #000, $alpha: 0.4);
+          p {
+            font-family: 'Montserrat-Regular';
+            margin: 0;
+            font-size: 16pt;
+            color: #fff;
+          }
+        }
         > img {
           width: 100%;
           height: 25vw;

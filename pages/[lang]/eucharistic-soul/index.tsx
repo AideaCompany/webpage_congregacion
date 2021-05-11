@@ -28,7 +28,13 @@ export default function eucharisticSoul(props: { localization: Localization; dat
       <>
         <>
           {data && (
-            <EucharisticScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+            <EucharisticScreen
+              carousel={data.carousel}
+              colors={data.colors}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
           )}
         </>
       </>
@@ -39,9 +45,11 @@ export default function eucharisticSoul(props: { localization: Localization; dat
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'eucharisticSoul' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'eucharisticSoul' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
   return {
     props: {
       localization,

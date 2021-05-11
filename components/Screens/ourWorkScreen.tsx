@@ -9,7 +9,7 @@ import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const OurWork = (props: PropsOurWorkScreen) => {
-  console.log(props)
+  console.log(props.carousel)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -17,7 +17,7 @@ const OurWork = (props: PropsOurWorkScreen) => {
           <div className="main__section">
             <div className="ourwork__container">
               <div className="container__news">
-                <Gallery photos={props.photos?.find(e => e.name === 'photoOurWork').photos} />
+                <Gallery photos={props.carousel?.find(e => e.name === 'photoOurWork').carousel} />
 
                 <TargetText text={props?.dataCMS?.textOurWork} />
               </div>

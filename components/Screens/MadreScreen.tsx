@@ -6,6 +6,8 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const MadreScreen = (props: PropsMadreScreen) => {
+  console.log(props.carousel)
+
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -26,10 +28,10 @@ const MadreScreen = (props: PropsMadreScreen) => {
             <div className="spirituality__index">
               <div dangerouslySetInnerHTML={{ __html: props?.dataCMS?.tittleArticuleOne }} className="secondary__title"></div>
               <div className="img__card">
-                <Gallery contain photos={props.photos?.find(e => e.name === 'articulePhotoOne').photos} />
+                <Gallery contain photos={props.carousel?.find(e => e.name === 'articulePhotoOne').carousel} />
 
                 <TargetText
-                  background={props.colors?.find(e => e.name === 'ariculeOne_ColorBack').color}
+                  // background={props.colors?.find(e => e.name === 'ariculeOne_ColorBack').color}
                   text={props?.dataCMS?.articuleOne}
                 />
               </div>

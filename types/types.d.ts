@@ -120,6 +120,15 @@ export type Province = {
   closed: string
   createdAt?: Date
   updatedAt?: Date
+  es?: provincesTexts
+  en?: provincesTexts
+  fr?: provincesTexts
+  de?: provincesTexts
+  it?: provincesTexts
+}
+
+export interface provincesTexts extends Province {
+  text?: string
 }
 export interface IAcademicLevels extends Document {
   key?: string
@@ -439,6 +448,7 @@ export type PropsScreens = {
   photos?: any[]
   data?: any
   colors?: any[]
+  carousel?: any[]
 }
 
 export interface PropsBeFranciscan extends PropsScreens {

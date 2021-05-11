@@ -31,6 +31,7 @@ export default function aspirantate(props: { localization: Localization; data: a
           <PEducationScreen
             colors={data.colors}
             data={data}
+            carousel={data.carousel}
             photos={data.photos}
             mainPhoto={data.mainPhoto.key}
             dataCMS={dataCMS}
@@ -44,9 +45,11 @@ export default function aspirantate(props: { localization: Localization; data: a
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'permanentEducation' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'permanentEducation' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
   return {
     props: {
       localization,

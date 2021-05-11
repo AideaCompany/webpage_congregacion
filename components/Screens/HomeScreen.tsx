@@ -86,12 +86,21 @@ const HomeScreen = (props: PropsHomeScreen) => {
               />
               <div className="images">
                 <Carousel autoplay={true}>
-                  {props.photos
+                  {props.carousel
                     ?.find(e => (e.name = 'photoUs'))
-                    ?.photos.map((photo: any, i: number) => (
+                    ?.carousel.map((carousel: any, i: number) => (
                       <div key={i}>
                         <div className="item">
-                          <img src={photo?.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                          {carousel[locale] && (
+                            <div className="text">
+                              <p>{carousel[locale]}</p>
+                            </div>
+                          )}
+
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${carousel.photos?.key}`}
+                            alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA"
+                          />
                         </div>
                       </div>
                     ))}

@@ -28,7 +28,13 @@ export default function aspirantate(props: { localization: Localization; data: a
       <>
         <>
           {data && (
-            <AspirantateScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+            <AspirantateScreen
+              carousel={data.carousel}
+              colors={data.colors}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
           )}
         </>
       </>

@@ -26,7 +26,15 @@ export default function postulancy(props: { localization: Localization; data: an
   return (
     <Layout title={props.localization.translations.postulancy}>
       <>
-        {data && <PostulancyScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}
+        {data && (
+          <PostulancyScreen
+            carousel={data.carousel}
+            colors={data.colors}
+            photos={data.photos}
+            mainPhoto={data.mainPhoto.key}
+            dataCMS={dataCMS}
+          />
+        )}
       </>
     </Layout>
   )

@@ -30,6 +30,7 @@ export default function index(props: { localization: Localization; data_news: Ne
         <>
           {data && (
             <OurWork
+              carousel={data.carousel}
               colors={data.colors}
               dataNews={news as NewsOBject[]}
               photos={data.photos}

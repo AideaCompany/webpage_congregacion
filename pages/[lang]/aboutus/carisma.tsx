@@ -28,7 +28,13 @@ export default function Carisma(props: { localization: Localization; data: any }
       <>
         {' '}
         {data && (
-          <CarismaScreen photos={data.photos} colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+          <CarismaScreen
+            carousel={data.carousel}
+            photos={data.photos}
+            colors={data.colors}
+            mainPhoto={data.mainPhoto.key}
+            dataCMS={dataCMS}
+          />
         )}{' '}
       </>
     </Layout>

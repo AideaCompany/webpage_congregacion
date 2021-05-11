@@ -25,7 +25,17 @@ export default function aboutUs(props: { localization: Localization; data: any }
 
   return (
     <Layout title={props.localization.translations.about}>
-      <>{data && <AboutUsScreen photos={data.photos} colors={data.colors} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>
+        {data && (
+          <AboutUsScreen
+            photos={data.photos}
+            carousel={data.carousel}
+            colors={data.colors}
+            mainPhoto={data.mainPhoto.key}
+            dataCMS={dataCMS}
+          />
+        )}
+      </>
     </Layout>
   )
 }

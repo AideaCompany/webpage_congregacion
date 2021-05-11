@@ -10,6 +10,7 @@ import TargetText from '../TargetText'
 const CarismaScreen = (props: PropsScreens) => {
   // const { t } = useTranslation()
 
+  console.log(props.carousel)
   return (
     <>
       <Header image={props?.mainPhoto}>
@@ -17,7 +18,7 @@ const CarismaScreen = (props: PropsScreens) => {
           <div className="main__section">
             <div className="carisma__container">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
-              <Gallery photos={props.photos?.find(e => e.name === 'gallery').photos} />
+              <Gallery photos={props.carousel?.find(e => e.name === 'gallery').carousel} />
               <div className="carisma__text">
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}

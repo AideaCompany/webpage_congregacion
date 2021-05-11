@@ -28,7 +28,13 @@ export default function index(props: { localization: Localization; data: any }) 
       <>
         <>
           {data && (
-            <EuchSpiritualityScreen colors={data.props} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />
+            <EuchSpiritualityScreen
+              carousel={data.carousel}
+              colors={data.props}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
           )}
         </>
       </>
@@ -40,9 +46,11 @@ export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
 
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'eucharisticSpirituality' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'eucharisticSpirituality' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
 
   return {
     props: {

@@ -413,6 +413,23 @@ export const getPages = /* GraphQL */ `
         name
         color
       }
+      carousel {
+        _id
+        name
+        carousel {
+          _id
+          photos {
+            _id
+            filename
+            key
+          }
+          es
+          en
+          fr
+          de
+          it
+        }
+      }
     }
   }
 `
@@ -442,23 +459,25 @@ export const getProvincesWeb = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      state
-      city
-      address
-      phone1
-      phone2
-      fax
-      link
-      email
-      opened
-      closed
       photo {
         filename
         key
       }
-      shouldShow
-      createdAt
-      updatedAt
+      es {
+        text
+      }
+      en {
+        text
+      }
+      fr {
+        text
+      }
+      de {
+        text
+      }
+      it {
+        text
+      }
     }
   }
 `

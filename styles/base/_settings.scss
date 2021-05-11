@@ -22,6 +22,9 @@ $textFooter: #fff;
   justify-content: center;
   align-items: center;
   .ant-carousel {
+    .slick-dots {
+      bottom: -30px;
+    }
     height: auto;
     width: 90%;
 
@@ -31,6 +34,23 @@ $textFooter: #fff;
       height: 100%;
       padding-top: 56.25%;
       position: relative;
+      .text {
+        position: absolute;
+        background-color: rgba($color: #000, $alpha: 0.45);
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: 'Montserrat-Regular';
+          margin: 0;
+          font-size: 16pt;
+          color: #fff;
+        }
+      }
       img {
         position: absolute;
         top: 0;

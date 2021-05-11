@@ -25,7 +25,17 @@ export default function sanFranciscoDeAsis(props: { localization: Localization; 
   return (
     <Layout title={props.localization.translations.sanFranciscoDeAsis}>
       <>
-        <>{data && <SaintScreen colors={data.colors} photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && (
+            <SaintScreen
+              carousel={data.carousel}
+              colors={data.colors}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
+          )}
+        </>
       </>
     </Layout>
   )
@@ -33,9 +43,11 @@ export default function sanFranciscoDeAsis(props: { localization: Localization; 
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'sanFranciscoDeAsis' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'sanFranciscoDeAsis' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
   return {
     props: {
       localization,
