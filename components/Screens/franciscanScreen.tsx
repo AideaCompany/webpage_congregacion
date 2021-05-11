@@ -20,9 +20,9 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
               <div className="container__iframe">
                 <div className="video">
                   <iframe
+                    allowFullScreen
                     src={props.dataCMS.linkVideo}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
