@@ -20,10 +20,10 @@ const Contact = ({ data }: { data: any }) => {
           <Image width={20} height={20} src="/images/footer/contact_icons/phone.svg" />
           <span>{data?.phone}</span>
         </li>
-        <li>
+        {/* <li>
           <Image width={20} height={20} src="/images/footer/contact_icons/clock.svg" />
           <span>{data?.horarios}</span>
-        </li>
+        </li> */}
       </ul>
     </div>
   )

@@ -116,12 +116,12 @@ const Navigation = () => {
                   <a>{t('permanentEducation').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
-              <Menu.Item>
-                <Link href={{ pathname: '/[lang]/formacion-vocacional/lay-branch', query: { lang: router.query.lang } }}>
-                  <a>{t('layBranch').toUpperCase()}</a>
-                </Link>
-              </Menu.Item>
             </Menu.SubMenu>
+            <Menu.Item>
+              <Link href={{ pathname: '/[lang/miframi', query: { lang: router.query.lang } }}>
+                <a>{t('miframi').toUpperCase()}</a>
+              </Link>
+            </Menu.Item>
             <Menu.SubMenu title={t('spirituality').toUpperCase()}>
               <Menu.Item>
                 <Link href={{ pathname: '/[lang]/spirituality', query: { lang: router.query.lang } }}>
@@ -143,8 +143,13 @@ const Navigation = () => {
                   <a>{t('madreCaridadBraderZanher').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
+              <Menu.Item>
+                <Link href={{ pathname: '/[lang]/spirituality/perpetual-adoration', query: { lang: router.query.lang } }}>
+                  <a>{t('perpetualAdoration').toUpperCase()}</a>
+                </Link>
+              </Menu.Item>
             </Menu.SubMenu>
-
+            {/* 
             <Menu.SubMenu title={t('eucharisticSoul').toUpperCase()}>
               <Menu.Item>
                 <Link href={{ pathname: '/[lang]/eucharistic-soul', query: { lang: router.query.lang } }}>
@@ -163,12 +168,12 @@ const Navigation = () => {
                   <a>{t('perpetualAdoration').toUpperCase()}</a>
                 </Link>
               </Menu.Item>
-              {/* <Menu.Item>
+              <Menu.Item>
                 <Link href={{ pathname: '/[lang]/eucharistic-soul/santuario', query: { lang: router.query.lang } }}>
                   <a>{t('santuario').toUpperCase()}</a>
                 </Link>
-              </Menu.Item> */}
-            </Menu.SubMenu>
+              </Menu.Item>
+            </Menu.SubMenu> */}
           </Menu>
         </div>
       </Drawer>
@@ -273,12 +278,17 @@ const Navigation = () => {
                   <a>{t('permanentEducation')}</a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href={{ pathname: '/[lang]/formacion-vocacional/lay-branch', query: { lang: router.query.lang } }}>
                   <a>{t('layBranch')}</a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
+          </li>
+          <li>
+            <Link href={{ pathname: '/[lang]/miframi', query: { lang: router.query.lang } }}>
+              <a>{t('miframi').toUpperCase()}</a>
+            </Link>
           </li>
           <li>
             <Link href={{ pathname: '/[lang]/spirituality', query: { lang: router.query.lang } }}>
@@ -300,9 +310,14 @@ const Navigation = () => {
                   <a>{t('madreCaridadBraderZanher')}</a>
                 </Link>
               </li>
+              <li>
+                <Link href={{ pathname: '/[lang]/spirituality/perpetual-adoration', query: { lang: router.query.lang } }}>
+                  <a>{t('perpetualAdoration')}</a>
+                </Link>
+              </li>
             </ul>
           </li>
-          <li>
+          {/* <li>
             <Link href={{ pathname: '/[lang]/eucharistic-soul', query: { lang: router.query.lang } }}>
               <a>{t('eucharisticSoul').toUpperCase()}</a>
             </Link>
@@ -314,18 +329,14 @@ const Navigation = () => {
                   <a>{t('eucharisticSpirituality')}</a>
                 </Link>
               </li>
+
               <li>
-                <Link href={{ pathname: '/[lang]/eucharistic-soul/perpetual-adoration', query: { lang: router.query.lang } }}>
-                  <a>{t('perpetualAdoration')}</a>
-                </Link>
-              </li>
-              {/* <li>
                 <Link href={{ pathname: '/[lang]/eucharistic-soul/santuario', query: { lang: router.query.lang } }}>
                   <a>{t('santuario')}</a>
                 </Link>
-              </li> */}
+              </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

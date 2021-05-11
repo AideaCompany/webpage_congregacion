@@ -32,6 +32,7 @@ const common = {
   provinces: 'Provincias',
   goToNews: 'Ir a noticias',
   lastNews: 'Ultimas Noticias',
+  miframi: 'Miframi',
 
   //pages
   country: 'Pais',

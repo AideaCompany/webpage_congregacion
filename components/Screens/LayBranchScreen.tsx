@@ -11,14 +11,14 @@ const LayBranchScreen = (props: PropsScreens) => {
         <>
           <div className="main__section">
             <div className="spirituality__index ">
-              <div dangerouslySetInnerHTML={{ __html: props?.dataCMS.title }} className="secondary__title"></div>
+              <div dangerouslySetInnerHTML={{ __html: props?.dataCMS?.title }} className="secondary__title"></div>
               <div className="img__card">
                 <Gallery photos={props.carousel?.find(e => e.name === 'photoMiframi').carousel} />
 
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
-                  title={props.dataCMS.titleMiframi}
-                  text={props.dataCMS.mainText}
+                  title={props?.dataCMS?.titleMiframi}
+                  text={props?.dataCMS?.mainText}
                 />
               </div>
             </div>
