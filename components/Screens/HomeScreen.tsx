@@ -30,7 +30,13 @@ const HomeScreen = (props: PropsHomeScreen) => {
 
   return (
     <>
-      <Header image={props?.mainPhoto}>
+      <Header
+        color={props.background}
+        select_back={props.select_back}
+        select_back={props.select_back}
+        color={props.background}
+        image={props?.mainPhoto}
+      >
         <>
           <div className="main__section first__home">
             <div className="animation__home">

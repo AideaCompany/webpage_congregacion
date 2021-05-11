@@ -22,7 +22,7 @@ const EducationalScreen = (props: PropsScreens) => {
 
   return (
     <>
-      <Header image={props.mainPhoto}>
+      <Header color={props.background} select_back={props.select_back} image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="mision__container">
@@ -32,7 +32,10 @@ const EducationalScreen = (props: PropsScreens) => {
                     <div>
                       <div className="item">
                         <div className="media">
-                          <img src="/images/franciscan/dommie_carousel.png" alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
+                          <img
+                            src="/images/franciscan/dommie_carousel.png"
+                            alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA"
+                          />
                         </div>
                         <div className="text">
                           <TargetText

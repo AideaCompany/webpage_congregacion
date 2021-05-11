@@ -26,7 +26,17 @@ export default function perpetualAdoration(props: { localization: Localization; 
 
   return (
     <Layout title={props.localization.translations.perpetualAdoration}>
-      <>{data && <PerpetualScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+      <>
+        {data && (
+          <PerpetualScreen
+            background={data.background}
+            select_back={data.select_back}
+            photos={data.photos}
+            mainPhoto={data.mainPhoto.key}
+            dataCMS={dataCMS}
+          />
+        )}
+      </>
     </Layout>
   )
 }
@@ -35,9 +45,11 @@ export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
 
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'perpetualAdoration' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'perpetualAdoration' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
 
   return {
     props: {

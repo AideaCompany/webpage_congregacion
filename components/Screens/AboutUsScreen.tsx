@@ -11,7 +11,7 @@ const AboutUsScreen = (props: PropsScreens) => {
 
   return (
     <>
-      <Header image={props.mainPhoto}>
+      <Header color={props.background} select_back={props.select_back} image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="video__about">

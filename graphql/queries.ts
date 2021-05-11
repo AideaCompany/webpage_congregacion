@@ -430,6 +430,7 @@ export const getPages = /* GraphQL */ `
       de
       it
       background
+      select_back
       mainPhoto {
         filename
         key

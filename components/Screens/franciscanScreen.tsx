@@ -1,5 +1,4 @@
 import { PropsBeFranciscan } from '@/types/types'
-import { Carousel } from 'antd'
 import React from 'react'
 //i18n
 // import useTranslation from '../../hooks/useTranslations'
@@ -13,26 +12,18 @@ const FranciscanScreen = (props: PropsBeFranciscan) => {
 
   return (
     <>
-      <Header image={props?.mainPhoto}>
+      <Header color={props.background} select_back={props.select_back} image={props?.mainPhoto}>
         <>
           <div className="main__section">
             <div className="franciscan__index">
               <div dangerouslySetInnerHTML={{ __html: props.dataCMS.title }} className="secondary__title"></div>
-              <div className="container__photos">
-                <div className="container__carousel">
-                  <Carousel>
-                    {props.data.photos
-                      .find((e: any) => e.name === 'gallery')
-                      .photos.map((photos: any, i: number) => {
-                        return (
-                          <div key={i}>
-                            <div className="item">
-                              <img src={photos.key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" />
-                            </div>
-                          </div>
-                        )
-                      })}
-                  </Carousel>
+              <div className="container__iframe">
+                <div className="video">
+                  <iframe
+                    src={props.dataCMS.linkVideo}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>

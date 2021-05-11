@@ -49,9 +49,11 @@ export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'educational' } })) as { data: { getPages: any } })
     .data.getPages
-  const data_misions = ((await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Educativa' } })) as {
-    data: { getMisionWebToWeb: any }
-  }).data.getMisionWebToWeb
+  const data_misions = (
+    (await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Educativa' } })) as {
+      data: { getMisionWebToWeb: any }
+    }
+  ).data.getMisionWebToWeb
   return {
     props: {
       localization,

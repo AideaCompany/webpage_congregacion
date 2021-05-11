@@ -9,10 +9,20 @@ const Header = (props: propsHeader) => {
 
   return (
     <>
-      {props.image && (
+      {props.image && props.select_back === 'photo' && (
         <div className="background">
-          <img src={props.image} className="background__image" alt={`CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA ${props.title}`} />
+          <img
+            src={props.image}
+            className="background__image"
+            alt={`CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA ${props.title}`}
+          />
           <div className="background__layout"></div>
+        </div>
+      )}
+
+      {props.color && props.select_back === 'background' && (
+        <div className="background">
+          <div style={{ backgroundColor: props.color }} className="background__layout"></div>
         </div>
       )}
 

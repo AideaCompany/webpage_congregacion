@@ -7,6 +7,8 @@ export type propsLayout = {
 
 export interface propsHeader extends propsLayout {
   image?: string
+  color?: string
+  select_back?: string
 }
 
 import { FormInstance } from 'antd/lib/form'
@@ -450,6 +452,8 @@ export type PropsScreens = {
   data?: any
   colors?: any[]
   carousel?: any[]
+  background?: string
+  select_back?: string
 }
 
 export interface PropsBeFranciscan extends PropsScreens {

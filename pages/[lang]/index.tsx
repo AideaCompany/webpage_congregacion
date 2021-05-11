@@ -37,6 +37,8 @@ export default function index(props: { localization: Localization; data_news: Ne
             mainPhoto={data.mainPhoto.key}
             dataCMS={dataCMS}
             carousel={data.carousel}
+            background={data.background}
+            select_back={data.select_back}
           />
         )}
       </>

@@ -33,6 +33,8 @@ export default function sanFranciscoDeAsis(props: { localization: Localization; 
               photos={data.photos}
               mainPhoto={data.mainPhoto.key}
               dataCMS={dataCMS}
+              background={data.background}
+              select_back={data.select_back}
             />
           )}
         </>

@@ -36,6 +36,8 @@ export default function misions(props: { localization: Localization; data_mision
               photos={data.photos}
               mainPhoto={data.mainPhoto.key}
               dataCMS={dataCMS}
+              background={data.background}
+              select_back={data.select_back}
             />
           )}
         </>
@@ -49,9 +51,11 @@ export const getStaticProps: GetStaticProps = async ctx => {
   const localization = getLocalizationProps(ctx, 'auth')
   const data = ((await client.query({ query: gql(getPages), variables: { name: 'parochial' } })) as { data: { getPages: any } })
     .data.getPages
-  const data_misions = ((await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Parroquiales' } })) as {
-    data: { getMisionWebToWeb: any }
-  }).data.getMisionWebToWeb
+  const data_misions = (
+    (await client.query({ query: gql(getMisionWebToWeb), variables: { type: 'Parroquiales' } })) as {
+      data: { getMisionWebToWeb: any }
+    }
+  ).data.getMisionWebToWeb
   return {
     props: {
       localization,

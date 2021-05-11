@@ -13,12 +13,15 @@ const NewsScreen = (props: PropsNewsScreen) => {
 
   return (
     <>
-      <Header image={props.mainPhoto}>
+      <Header color={props.background} select_back={props.select_back} image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="news__container">
               <div className="container__text">
-                <img src={props.dataNews.image.key} alt={`CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA ${props.dataNews[locale]?.title}`} />
+                <img
+                  src={props.dataNews.image.key}
+                  alt={`CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA ${props.dataNews[locale]?.title}`}
+                />
                 <div className="content">
                   <h1 className="title mainTitle">{capitalize(props.dataNews[locale]?.title)}</h1>
                   <div dangerouslySetInnerHTML={{ __html: props.dataNews[locale]?.text as string }}></div>

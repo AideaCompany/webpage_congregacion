@@ -27,7 +27,17 @@ export default function sanctuary(props: { localization: Localization; data: any
   return (
     <Layout title={props.localization.translations.santuario}>
       <>
-        <>{data && <SanctuaryScreen photos={data.photos} mainPhoto={data.mainPhoto.key} dataCMS={dataCMS} />}</>
+        <>
+          {data && (
+            <SanctuaryScreen
+              background={data.background}
+              select_back={data.select_back}
+              photos={data.photos}
+              mainPhoto={data.mainPhoto.key}
+              dataCMS={dataCMS}
+            />
+          )}
+        </>
       </>
     </Layout>
   )

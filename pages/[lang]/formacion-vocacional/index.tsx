@@ -33,6 +33,8 @@ export default function beFranciscan(props: { localization: Localization; data: 
             photos={data.photos}
             mainPhoto={data.mainPhoto.key}
             dataCMS={dataCMS}
+            background={data.background}
+            select_back={data.select_back}
           />
         )}
       </>
@@ -43,9 +45,11 @@ export default function beFranciscan(props: { localization: Localization; data: 
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const data = ((await client.query({ query: gql(getPages), variables: { name: 'beFranciscan' } })) as {
-    data: { getPages: any }
-  }).data.getPages
+  const data = (
+    (await client.query({ query: gql(getPages), variables: { name: 'beFranciscan' } })) as {
+      data: { getPages: any }
+    }
+  ).data.getPages
   return {
     props: {
       localization,

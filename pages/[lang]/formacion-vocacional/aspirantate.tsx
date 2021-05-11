@@ -34,6 +34,8 @@ export default function aspirantate(props: { localization: Localization; data: a
               photos={data.photos}
               mainPhoto={data.mainPhoto.key}
               dataCMS={dataCMS}
+              background={data.background}
+              select_back={data.select_back}
             />
           )}
         </>

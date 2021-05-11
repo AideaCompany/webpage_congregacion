@@ -38,6 +38,30 @@
       }
     }
   }
+
+  .container__iframe {
+    height: 100%;
+    width: 100%;
+    // border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .video {
+      width: 50%;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        top: 50%; /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        border: none;
+      }
+    }
+  }
+
   .container__franciscan {
     width: 100%;
     height: 100%;
@@ -87,6 +111,28 @@
       flex-direction: column;
       > div {
         width: 100%;
+      }
+    }
+    .container__iframe {
+      height: 100%;
+      width: 100%;
+      // border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .video {
+        width: 90%;
+        padding-top: 56.25%;
+        iframe {
+          position: absolute;
+          top: 50%; /* position the top  edge of the element at the middle of the parent */
+          left: 50%; /* position the left edge of the element at the middle of the parent */
+          margin-top: 50px;
+          transform: translate(-50%, -50%);
+          width: 90%;
+          height: 90%;
+          border: none;
+        }
       }
     }
   }

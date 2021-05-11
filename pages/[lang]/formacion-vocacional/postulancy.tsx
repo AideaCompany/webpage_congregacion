@@ -33,6 +33,8 @@ export default function postulancy(props: { localization: Localization; data: an
             photos={data.photos}
             mainPhoto={data.mainPhoto.key}
             dataCMS={dataCMS}
+            background={data.background}
+            select_back={data.select_back}
           />
         )}
       </>
