@@ -9,7 +9,6 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
   const { locale } = useTranslation()
 
   const { provinces: itemsSlider } = props
-  console.log(itemsSlider)
   return (
     <Header>
       <>

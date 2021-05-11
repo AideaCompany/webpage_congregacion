@@ -5,7 +5,6 @@ import Header from '../header'
 import TargetText from '../TargetText'
 
 const SaintScreen = (props: PropsScreens) => {
-  console.log(props.carousel)
   return (
     <>
       <Header image={props.mainPhoto}>

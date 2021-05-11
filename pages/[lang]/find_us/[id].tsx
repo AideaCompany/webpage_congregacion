@@ -21,17 +21,19 @@ export default function index(props: { localization: Localization; provinces: Pr
 export const getStaticProps: GetStaticProps = async ctx => {
   await client.cache.reset()
   const localization = getLocalizationProps(ctx, 'auth')
-  const fraternities = ((await client.query({
-    query: gql(getFraternityWeb),
-    variables: { country: (ctx.params as ParsedUrlQuery).id }
-  })) as {
-    data: { getFraternityWeb: IFraternity[] }
-  }).data.getFraternityWeb
+  const fraternities = (
+    (await client.query({
+      query: gql(getFraternityWeb),
+      variables: { country: (ctx.params as ParsedUrlQuery).id }
+    })) as {
+      data: { getFraternityWeb: IFraternity[] }
+    }
+  ).data.getFraternityWeb
   const provinces = fraternities.map(e => e.province)
   var uniqueProvince = _.uniq(provinces, x => (x as Province)._id)
   return {
     props: {
-      provinces: uniqueProvince,
+      provinces: uniqueProvince.reverse(),
       localization
     }
   }
