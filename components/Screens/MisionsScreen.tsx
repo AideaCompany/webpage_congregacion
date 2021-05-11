@@ -26,7 +26,6 @@ const MisionScreen = (props: PropsMisionScreen) => {
                       <div className="item_carousel">
                         <div className="media">
                           <Gallery contain photos={mision.carousel?.find(e => e.name === 'gallery').carousel} />
-
                           {/* <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" /> */}
                         </div>
                         <div className="text_mision">
