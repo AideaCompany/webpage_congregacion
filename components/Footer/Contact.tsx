@@ -14,7 +14,9 @@ const Contact = ({ data }: { data: any }) => {
         </li>
         <li>
           <Image width={20} height={20} src="/images/footer/contact_icons/mail.svg" />
-          <span>{data?.email}</span>
+          <span>
+            <a href={`mailto:${data?.email}`}>{data?.email}</a>
+          </span>
         </li>
         <li>
           <Image width={20} height={20} src="/images/footer/contact_icons/phone.svg" />
