@@ -36,6 +36,9 @@ export default function misions(props: { localization: Localization; data_mision
               photos={data.photos}
               mainPhoto={data.mainPhoto.key}
               dataCMS={dataCMS}
+              carousel={data.carousel}
+              background={data.background}
+              select_back={data.select_back}
             />
           )}
         </>

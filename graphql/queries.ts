@@ -310,10 +310,24 @@ export const getMisionWebToWeb = /* GraphQL */ `
       _id
       date
       type
-      gallery {
+      carousel {
         _id
-        filename
-        key
+        name
+        carousel {
+          _id
+          photos {
+            _id
+            filename
+            key
+          }
+          es
+          en
+          fr
+          de
+          it
+          checkState
+          link
+        }
       }
       es {
         text
@@ -378,6 +392,25 @@ export const getMisionsWeb = /* GraphQL */ `
         text
         title
         description
+      }
+      carousel {
+        _id
+        name
+        carousel {
+          _id
+          photos {
+            _id
+            filename
+            key
+          }
+          es
+          en
+          fr
+          de
+          it
+          checkState
+          link
+        }
       }
     }
   }
@@ -462,6 +495,8 @@ export const getPages = /* GraphQL */ `
           fr
           de
           it
+          checkState
+          link
         }
       }
     }

@@ -502,4 +502,5 @@ export interface NewsOBject extends INews {
   title?: string
   description?: string
   gallery?: fileType[] | string[]
+  carousel?: any[]
 }
