@@ -70,8 +70,10 @@
   .container__news {
     margin-top: 5vh;
     width: 80%;
+    height: 600px;
     display: flex;
     overflow: hidden;
+    // border: 1px solid black;
     > div {
       height: 100%;
     }
@@ -79,9 +81,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       width: 40%;
       .ant-list {
         height: 70%;
+
         .ant-spin-nested-loading {
           height: 100%;
           .ant-spin-container {
@@ -90,9 +94,8 @@
               height: 100%;
               .ant-list-item {
                 height: 50%;
-
                 .news__target {
-                  height: 100%;
+                  height: 200px;
                 }
               }
             }
@@ -102,6 +105,7 @@
     }
     .main__news {
       padding: 20px;
+      height: 100%;
       width: 60%;
       display: flex;
       justify-content: center;

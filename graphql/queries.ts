@@ -429,6 +429,7 @@ export const getPages = /* GraphQL */ `
       fr
       de
       it
+      background
       mainPhoto {
         filename
         key
