@@ -21,7 +21,7 @@ const MisionScreen = (props: PropsMisionScreen) => {
               <div dangerouslySetInnerHTML={{ __html: props.dataCMS?.title }} className="secondary__title"></div>
               <div className="carousel__mision">
                 <Carousel>
-                  {props.misions?.map(mision => (
+                  {props.misions.reverse()?.map(mision => (
                     <div key={mision._id}>
                       <div className="item_carousel">
                         <div className="media">
