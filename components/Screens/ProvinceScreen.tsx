@@ -20,7 +20,7 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
               </div> */}
               <div className="content">
                 <Gallery
-                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  // text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
                   photos={e?.carousel?.find(j => j.name === 'carousel')?.carousel}
                 ></Gallery>
 
