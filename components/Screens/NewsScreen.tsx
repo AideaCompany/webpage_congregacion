@@ -13,7 +13,7 @@ const NewsScreen = (props: PropsNewsScreen) => {
 
   return (
     <>
-      <Header color={props.background} select_back={props.select_back} image={props.mainPhoto}>
+      <Header color={`rgba(5, 160, 171, 0.5)`} select_back={'background'} image={props.mainPhoto}>
         <>
           <div className="main__section">
             <div className="news__container">

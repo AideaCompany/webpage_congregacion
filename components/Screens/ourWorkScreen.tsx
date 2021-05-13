@@ -9,7 +9,6 @@ import TargetText from '../TargetText'
 // import TargetText from '../TargetText'
 
 const OurWork = (props: PropsOurWorkScreen) => {
-  console.log(props.carousel)
   return (
     <>
       <Header color={props.background} select_back={props.select_back} image={props?.mainPhoto}>
@@ -17,7 +16,10 @@ const OurWork = (props: PropsOurWorkScreen) => {
           <div className="main__section">
             <div className="ourwork__container">
               <div className="container__news">
-                <Gallery photos={props.carousel?.find(e => e.name === 'photoOurWork').carousel} />
+                <Gallery
+                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  photos={props.carousel?.find(e => e.name === 'photoOurWork').carousel}
+                />
 
                 <TargetText text={props?.dataCMS?.textOurWork} />
               </div>

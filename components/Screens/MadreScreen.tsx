@@ -16,7 +16,7 @@ const MadreScreen = (props: PropsMadreScreen) => {
             <div className="spirituality__index">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="img__card">
-                <div></div>
+                <TargetText text={props.select_back === 'background' ? props.dataCMS.text_back : null} />
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'mainText_ColorBack').name}
                   text={props?.dataCMS?.mainText}

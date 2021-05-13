@@ -19,7 +19,10 @@ const ProvinceScreen = (props: { provinces: Province[] }) => {
                 <TargetText classname="provincesTarget" text={e[locale]?.text}></TargetText>
               </div> */}
               <div className="content">
-                <Gallery photos={e?.carousel?.find(j => j.name === 'carousel')?.carousel}></Gallery>
+                <Gallery
+                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  photos={e?.carousel?.find(j => j.name === 'carousel')?.carousel}
+                ></Gallery>
 
                 <TargetText classname="provincesTarget" text={e[locale]?.text}></TargetText>
               </div>

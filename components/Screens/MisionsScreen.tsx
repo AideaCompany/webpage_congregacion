@@ -11,7 +11,7 @@ import TargetText from '../TargetText'
 
 const MisionScreen = (props: PropsMisionScreen) => {
   const { locale } = useTranslation()
-  console.log(props.misions)
+
   return (
     <>
       <Header color={props.background} select_back={props.select_back} image={props?.mainPhoto}>
@@ -25,7 +25,11 @@ const MisionScreen = (props: PropsMisionScreen) => {
                     <div key={mision._id}>
                       <div className="item_carousel">
                         <div className="media">
-                          <Gallery contain photos={mision.carousel?.find(e => e.name === 'gallery').carousel} />
+                          <Gallery
+                            text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                            contain
+                            photos={mision.carousel?.find(e => e.name === 'gallery').carousel}
+                          />
                           {/* <img src={(mision.image as fileType).key} alt="CONGREGACIÓN DE FRANCISCANAS DE MARIA INMACULADA" /> */}
                         </div>
                         <div className="text_mision">

@@ -55,6 +55,9 @@
         }
         .text_mision {
           width: 100%;
+          > div {
+            width: 100%;
+          }
         }
       }
     }

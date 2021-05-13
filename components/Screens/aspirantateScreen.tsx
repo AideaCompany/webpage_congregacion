@@ -13,7 +13,10 @@ const AspirantateScreen = (props: PropsScreens) => {
             <div className="franciscan__index">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="container__franciscan">
-                <Gallery photos={props.carousel?.find(e => e.name === 'gallery').carousel} />
+                <Gallery
+                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  photos={props.carousel?.find(e => e.name === 'gallery').carousel}
+                />
                 <TargetText text={props?.dataCMS?.mainText} />
               </div>
             </div>

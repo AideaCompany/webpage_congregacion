@@ -13,7 +13,10 @@ const SaintScreen = (props: PropsScreens) => {
             <div className="spirituality__index">
               <div dangerouslySetInnerHTML={{ __html: props.dataCMS.title }} className="secondary__title"></div>
               <div className="img__card">
-                <Gallery photos={props.carousel?.find(e => e.name === 'photograhy').carousel} />
+                <Gallery
+                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  photos={props.carousel?.find(e => e.name === 'photograhy').carousel}
+                />
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'mainText_ColorBack').color}
                   text={props.dataCMS.mainText}

@@ -4,7 +4,7 @@ $dark-grey: #363636;
 $light-grey: #d8d8d8;
 $backgroundDark: #303030;
 $lightBlue: #01b9c5;
-$lightBlueHover: #05a0ab;
+$lightBlueHover: rgba(5, 160, 171, 1);
 //text
 $textFooter: #fff;
 
@@ -21,6 +21,7 @@ $textFooter: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   .ant-carousel {
     .slick-dots {
       bottom: -30px;
@@ -46,8 +47,10 @@ $textFooter: #fff;
         align-items: center;
         p {
           font-family: 'Montserrat-Regular';
+          text-align: center;
+          padding: 0 5px 0 5px;
           margin: 0;
-          font-size: 16pt;
+          font-size: 14pt;
           color: #fff;
         }
       }

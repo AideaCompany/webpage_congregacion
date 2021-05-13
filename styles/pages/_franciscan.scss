@@ -74,23 +74,26 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .iframe__video {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding-top: 56.25%;
-      iframe {
-        position: absolute;
-        top: 50%; /* position the top  edge of the element at the middle of the parent */
-        left: 50%; /* position the left edge of the element at the middle of the parent */
+      flex-direction: column;
+      .iframe__video {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
 
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 90%;
-        border: none;
+        iframe {
+          position: absolute;
+          top: 50%; /* position the top  edge of the element at the middle of the parent */
+          left: 50%; /* position the left edge of the element at the middle of the parent */
+
+          transform: translate(-50%, -50%);
+          width: 90%;
+          height: 90%;
+          border: none;
+        }
       }
     }
+
     .text {
       display: flex;
       justify-content: flex-end;

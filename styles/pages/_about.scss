@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     video {
       width: 90%;
     }
@@ -29,6 +30,9 @@
     padding: 0;
     height: auto;
     flex-direction: column-reverse;
+    > div {
+      width: 100%;
+    }
     video {
       width: 90%;
     }

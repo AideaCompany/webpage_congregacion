@@ -20,6 +20,7 @@ const PastoralScreen = (props: PropsScreens) => {
                       allowFullScreen
                     ></iframe>
                   </div>
+                  {props.select_back === 'background' && props.dataCMS.text_back && <TargetText text={props.dataCMS.text_back} />}
                 </div>
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'textOrientation_ColorBack').color}

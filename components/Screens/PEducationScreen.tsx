@@ -13,7 +13,10 @@ const PEducationScreen = (props: PropsScreens) => {
             <div className="spirituality__index">
               <div className="secondary__title" dangerouslySetInnerHTML={{ __html: props.dataCMS.title }}></div>
               <div className="img__card">
-                <Gallery photos={props.carousel?.find(e => e.name === 'photoOne').carousel} />
+                <Gallery
+                  text_back={props.select_back === 'background' ? props.dataCMS.text_back : null}
+                  photos={props.carousel?.find(e => e.name === 'photoOne').carousel}
+                />
                 <TargetText
                   // background={props.colors?.find(e => e.name === 'text_ColorBack').color}
                   text={props.dataCMS.text}
