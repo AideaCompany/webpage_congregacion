@@ -26,7 +26,6 @@ export default function Carisma(props: { localization: Localization; data: any }
   return (
     <Layout title={'Inicio'}>
       <>
-        {' '}
         {data && (
           <CarismaScreen
             carousel={data.carousel}
@@ -37,7 +36,7 @@ export default function Carisma(props: { localization: Localization; data: any }
             background={data.background}
             select_back={data.select_back}
           />
-        )}{' '}
+        )}
       </>
     </Layout>
   )
