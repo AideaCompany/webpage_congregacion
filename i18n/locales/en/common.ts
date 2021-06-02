@@ -4,7 +4,7 @@ const common = {
   about: 'About Us',
   where: 'Find Us',
   ourWork: 'Our Work',
-  misions: 'Misions',
+  misions: 'Worship Apostolate',
   educational: 'Educational Pastoral',
   parochial: 'Parochial Pastoral',
   social: 'Social Pastoral',

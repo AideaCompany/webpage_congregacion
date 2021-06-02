@@ -4,7 +4,7 @@ const common = {
   about: '¿Quiénes somos?',
   where: '¿Dónde estamos?',
   ourWork: '¿Qué hacemos?',
-  misions: 'Misiones',
+  misions: 'Apostolado de adoración',
   educational: 'Educativo',
   parochial: 'Parroquial',
   beFranciscan: 'Ser Franciscana',
