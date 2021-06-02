@@ -6,7 +6,7 @@ const common = {
   ourWork: '¿Qué hacemos?',
   misions: 'Apostolado de adoración',
   educational: 'Pastoral Educativa',
-  parochial: 'Pastoral Misionero',
+  parochial: 'Pastoral Misionera',
   social: 'Pastoral Social',
   adgente: 'Misión Ad Gentes',
   beFranciscan: 'Ser Franciscana',
