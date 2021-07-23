@@ -17,7 +17,7 @@ export default function index(props: { localization: Localization; data_news: Ne
   useEffect(() => {
     setDataCMS(props.data[props.localization.locale])
     setData(props.data)
-    setNews(props.data_news)
+    setNews(props.data_news.reverse())
   }, [])
 
   useEffect(() => {
