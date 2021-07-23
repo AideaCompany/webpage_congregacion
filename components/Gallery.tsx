@@ -3,11 +3,22 @@ import useTranslation from 'hooks/useTranslations'
 import React from 'react'
 import TargetText from './TargetText'
 
-const Gallery = ({ photos, contain, text_back }: { photos?: any[]; contain?: boolean; text_back?: string }) => {
+const Gallery = ({
+  photos,
+  contain,
+  text_back,
+  link
+}: {
+  photos?: any[]
+  contain?: boolean
+  text_back?: string
+  link?: string
+}) => {
   const styles: React.CSSProperties = {
     objectFit: contain ? 'contain' : 'cover'
   }
   const { locale } = useTranslation()
+
   return (
     <>
       <div className="gallery">
@@ -19,11 +30,23 @@ const Gallery = ({ photos, contain, text_back }: { photos?: any[]; contain?: boo
                   <p>{photo[locale]}</p>
                 </div>
               )}
-              <img
-                style={styles}
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${photo.photos?.key}`}
-                alt="congregación de franciscanas de maria inmaculada"
-              />
+              {photo.link ? (
+                <div className="video">
+                  <div className="iframe">
+                    <iframe
+                      src={photo.link}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  style={styles}
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${photo.photos?.key}`}
+                  alt="congregación de franciscanas de maria inmaculada"
+                />
+              )}
             </div>
           ))}
         </Carousel>
