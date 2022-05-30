@@ -29,10 +29,11 @@ const common = {
   santuario: 'View of the eucharistic sanctuary',
   congregationHistory: 'Congregation History',
   ourCharisma: 'Our Charisma',
-  provinces: 'Provinces',
+  provinces: 'Countries',
   goToNews: 'Go to News',
   lastNews: 'Last News',
   miframi: 'Miframi',
+  jpic: 'JPIC',
   //pages
   country: 'Country',
   city: 'City',

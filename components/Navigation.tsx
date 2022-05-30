@@ -85,6 +85,11 @@ const Navigation = () => {
                 <a>{t('vocationMinistry').toUpperCase()}</a>
               </Link>
             </Menu.Item>
+            <Menu.Item>
+              <Link href={{ pathname: '/[lang]/jpic', query: { lang: router.query.lang } }}>
+                <a>{t('jpic').toUpperCase()}</a>
+              </Link>
+            </Menu.Item>
             <Menu.SubMenu title={t('vocationalFormation').toUpperCase()}>
               <Menu.Item>
                 <Link href={{ pathname: '/[lang]/formacion-vocacional', query: { lang: router.query.lang } }}>
@@ -246,6 +251,11 @@ const Navigation = () => {
           <li>
             <Link href={{ pathname: '/[lang]/pastoral-vocacional', query: { lang: router.query.lang } }}>
               <a>{t('vocationMinistry').toUpperCase()}</a>
+            </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: '/[lang]/jpic', query: { lang: router.query.lang } }}>
+              <a>{t('jpic').toUpperCase()}</a>
             </Link>
           </li>
           <li>
